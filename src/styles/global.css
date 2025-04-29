@@ -1,76 +1,110 @@
 /* Reset & Base Styles */
 
+@font-face {
+  font-family: Popins;
+  src: url(/src/fonts/Poppins-Regular.ttf);
+}
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    display: flex;
-    flex-direction: column;
-    min-height: 100dvh;
-    
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;  
   }
   
   /* Header */
-  header {
-    background-color: #0077cc; /* Blue */
-    padding: 1rem 2rem;
-    color: white;
+header {
+  background-color: #0077cc; /* Blue */
+  padding: 2rem;
+  padding-right: 0;
+  color: white;
+  font-family:Popins,sans-serif;
   }
   
-  .navigation {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-  }
+.mainNav {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
   
- .navigation li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .navigation li a:hover {
-    color: #cce6ff;
-  }
+.mainNav li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
 
-  .tickets li a{
-    background-color: gold;
-    color: black;
-    padding:1rem;
-  }
-  .navigation .tickets a:hover {
-    color:black;
-    background-color: #cce6ff;
-  }
   
-  /* Footer */
-  footer {
-    background-color: #004a99; /* Darker blue */
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-  }
+.navigation li a:hover {
+  color: #cce6ff;
+}
+
+navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.navigation,
+.tickets {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
   
-  footer img {
-    height: 60px;
-    margin-bottom: 1rem;
-  }
+
+.tickets li a{
+  background-color: gold;
+  color: black;
+  padding:2.05rem;  
+  font-weight: bold;
+
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.navigation .tickets a:hover {
+  color:black;
+  background-color: #cce6ff;
+}
   
-  footer a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-  }
+/* Footer */
+footer {
+  background-color: #004a99; /* Darker blue */
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
   
-  footer a:hover {
-    color: #aad4ff;
-  }
+footer img {
+  height: 60px;
+  margin-bottom: 1rem;
+}
   
-  footer p {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-  }
+footer a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+  
+footer a:hover {
+  color: #aad4ff;
+}
+  
+footer p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+
   
