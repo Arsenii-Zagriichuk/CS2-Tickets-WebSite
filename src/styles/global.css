@@ -1,0 +1,76 @@
+/* Reset & Base Styles */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    
+  }
+  
+  /* Header */
+  header {
+    background-color: #0077cc; /* Blue */
+    padding: 1rem 2rem;
+    color: white;
+  }
+  
+  .navigation {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+ .navigation li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .navigation li a:hover {
+    color: #cce6ff;
+  }
+
+  .tickets li a{
+    background-color: gold;
+    color: black;
+    padding:1rem;
+  }
+  .navigation .tickets a:hover {
+    color:black;
+    background-color: #cce6ff;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #004a99; /* Darker blue */
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  footer img {
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  footer a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #aad4ff;
+  }
+  
+  footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+  
