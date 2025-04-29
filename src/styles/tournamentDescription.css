@@ -6,11 +6,14 @@ span{
     justify-content: space-between;
     align-items: center;
     margin :0;
+    padding: 10rem;
+    gap: 10rem;
 }
 #b1t_image{
-    width: 50%;
-    height: 50%;
-    padding: 1rem;
+    width: 40%;
+    height: 30%;
+    border-radius: 2rem;
+    object-fit: cover;
 }
 #section p{
     font-size: 1.5rem;
