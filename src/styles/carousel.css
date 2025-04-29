@@ -1,0 +1,29 @@
+---
+
+---
+
+
+  .carousel {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-slide {
+    width: 100%; /* Each image takes up the entire width of the container */
+    box-sizing: border-box;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 300px; /* Set a fixed height for uniform size */
+    object-fit: cover; /* Ensures the image covers the area, preserving aspect ratio */
+    border-radius: 12px;
+  }

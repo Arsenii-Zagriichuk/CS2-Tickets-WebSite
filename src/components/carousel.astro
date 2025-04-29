@@ -1,5 +1,36 @@
 ---
-import 'swiper/css';
-import 'swiper/css/pagination';
-
+import { Image } from 'astro:assets'
+import g2Win from '../images/g2win.jpg'
+import vitalityWin from '../images/vitalitywin.jpg'
+import aleksib from '../images/aleksib.jpg'
+import faze from '../images/faze.jpg'
+import trophy from '../images/trophy.jpg'
+import '../styles/carousel.css'
 ---
+<section class="carousel">
+    <div class="carousel-track-container">
+      <ul class="carousel-track" id="carousel-track">
+        <li class="carousel-slide"><Image src={g2Win} alt="g2 win" /></li>
+        <li class="carousel-slide"><Image src={vitalityWin} alt="vitality win" /></li>
+        <li class="carousel-slide"><Image src={aleksib} alt="aleksib" /></li>
+        <li class="carousel-slide"><Image src={faze} alt="faze" /></li>
+        <li class="carousel-slide"><Image src={trophy} alt="trophy" /></li>
+      </ul>
+    </div>
+  </section>
+  
+  <script type="module">
+    const track = document.querySelector('#carousel-track');
+  const slides = Array.from(track.children);
+  let currentSlide = 0;
+
+  function updateSlide(position) {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-\${slideWidth * position}px)`;
+  }
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlide(currentSlide);
+  }, 4000);
+    </script>
