@@ -9,28 +9,40 @@ import '../styles/carousel.css'
 ---
 <section class="carousel">
     <div class="carousel-track-container">
-      <ul class="carousel-track" id="carousel-track">
-        <li class="carousel-slide"><Image src={g2Win} alt="g2 win" /></li>
+      <ul class="carousel-track">
+        <li class="carousel-slide current"><Image src={g2Win} alt="g2 win" /></li>
         <li class="carousel-slide"><Image src={vitalityWin} alt="vitality win" /></li>
         <li class="carousel-slide"><Image src={aleksib} alt="aleksib" /></li>
         <li class="carousel-slide"><Image src={faze} alt="faze" /></li>
         <li class="carousel-slide"><Image src={trophy} alt="trophy" /></li>
       </ul>
     </div>
-  </section>
-  
-  <script type="module">
-    const track = document.querySelector('#carousel-track');
-  const slides = Array.from(track.children);
-  let currentSlide = 0;
+</section>
 
-  function updateSlide(position) {
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    track.style.transform = `translateX(-\${slideWidth * position}px)`;
-  }
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    if (!track) return;
 
-  setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateSlide(currentSlide);
-  }, 4000);
-    </script>
+    const slides = Array.from(track.children);
+    let currentSlide = 0;
+
+    function updateSlide() {
+      slides.forEach((slide, index) => {
+        slide.classList.remove('current');
+        if (index === currentSlide) {
+          slide.classList.add('current');
+        }
+      });
+    }
+
+    // Initialize first slide
+    updateSlide();
+
+    // Set up the interval
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlide();
+    }, 5000);
+  });
+</script>
