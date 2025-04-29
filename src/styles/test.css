@@ -1,0 +1,17 @@
+span{
+    font-size: 3rem;
+}
+#section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#b1t_image{
+    width: 50%;
+    height: auto;
+    padding: 1rem;
+}
+#section p{
+    font-size: 2rem;
+    padding: 1rem;
+}
