@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 1rem;
+    flex-wrap: wrap;
+    align-items: stretch; 
+  }
+  
+  .ticketBox {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 1 1 300px;
+    max-width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+  }
+  
+  .ticketBox:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .ticketTitle {
+    background-color: black;
+    color: rgb(255, 94, 0);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .ticketContent {
+    background-color: rgb(255, 94, 0);
+    color: black;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .ticketContent p {
+    margin: 1rem 0;
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 2rem;
+  }
