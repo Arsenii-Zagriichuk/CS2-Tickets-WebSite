@@ -1,47 +1,56 @@
-<!doctype html>
+---
+import "../styles/global.css";
+---
+
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<header>
-			<nav>
-				<ul>
-					<li>Home Page</li>
-					<li>About Us</li>
-					<li>Gallery</li>
-					<li>Get tickets</li>
-				</ul>
-			</nav>
-		</header>
-		<slot />
-		<footer style="background-color: #222; color: #fff; padding: 2rem; text-align: center;">
-			<!-- Logo -->
-			<div>
-			  <img src="logo.png" alt="Your Logo" style="height: 60px; margin-bottom: 1rem;">
-			</div>
-		  
-			<!-- Social Media Links -->
-			<div style="margin-bottom: 1rem;">
-			  <a href="https://instagram.com/yourprofile1" target="_blank" style="color: #fff; margin: 0 10px;">
-				<i class="fab fa-instagram fa-2x"></i>
-			  </a>
-			  <a href="https://instagram.com/yourprofile2" target="_blank" style="color: #fff; margin: 0 10px;">
-				<i class="fab fa-instagram fa-2x"></i>
-			  </a>
-			  <a href="https://instagram.com/yourprofile3" target="_blank" style="color: #fff; margin: 0 10px;">
-				<i class="fab fa-instagram fa-2x"></i>
-			  </a>
-			</div>
-		  
-			<div style="font-size: 0.9rem; color: #bbb;">
-			  <p>&copy; 2025 Your Company Name. All rights reserved.</p>
-			  <p>Contact us at <a href="mailto:info@yourcompany.com" style="color: #bbb;">info@yourcompany.com</a></p>
-			</div>
-		  </footer>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Astro" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home Page</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/tickets">Get Tickets</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div>
+        <img src="/logo.png" alt="Logo"/>
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <a href="https://instagram.com/yourprofile1" target="_blank">
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
+        <a href="https://instagram.com/yourprofile2" target="_blank">
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
+        <a href="https://instagram.com/yourprofile3" target="_blank">
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
+      </div>
+
+      <div>
+        <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+        <p>
+          Contact us at
+          <a href="mailto:info@yourcompany.com">tickets.cs2@gmail.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>
