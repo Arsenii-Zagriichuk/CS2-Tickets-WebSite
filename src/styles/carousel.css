@@ -1,6 +1,4 @@
----
 
----
 
 
   .carousel {
@@ -9,11 +7,12 @@
     margin: 2rem auto;
     overflow: hidden;
     border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
 
   .carousel-track-container {
     position: relative;
-    height: 400px;
+    height: 25rem;
   }
 
   .carousel-track {
@@ -21,7 +20,8 @@
     gap: 1rem;
     list-style: none;
     margin: 0;
-    padding: 0 3rem;
+    padding: 1rem 3rem;
+
     height: 100%;
   }
 
