@@ -4,10 +4,12 @@
   font-family: Popins;
   src: url(/src/fonts/Poppins-Regular.ttf);
 }
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #000110;
+  color: white;
   display: flex;
   flex-direction: column;
   min-height: 100dvh;  
