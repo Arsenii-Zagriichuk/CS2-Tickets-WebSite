@@ -1,0 +1,75 @@
+.teams {
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.top_text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.top_text span {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.firstRow, .secondRow {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.team-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+}
+
+.team-item img {
+    width: 100px;  /* Fixed width for all team logos */
+    height: 100px; /* Fixed height for all team logos */
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    mix-blend-mode: normal; /* This can help with transparency */
+}
+
+.team-item:hover img {
+    transform: scale(1.05);
+}
+
+.team-item span {
+    font-size: 0.9rem;
+    text-align: center;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+    .firstRow, .secondRow {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .firstRow, .secondRow {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .team-item img {
+        width: 80px;
+        height: 80px;
+    }
+}
