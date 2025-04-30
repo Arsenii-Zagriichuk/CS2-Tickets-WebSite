@@ -6,6 +6,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+    background: transparent;
 }
 
 .top_text {
@@ -25,6 +26,7 @@
     grid-template-columns: repeat(8, 1fr);
     gap: 2rem;
     margin-bottom: 2rem;
+    background: transparent;
 }
 
 .team-item {
@@ -34,15 +36,18 @@
     gap: 0.5rem;
     width: 100%;
     height: 100%;
+    background: transparent;
 }
 
 .team-item img {
-    width: 100px;  /* Fixed width for all team logos */
-    height: 100px; /* Fixed height for all team logos */
+    width: 100px;
+    height: 100px;
     object-fit: contain;
     border-radius: 8px;
     transition: transform 0.2s ease;
-    mix-blend-mode: normal; /* This can help with transparency */
+    mix-blend-mode: normal;
+    background: transparent;
+    filter: none;
 }
 
 .team-item:hover img {
