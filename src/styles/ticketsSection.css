@@ -8,6 +8,31 @@
     flex-wrap: wrap;
     align-items: stretch; 
   }
+
+  .border {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 4rem 0;
+  }
+
+  .border span{
+    font-size: 2rem;
+  }
+  
+  .border::before, .border::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid rgb(255, 94, 0);
+  }
+  
+  .border::before {
+    margin-right: 1rem;
+  }
+  
+  .border::after {
+    margin-left: 1rem;
+  }
   
   .ticketBox {
     display: flex;
