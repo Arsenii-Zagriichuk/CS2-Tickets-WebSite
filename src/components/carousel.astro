@@ -6,17 +6,76 @@ import aleksib from '../images/aleksib.jpg'
 import faze from '../images/faze.jpg'
 import trophy from '../images/trophy.jpg'
 import '../styles/carousel.css'
+
+// Create an array of image objects for easier handling
+const images = [
+    { src: g2Win, alt: "g2 win" },
+    { src: vitalityWin, alt: "vitality win" },
+    { src: aleksib, alt: "aleksib" },
+    { src: faze, alt: "faze" },
+    { src: trophy, alt: "trophy" }
+];
 ---
 <section class="carousel">
     <div class="carousel-track-container">
-      <ul class="carousel-track">
-        <li class="carousel-slide"><Image src={g2Win} alt="g2 win" /></li>
-        <li class="carousel-slide"><Image src={vitalityWin} alt="vitality win" /></li>
-        <li class="carousel-slide"><Image src={aleksib} alt="aleksib" /></li>
-        <li class="carousel-slide"><Image src={faze} alt="faze" /></li>
-        <li class="carousel-slide"><Image src={trophy} alt="trophy" /></li>
-      </ul>
+        <ul class="carousel-track">
+            {images.map((image, index) => (
+                <li class="carousel-slide" data-index={index}>
+                    <Image src={image.src} alt={image.alt} />
+                </li>
+            ))}
+        </ul>
     </div>
 </section>
 
+<!-- Popup overlay -->
+<div class="popup-overlay">
+    <div class="popup-content">
+        <button class="close-popup">&times;</button>
+        {images.map((image, index) => (
+            <div class="popup-image" data-index={index}>
+                <Image src={image.src} alt={image.alt} />
+            </div>
+        ))}
+    </div>
+</div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.carousel-slide');
+        const popup = document.querySelector('.popup-overlay');
+        const popupImages = document.querySelectorAll('.popup-image');
+        const closeButton = popup?.querySelector('.close-popup');
+
+        // Show popup when clicking a slide
+        slides.forEach(slide => {
+            slide.addEventListener('click', () => {
+                const index = slide.getAttribute('data-index');
+                showPopupImage(index ? parseInt(index) : 0);
+                popup?.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+       
+        // the usage of typescript is needed based on constraints of props in astro, the information is used from https://docs.astro.build/en/getting-started/
+        function showPopupImage(index: number) {
+           // the manipulation of the popup image div  has been taken form https://www.geeksforgeeks.org/what-is-the-meaning-htmldivelement/
+            const popupDivs = document.querySelectorAll<HTMLDivElement>('.popup-image');
+            popupDivs.forEach(div => div.style.display = 'none');
+            popupDivs[index].style.display = 'block';
+        }
+
+        closeButton?.addEventListener('click', closePopup);
+        popup?.addEventListener('click', (e) => {
+            if (e.target === popup) closePopup();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup?.classList.contains('active')) closePopup();
+        });
+
+        function closePopup() {
+            popup?.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+</script>
