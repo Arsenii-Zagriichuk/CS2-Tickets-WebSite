@@ -6,15 +6,15 @@ import navi from '../images/navi.png'
 import astralis from '../images/astralis.png'
 import pain from '../images/pain.png'
 import furia from '../images/furia.png'
-import mouz from '../images/mouz.png'
+import mouz from '../images/mouzLogo.png'
 import spirit from '../images/spirit.png'
 import flyquest from '../images/flyquest.png'
 import imperial from '../images/imperial.png'
 import liquid from '../images/liquid.png'
 import vitality from '../images/vitality.png'
 import falcons from '../images/falcons.png'
-import mongolz from '../images/mongolz.png'
-import b8 from '../images/b8.png'
+import mongolz from '../images/mongolzLogo.png'
+import heroic from '../images/heroic.png'
 import eternalFire from '../images/eternalFire.png'
 const firstRow = [
     { src: g2, alt: "g2", name: "G2 Esports" },
@@ -27,13 +27,13 @@ const firstRow = [
     { src: spirit, alt: "spirit", name: "Spirit" },
 ];
 const secondRow = [
-    { src: flyquest, alt: "flyquest", name: "FlyQuest" },
+    { src: flyquest, alt: "flyquest", name: "Flyquest" },
     { src: imperial, alt: "imperial", name: "Imperial" },
     { src: liquid, alt: "liquid", name: "Liquid" },
     { src: vitality, alt: "vitality", name: "Vitality" },
     { src: falcons, alt: "falcons", name: "Falcons" },
     { src: mongolz, alt: "mongolz", name: "Mongolz" },
-    { src: b8, alt: "b8", name: "B8" },
+    { src: heroic, alt: "heroic", name: "Heroic" },
     { src: eternalFire, alt: "eternalFire", name: "Eternal Fire" },
 ];
 import '../styles/teamsSection.css'
@@ -48,7 +48,12 @@ import '../styles/teamsSection.css'
         <div class="firstRow">
             {firstRow.map((team) => (
                 <div class="team-item">
-                    <Image src={team.src} alt={team.alt} />
+                    <Image 
+                        src={team.src} 
+                        alt={team.alt} 
+                        format="png"
+                        quality="max"
+                    />
                     <span>{team.name}</span>
                 </div>
             ))}
@@ -57,7 +62,12 @@ import '../styles/teamsSection.css'
         <div class="secondRow">
             {secondRow.map((team) => (
                 <div class="team-item">
-                    <Image src={team.src} alt={team.alt} />
+                    <Image 
+                        src={team.src} 
+                        alt={team.alt} 
+                        format="png"
+                        quality="max"
+                    />
                     <span>{team.name}</span>
                 </div>
             ))}
