@@ -10,7 +10,7 @@ import '../styles/carousel.css'
 <section class="carousel">
     <div class="carousel-track-container">
       <ul class="carousel-track">
-        <li class="carousel-slide current"><Image src={g2Win} alt="g2 win" /></li>
+        <li class="carousel-slide"><Image src={g2Win} alt="g2 win" /></li>
         <li class="carousel-slide"><Image src={vitalityWin} alt="vitality win" /></li>
         <li class="carousel-slide"><Image src={aleksib} alt="aleksib" /></li>
         <li class="carousel-slide"><Image src={faze} alt="faze" /></li>
@@ -19,30 +19,4 @@ import '../styles/carousel.css'
     </div>
 </section>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const track = document.querySelector('.carousel-track');
-    if (!track) return;
 
-    const slides = Array.from(track.children);
-    let currentSlide = 0;
-
-    function updateSlide() {
-      slides.forEach((slide, index) => {
-        slide.classList.remove('current');
-        if (index === currentSlide) {
-          slide.classList.add('current');
-        }
-      });
-    }
-
-    // Initialize first slide
-    updateSlide();
-
-    // Set up the interval
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      updateSlide();
-    }, 5000);
-  });
-</script>
