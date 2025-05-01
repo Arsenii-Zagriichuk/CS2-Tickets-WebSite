@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import { Image } from 'astro:assets'
+import Logo from '../images/Logo.jpg'
 ---
 
 <!DOCTYPE html>
@@ -15,6 +17,7 @@ import "../styles/global.css";
     <header>
       <nav class="navContainer">
         <ul class="navigation">
+          <div class="logo"><Image src={Logo} alt = "logo" /></div>
           <div class="mainNav">
             <li><a href="/">Home Page</a></li>
             <li><a href="/about">About Us</a></li>
