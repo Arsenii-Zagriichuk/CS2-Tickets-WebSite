@@ -19,7 +19,7 @@ body {
   min-height: 100dvh;  
   }
   main{
-    max-width: 100rem;
+    width: 70vw;
     margin: 0 auto;
 
   }

@@ -3,11 +3,11 @@
 }
 
 .team_section {
-    max-width: 1200px;
+    max-width: 1160px;
     margin: 0 auto;
     padding: 0 1rem;
     background: transparent;
-    border: 3px solid #0077cc;
+    border: 1px solid #0077cc;
 }
 
 .top_text {
@@ -24,7 +24,7 @@
     color: white;
 }
 .title_team_section {
-    border-right: 3px solid #0077cc;
+    border-right: 1px solid #0077cc;
     padding-right: 1.5rem;
 }
 
