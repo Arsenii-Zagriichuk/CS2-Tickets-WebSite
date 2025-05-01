@@ -17,15 +17,46 @@
     gap: 2rem;
     margin-bottom: 2rem;
     padding-top: 1rem;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .top_text span {
     font-size: 1.5rem;
     color: white;
 }
+
 .title_team_section {
     border-right: 1px solid #0077cc;
     padding-right: 1.5rem;
+}
+
+/* Media queries for top text section */
+@media (max-width: 768px) {
+    .top_text {
+        gap: 1rem;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .top_text span {
+        font-size: 1.3rem;
+    }
+    
+    .title_team_section {
+        border-right: none;
+        border-bottom: 1px solid #0077cc;
+        padding-right: 0;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .top_text span {
+        font-size: 1.1rem;
+    }
 }
 
 .firstRow, .secondRow {
