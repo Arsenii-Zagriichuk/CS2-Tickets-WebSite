@@ -21,7 +21,6 @@ body {
   main{
     width: 70vw;
     margin: 0 auto;
-
   }
   
   /* Header */
@@ -50,7 +49,7 @@ header {
 
   
 .navigation li a:hover {
-  color: #cce6ff;
+  color: gold;
 }
 
 navContainer {
