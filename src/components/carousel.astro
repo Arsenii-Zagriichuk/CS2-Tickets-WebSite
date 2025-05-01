@@ -27,8 +27,6 @@ const images = [
         </ul>
     </div>
 </section>
-
-<!-- Popup overlay -->
 <div class="popup-overlay">
     <div class="popup-content">
         <button class="close-popup">&times;</button>
@@ -57,9 +55,7 @@ const images = [
             });
         });
        
-        // the usage of typescript is needed based on constraints of props in astro, the information is used from https://docs.astro.build/en/getting-started/
         function showPopupImage(index: number) {
-           // the manipulation of the popup image div  has been taken form https://www.geeksforgeeks.org/what-is-the-meaning-htmldivelement/
             const popupDivs = document.querySelectorAll<HTMLDivElement>('.popup-image');
             popupDivs.forEach(div => div.style.display = 'none');
             popupDivs[index].style.display = 'block';
