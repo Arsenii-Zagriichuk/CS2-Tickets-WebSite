@@ -3,7 +3,7 @@
 }
 
 .team_section {
-    max-width: 1160px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
     background: transparent;
@@ -37,10 +37,9 @@
     justify-content: center;
 }
 
-/* Center the grid items when there are fewer than 8 items */
-@media (min-width: 1025px) {
+@media (max-width: 1440px) {
     .firstRow, .secondRow {
-        grid-template-columns: repeat(auto-fit, 100px);
+        grid-template-columns: repeat(4, 1fr);
         justify-content: center;
         gap: 3rem;
     }
@@ -80,14 +79,14 @@
 
 @media (max-width: 1024px) {
     .firstRow, .secondRow {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         justify-content: center;
     }
 }
 
 @media (max-width: 640px) {
     .firstRow, .secondRow {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 1rem;
     }
     
@@ -96,3 +95,4 @@
         height: 5rem;
     }
 }
+
