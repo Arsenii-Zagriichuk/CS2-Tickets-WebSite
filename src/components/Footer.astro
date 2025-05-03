@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import SmallLogo from "../images/logoSmall.png";
+---
+
+<footer>
+  <Image src={SmallLogo} alt="logo" class="logoImg" id="smallLogo" />
+
+  <div style="margin-bottom: 1rem;">
+    <a href="https://instagram.com/yourprofile1" target="_blank">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+    <a href="https://instagram.com/yourprofile2" target="_blank">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+    <a href="https://instagram.com/yourprofile3" target="_blank">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+  </div>
+
+  <div>
+    <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+    <p>
+      Contact us at
+      <a href="mailto:info@yourcompany.com">tickets.cs2@gmail.com</a>
+    </p>
+  </div>
+</footer>
