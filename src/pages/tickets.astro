@@ -1,6 +1,67 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import  TicketHero from '../components/TicketHero.astro';
+import { Image } from 'astro:assets'
+import FullLogo from '../images/logoFull.jpg';
+import SmallLogo from '../images/logoSmall.png';
+import '../styles/global.css'
 ---
-<Layout>
-	<h1>Get Tickets</h1>
-</Layout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Astro" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navContainer">
+        <Image src={FullLogo} alt="logo" class="logoImg" />
+
+        <ul class="navigation">
+          <li>
+            <ul class="mainNav">
+              <li><a href="/">Home Page</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/gallery">Gallery</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul class="tickets">
+              <li><a href="/tickets">Get Tickets</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="tiketMain">
+    </main>
+    <footer>
+        <Image src={SmallLogo} alt="logo" class="logoImg" id="smallLogo" />
+  
+        <div style="margin-bottom: 1rem;">
+          <a href="https://instagram.com/yourprofile1" target="_blank">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+          <a href="https://instagram.com/yourprofile2" target="_blank">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+          <a href="https://instagram.com/yourprofile3" target="_blank">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+        </div>
+  
+        <div>
+          <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+          <p>
+            Contact us at
+            <a href="mailto:info@yourcompany.com">tickets.cs2@gmail.com</a>
+          </p>
+        </div>
+      </footer>
+    </body>
+  </html>
