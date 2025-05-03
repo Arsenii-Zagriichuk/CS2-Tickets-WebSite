@@ -16,22 +16,23 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;  
-  }
-  main{
-    width: 70vw;
-    margin: 0 auto;
-  }
-  
-  /* Header */
+  min-height: 100dvh;
+}
+main {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+/* Header */
 header {
-  background-color: #1345e9; 
+  background-color: #1345e9;
   padding: 2rem;
+  padding-bottom: 0;
   padding-right: 0;
   color: white;
-  font-family:Popins,sans-serif;
-  }
-  
+  font-family: Popins, sans-serif;
+}
+
 .mainNav {
   list-style: none;
   display: flex;
@@ -39,7 +40,7 @@ header {
   margin: 0;
   padding: 0;
 }
-  
+
 .mainNav li a {
   text-decoration: none;
   color: white;
@@ -47,7 +48,11 @@ header {
   transition: color 0.3s ease;
 }
 
-  
+.logo img {
+  width: max-content;
+  height: auto;
+}
+
 .navigation li a:hover {
   color: gold;
 }
@@ -71,50 +76,44 @@ navContainer {
   padding: 0;
 }
 
-
-  
-
-.tickets li a{
+.tickets li a {
   background-color: gold;
   color: black;
-  padding:2.05rem;  
+  padding: 2.05rem;
   font-weight: bold;
 
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 .navigation .tickets a:hover {
-  color:black;
+  color: black;
   background-color: #cce6ff;
 }
-  
+
 /* Footer */
 footer {
   background-color: #004a99; /* Darker blue */
   color: white;
   text-align: center;
-  padding: 6rem 4rem ;
+  padding: 6rem 4rem;
 }
-  
+
 footer img {
   height: 60px;
   margin-bottom: 1rem;
 }
-  
+
 footer a {
   color: white;
   margin: 0 10px;
   text-decoration: none;
 }
-  
+
 footer a:hover {
   color: #aad4ff;
 }
-  
+
 footer p {
   margin: 0.5rem 0;
   font-size: 0.9rem;
 }
-
-
-  

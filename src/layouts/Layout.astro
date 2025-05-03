@@ -1,23 +1,26 @@
 ---
 import "../styles/global.css";
-import { Image } from 'astro:assets'
-import Logo from '../images/Logo.jpg'
+import { Image } from "astro:assets";
+import Logo from "../images/Logo.jpg";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Astro" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <title>Astro Basics</title>
   </head>
   <body>
     <header>
       <nav class="navContainer">
         <ul class="navigation">
-          <div class="logo"><Image src={Logo} alt = "logo" /></div>
+          <div class="logo"><Image src={Logo} alt="logo" /></div>
           <div class="mainNav">
             <li><a href="/">Home Page</a></li>
             <li><a href="/about">About Us</a></li>
@@ -25,7 +28,7 @@ import Logo from '../images/Logo.jpg'
           </div>
           <div class="tickets">
             <li><a href="/tickets">Get Tickets</a></li>
-          </div>  
+          </div>
         </ul>
       </nav>
     </header>
@@ -35,8 +38,8 @@ import Logo from '../images/Logo.jpg'
     </main>
 
     <footer>
-      <div>
-        <img src="/logo.png" alt="Logo"/>
+      <div class="logoContainer">
+        <Image src={Logo} alt="logo" class="logo" />
       </div>
 
       <div style="margin-bottom: 1rem;">
