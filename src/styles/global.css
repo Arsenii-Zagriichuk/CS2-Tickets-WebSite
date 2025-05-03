@@ -26,18 +26,32 @@ main {
 /* Header */
 header {
   background-color: #1345e9;
-  padding: 2rem;
-  padding-bottom: 0;
-  padding-right: 0;
   color: white;
   font-family: Popins, sans-serif;
+  width: 100%;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  flex: 1;
+}
+
+.tickets {
+  list-style: none;
 }
 
 .mainNav {
   list-style: none;
   display: flex;
   gap: 2rem;
-  margin: 0;
   padding: 0;
 }
 
@@ -48,8 +62,8 @@ header {
   transition: color 0.3s ease;
 }
 
-.logo img {
-  width: max-content;
+.logoImg {
+  width: 230px;
   height: auto;
 }
 
@@ -57,34 +71,15 @@ header {
   color: gold;
 }
 
-navContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  width: 100%;
-}
-
-.navigation,
-.tickets {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 .tickets li a {
   background-color: gold;
   color: black;
-  padding: 2.05rem;
+  padding: 2rem;
   font-weight: bold;
-
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
+
 .navigation .tickets a:hover {
   color: black;
   background-color: #cce6ff;

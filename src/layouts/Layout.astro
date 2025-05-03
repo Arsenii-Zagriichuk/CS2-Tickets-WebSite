@@ -19,16 +19,21 @@ import Logo from "../images/Logo.jpg";
   <body>
     <header>
       <nav class="navContainer">
+        <Image src={Logo} alt="logo" class="logoImg" />
+
         <ul class="navigation">
-          <div class="logo"><Image src={Logo} alt="logo" /></div>
-          <div class="mainNav">
-            <li><a href="/">Home Page</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/gallery">Gallery</a></li>
-          </div>
-          <div class="tickets">
-            <li><a href="/tickets">Get Tickets</a></li>
-          </div>
+          <li>
+            <ul class="mainNav">
+              <li><a href="/">Home Page</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/gallery">Gallery</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul class="tickets">
+              <li><a href="/tickets">Get Tickets</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </header>
