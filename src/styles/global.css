@@ -51,6 +51,7 @@ header {
 .mainNav {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 2rem;
   padding: 0;
 }
@@ -60,6 +61,11 @@ header {
   color: white;
   font-weight: bold;
   transition: color 0.3s ease;
+}
+
+.hamburgerMenu {
+  width: 30px;
+  height: auto;
 }
 
 .logoImg {
