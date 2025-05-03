@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import FullLogo from "../images/logoFull.jpg";
+---
+
+<header>
+  <nav class="navContainer">
+    <Image src={FullLogo} alt="logo" class="logoImg" />
+
+    <ul class="navigation">
+      <li>
+        <ul class="mainNav">
+          <li><a href="/">Home Page</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+        </ul>
+      </li>
+      <li>
+        <ul class="tickets">
+          <li><a href="/tickets">Get Tickets</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
