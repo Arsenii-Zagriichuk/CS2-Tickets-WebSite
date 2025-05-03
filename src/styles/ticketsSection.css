@@ -1,10 +1,12 @@
+/* container styling */
 .container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-items: stretch; 
+    align-items: stretch;
+    gap: 0.5rem; 
   }
-
+  /* border styling */
   .border {
     display: flex;
     align-items: center;
@@ -29,7 +31,7 @@
   .border::after {
     margin-left: 1rem;
   }
-  
+  /* ticket box styling */
   .ticketBox {
     display: flex;
     flex-direction: column;
@@ -72,10 +74,49 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
   }
   
   h2 {
     text-align: center;
     margin-top: 2rem;
+  }
+
+  /* responsive design for the smaller screens */
+  @media (max-width: 768px) {
+    .border {
+      margin: 2rem 0;
+    }
+  
+    .border span{
+      font-size: 1.2rem;
+    }
+    
+    .border::before, .border::after {
+      content: '';
+      flex: 1;
+      border-top: 1px solid rgb(255, 94, 0);
+    }
+    
+    .border::before {
+      margin-right: 0.7rem;
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .ticketBox{
+      margin-bottom:1.5rem;
+      padding-bottom: 3rem;
+    }
+  }
+
+  @media (max-width: 471px) {
+    .ticketBox {
+      flex: 1 1 100%;
+      max-width: 100%;
+      height: auto;
+    }
   }
