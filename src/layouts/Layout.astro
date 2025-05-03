@@ -1,7 +1,8 @@
 ---
 import "../styles/global.css";
 import { Image } from "astro:assets";
-import Logo from "../images/Logo.jpg";
+import FullLogo from "../images/logoFull.jpg";
+import SmallLogo from "../images/logoSmall.png";
 ---
 
 <!doctype html>
@@ -19,7 +20,7 @@ import Logo from "../images/Logo.jpg";
   <body>
     <header>
       <nav class="navContainer">
-        <Image src={Logo} alt="logo" class="logoImg" />
+        <Image src={FullLogo} alt="logo" class="logoImg" />
 
         <ul class="navigation">
           <li>
@@ -43,9 +44,7 @@ import Logo from "../images/Logo.jpg";
     </main>
 
     <footer>
-      <div class="logoContainer">
-        <Image src={Logo} alt="logo" class="logo" />
-      </div>
+      <Image src={SmallLogo} alt="logo" class="logoImg" id="smallLogo" />
 
       <div style="margin-bottom: 1rem;">
         <a href="https://instagram.com/yourprofile1" target="_blank">
