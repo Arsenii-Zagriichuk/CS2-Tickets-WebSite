@@ -1,7 +1,14 @@
 ---
 import "../styles/global.css";
+<<<<<<< HEAD
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+=======
+import { Image } from "astro:assets";
+import FullLogo from "../images/logoFull.jpg";
+import SmallLogo from "../images/logoSmall.png";
+import HamburgerMenu from "../components/HamburgerMenu.jsx";
+>>>>>>> 1e83d0b727a0d01afe43cb6aaef48090f9ea36b3
 ---
 
 <!DOCTYPE html>
@@ -12,7 +19,48 @@ import Footer from "../components/Footer.astro";
     <title>Main Page</title>
   </head>
   <body>
+<<<<<<< HEAD
     <Header />
+=======
+    <header>
+      <nav class="navContainer">
+        <div class="logoContainer">
+          <Image src={FullLogo} alt="logo" class="logoImg" />
+        </div>
+        <ul class="navigation">
+          <li>
+            <ul class="mainNav">
+              <!-- This component is loaded on the client side, becuase it has additional logic in js -->
+              <HamburgerMenu client:load />
+              <div class="navLinks">
+                <li><a href="/">Home Page</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+              </div>
+            </ul>
+          </li>
+          <li>
+            <ul class="tickets">
+              <li><a href="/tickets">Get Tickets</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="menuOverlay" class="hidden">
+      <div class="menu-content">
+        <button id="closeMenu">&times;</button>
+        <nav>
+          <a href="#">The Tournament</a>
+          <a href="#">Format and Teams</a>
+          <a href="#">FAQs</a>
+          <a href="#">Partner</a>
+        </nav>
+      </div>
+    </div>
+
+>>>>>>> 1e83d0b727a0d01afe43cb6aaef48090f9ea36b3
     <main>
       <slot />
     </main>
