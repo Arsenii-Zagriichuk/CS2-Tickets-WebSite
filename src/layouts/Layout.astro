@@ -21,16 +21,22 @@ import HamburgerMenu from "../components/HamburgerMenu.jsx";
   <body>
     <header>
       <nav class="navContainer">
-        <Image src={FullLogo} alt="logo" class="logoImg" />
+        <div class="logoContainer">
+          <Image src={FullLogo} alt="logo" class="logoImg" />
+        </div>
         <ul class="navigation">
           <li>
             <ul class="mainNav">
               <div class="hamburgerMenu">
+                <!-- This component is loaded on the client side, becuase it has additional logic in js -->
                 <HamburgerMenu client:load />
+                <p class="menuText">Menu</p>
               </div>
-              <li><a href="/">Home Page</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/gallery">Gallery</a></li>
+              <div class="navLinks">
+                <li><a href="/">Home Page</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+              </div>
             </ul>
           </li>
           <li>

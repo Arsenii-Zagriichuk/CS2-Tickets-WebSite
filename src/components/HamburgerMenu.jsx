@@ -1,13 +1,13 @@
 import { useRive, useStateMachineInput } from "@rive-app/react-canvas";
 
-const RiveWrapper = () => {
+export default function HamburgerMenu() {
+  // Define the state machine and input names for the Rive animation
   const stateMachines = "State Machine 1";
   const inputName = "Trigger 1";
 
   const { rive, RiveComponent } = useRive({
     src: "/src/images/hamburger_menu.riv",
     stateMachines: stateMachines,
-    animations: 'to white',
     autoplay: true,
   });
 
@@ -17,13 +17,12 @@ const RiveWrapper = () => {
     inputName
   );
 
-  const handleClick = () => {
+  // Function to handle the click event and trigger the animation
+  function handleClick() {
     if (toggleInput) {
       toggleInput.fire();
     }
-  };
+  }
 
-  return <div onClick={handleClick}><RiveComponent /></div>;
-};
-
-export default RiveWrapper;
+  return <div onClick={handleClick} class="hamburgerMenuIcon"><RiveComponent /></div>;
+} ;
