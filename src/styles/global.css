@@ -35,6 +35,7 @@ header {
 .navContainer {
   display: flex;
   align-items: center;
+  /* height: 8vh; */
 }
 
 .navigation {
@@ -44,15 +45,19 @@ header {
   list-style: none;
   flex: 1;
   margin: 0;
+  height: 8vh;
 }
 
 .navigation li {
   display: flex;
   align-items: center;
+  max-height: 8vh;
 }
 
 .tickets {
   list-style: none;
+  background-color: gold;
+  padding: 0;
 }
 
 .mainNav {
@@ -85,6 +90,7 @@ header {
 .logoContainer {
   display: flex;
   justify-content: center;
+  height: 8vh;
 }
 
 @media (max-width: 790px) {
@@ -105,7 +111,16 @@ header {
 
 @media (min-width: 530px) {
   .tickets li a {
-    padding: 2rem;
+    padding: 1.57rem;
+  }
+
+  .navContainer {
+    height: fit-content;
+  }
+
+  .logoImg {
+    height: 100%;
+    width: auto;
   }
 }
 
@@ -127,15 +142,15 @@ header {
   .tickets li a {
     padding: 1rem;
   }
+
+  .logoImg {
+    width: 190px;
+    height: auto;
+  }
 }
 
 .hamburgerMenuIcon {
   width: 50px;
-}
-
-.logoImg {
-  width: 235px;
-  height: auto;
 }
 
 #smallLogo {
@@ -147,7 +162,6 @@ header {
 }
 
 .tickets li a {
-  background-color: gold;
   color: black;
   font-weight: bold;
   text-decoration: none;
@@ -156,6 +170,9 @@ header {
 
 .navigation .tickets a:hover {
   color: black;
+}
+
+.navigation .tickets:hover {
   background-color: #cce6ff;
 }
 
