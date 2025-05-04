@@ -12,7 +12,19 @@ import '../styles/ticketsPage.css'
 
 <span>Types of tickets:</span>
 <div class="ticketImages">
-    <Image src={Ticket1} alt="ticket1" class = "ticketImage"/>
-    <Image src={Ticket2} alt="ticket2" class = "ticketImage"/>
-    <Image src={Ticket3} alt="ticket3" class = "ticketImage"/>
+    <div class = "ticketImage">
+        <Image src={Ticket1} alt="ticket1" />
+        <p class="ticketName">1 Day Ticket</p>
+        <p class="ticketPrice">$65</p>
+    </div>
+    <div class = "ticketImage">
+        <Image src={Ticket2} alt="ticket2"/>
+        <p class="ticketName">3 Day Ticket</p>
+        <p class="ticketPrice">$109</p>
+    </div>
+    <div class = "ticketImage">
+        <Image src={Ticket3} alt="ticket3"/>
+        <p class="ticketName">Fan Zone Ticket</p>
+        <p class="ticketPrice">$309</p>
+    </div>
 </div>

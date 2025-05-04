@@ -5,13 +5,13 @@ background-image: url("/src/images/ticket_background.jpg");
 .ticketImages {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+    gap: 2rem;
     margin-top: 1rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
 }
 
-
-.ticketImage {
+.ticketImage img {
     width: 20vw;
     max-width: 200px;
     height: auto;
@@ -21,7 +21,19 @@ background-image: url("/src/images/ticket_background.jpg");
     cursor: pointer;
 }
 
-.ticketImage:hover {
+.ticketImage img:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.ticketName {
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0.5rem 0 0.25rem;
+}
+
+.ticketPrice {
+    font-size: 0.95rem;
+    color: #a59e9e;
+    margin: 0;
 }
