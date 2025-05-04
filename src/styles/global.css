@@ -42,6 +42,12 @@ header {
   align-items: center;
   list-style: none;
   flex: 1;
+  margin: 0;
+}
+
+.navigation li {
+  display: flex;
+  align-items: center;
 }
 
 .tickets {
@@ -51,7 +57,7 @@ header {
 .mainNav {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  align-items: center;
   padding: 0;
 }
 
@@ -60,16 +66,79 @@ header {
   color: white;
   font-weight: bold;
   transition: color 0.3s ease;
+  padding-right: 2rem;
+}
+
+.hamburgerMenu {
+  display: flex;
+  width: 100px;
+  height: auto;
+  max-width: 0;
+  overflow: hidden;
+}
+
+.navLinks {
+  display: flex;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 790px) {
+  .hamburgerMenu {
+    max-width: 100px;
+    overflow: visible;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .navigation {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (min-width: 530px) {
+  .tickets li a {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .navContainer {
+    flex-direction: column;
+  }
+
+  .logoContainer {
+    flex: 1;
+    width: 100%;
+    background-color: #000110;
+  }
+
+  .navigation {
+    width: 100%;
+  }
+
+  .tickets li a {
+    padding: 1rem;
+  }
+}
+
+.hamburgerMenuIcon {
+  width: 50px;
 }
 
 .logoImg {
-  width: 230px;
+  width: 235px;
   height: auto;
 }
 
 #smallLogo {
   width: 150px;
-  height: auto;
 }
 
 .navigation li a:hover {
@@ -79,7 +148,6 @@ header {
 .tickets li a {
   background-color: gold;
   color: black;
-  padding: 2rem;
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s ease;
@@ -117,4 +185,43 @@ footer a:hover {
 footer p {
   margin: 0.5rem 0;
   font-size: 0.9rem;
+}
+
+.hidden {
+  max-width: 0;
+  overflow: hidden;
+}
+
+#menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #002cff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#closeMenu {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-content nav a {
+  display: block;
+  margin: 20px 0;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
 }
