@@ -11,6 +11,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "astro": "^5.7.5",
+    "fortawesome": "^0.0.1-security",
     "swiper": "^11.2.6"
   }
 }
