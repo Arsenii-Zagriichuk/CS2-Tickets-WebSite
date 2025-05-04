@@ -1,0 +1,20 @@
+---
+import "../styles/heroBanner.css";
+import { Image } from "astro:assets";
+import bigLogo from "../images/bigLogo.png";
+---
+
+<section class="heroBanner">
+  <video autoplay loop muted plays-inline class="backVideo">
+    <!-- <source src="/src/images/test.mp4" type="video/mp4" /> -->
+  </video>
+
+  <div class="heroContent">
+    <div class="bigLogoContainer">
+      <Image src={bigLogo} alt="logo" id="bigLogo" />
+    </div>
+    <div class="heroText">
+      <h1>Welcome</h1>
+    </div>
+  </div>
+</section>
