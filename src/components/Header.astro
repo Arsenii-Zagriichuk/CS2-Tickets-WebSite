@@ -1,18 +1,24 @@
 ---
 import { Image } from "astro:assets";
 import FullLogo from "../images/logoFull.jpg";
+import HamburgerMenu from "../components/HamburgerMenu.jsx";
 ---
 
 <header>
   <nav class="navContainer">
-    <Image src={FullLogo} alt="logo" class="logoImg" />
-
+    <div class="logoContainer">
+      <Image src={FullLogo} alt="logo" class="logoImg" />
+    </div>
     <ul class="navigation">
       <li>
         <ul class="mainNav">
-          <li><a href="/">Home Page</a></li>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/gallery">Gallery</a></li>
+          <!-- This component is loaded on the client side, becuase it has additional logic in js -->
+          <HamburgerMenu client:load />
+          <div class="navLinks">
+            <li><a href="/">Home Page</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+          </div>
         </ul>
       </li>
       <li>
