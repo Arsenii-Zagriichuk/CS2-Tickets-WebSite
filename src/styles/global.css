@@ -196,7 +196,7 @@ footer p {
 .hidden {
   max-width: 0;
   overflow: hidden;
-  transition: max-width 0.5s ease;
+  transition: max-width 0.7s ease;
 }
 
 /* Overlay styles */
