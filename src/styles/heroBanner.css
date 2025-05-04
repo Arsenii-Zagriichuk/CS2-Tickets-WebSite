@@ -1,0 +1,38 @@
+.heroBanner {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.heroContent {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.bigLogoContainer {
+  width: auto;
+  height: 30%;
+}
+
+#bigLogo {
+  width: 100%;
+  height: 100%;
+}
