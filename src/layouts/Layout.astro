@@ -27,11 +27,8 @@ import HamburgerMenu from "../components/HamburgerMenu.jsx";
         <ul class="navigation">
           <li>
             <ul class="mainNav">
-              <div class="hamburgerMenu">
-                <!-- This component is loaded on the client side, becuase it has additional logic in js -->
-                <HamburgerMenu client:load />
-                <p class="menuText">Menu</p>
-              </div>
+              <!-- This component is loaded on the client side, becuase it has additional logic in js -->
+              <HamburgerMenu client:load />
               <div class="navLinks">
                 <li><a href="/">Home Page</a></li>
                 <li><a href="/about">About Us</a></li>
@@ -47,6 +44,18 @@ import HamburgerMenu from "../components/HamburgerMenu.jsx";
         </ul>
       </nav>
     </header>
+
+    <div id="menuOverlay" class="hidden">
+      <div class="menu-content">
+        <button id="closeMenu">&times;</button>
+        <nav>
+          <a href="#">The Tournament</a>
+          <a href="#">Format and Teams</a>
+          <a href="#">FAQs</a>
+          <a href="#">Partner</a>
+        </nav>
+      </div>
+    </div>
 
     <main>
       <slot />

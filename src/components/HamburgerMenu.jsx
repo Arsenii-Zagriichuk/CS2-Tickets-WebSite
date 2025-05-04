@@ -24,5 +24,12 @@ export default function HamburgerMenu() {
     }
   }
 
-  return <div onClick={handleClick} class="hamburgerMenuIcon"><RiveComponent /></div>;
+  return (
+    <div className="hamburgerMenu" onClick={handleClick}>
+      <div className="hamburgerMenuIcon">
+        <RiveComponent />
+      </div>
+      <p className="menuText">Menu</p>
+    </div>
+  );
 } ;
