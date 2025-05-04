@@ -29,3 +29,34 @@ import HamburgerMenu from "../components/HamburgerMenu.jsx";
     </ul>
   </nav>
 </header>
+
+<div class="hidden" id="menuOverlay">
+  <div class="menu-content">
+    <nav>
+      <a href="#">The Tournament</a>
+      <a href="#">Format and Teams</a>
+      <a href="#">FAQs</a>
+      <a href="#">Partner</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+  const openButton = document.querySelector(".hamburgerMenu");
+  const closeButton = document.getElementById("closeMenu");
+  const menuOverlay = document.getElementById("menuOverlay");
+  const header = document.querySelector(".navContainer") as HTMLDivElement;
+  const body = document.querySelector("body") as HTMLBodyElement;
+
+  openButton?.addEventListener("click", () => {
+    menuOverlay?.classList.toggle("active");
+    if (menuOverlay) {
+      menuOverlay.style.top = `${header?.offsetHeight}px`;
+    }
+    if (menuOverlay?.classList.contains("active")) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "auto";
+    }
+  });
+</script>
