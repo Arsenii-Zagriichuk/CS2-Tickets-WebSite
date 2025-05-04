@@ -1,6 +1,13 @@
 .ticketLayout {
-background-image: url("/src/images/ticket_background.jpg");
-}
+    background-image: url("../images/tickets_background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.9);
+
+  }
 
 .ticketImages {
     display: flex;
