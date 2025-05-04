@@ -3,17 +3,16 @@ import  TicketHero from '../components/TicketHero.astro';
 import { Image } from 'astro:assets'
 import FullLogo from '../images/logoFull.jpg';
 import SmallLogo from '../images/logoSmall.png';
-import Ticket1 from '../images/ticket_image1.JPEG';
-import Ticket2 from '../images/ticket_image2.JPEG';
-import Ticket3 from '../images/ticket_image3.JPEG';
-import '../styles/global.css'
+import Ticket1 from '../images/ticket_image1.jpg';
+import Ticket2 from '../images/ticket_image2.jpg';
+import Ticket3 from '../images/ticket_image3.jpg';
 import '../styles/ticketsPage.css'
 
 ---
 
 <span>Types of tickets:</span>
 <div class="ticketImages">
-    <Image src={Ticket1} alt="ticket1"/>
-    <Image src={Ticket2} alt="ticket2"/>
-    <Image src={Ticket3} alt="ticket3"/>
+    <Image src={Ticket1} alt="ticket1" class = "ticketImage"/>
+    <Image src={Ticket2} alt="ticket2" class = "ticketImage"/>
+    <Image src={Ticket3} alt="ticket3" class = "ticketImage"/>
 </div>
