@@ -3,16 +3,66 @@ import  TicketHero from '../components/TicketHero.astro';
 import { Image } from 'astro:assets'
 import FullLogo from '../images/logoFull.jpg';
 import SmallLogo from '../images/logoSmall.png';
-import Ticket1 from '../images/ticket_image1.JPEG';
-import Ticket2 from '../images/ticket_image2.JPEG';
-import Ticket3 from '../images/ticket_image3.JPEG';
-import '../styles/global.css'
+import Ticket1 from '../images/ticket_image1.jpg';
+import Ticket2 from '../images/ticket_image2.jpg';
+import Ticket3 from '../images/ticket_image3.jpg';
+import '../styles/ticketsPage.css'
+
 ---
 
-
-<span>Types of tickets:</span>
-<div class="ticketImages">
-    <Image src={Ticket1} alt="ticket1"/>
-    <Image src={Ticket2} alt="ticket2"/>
-    <Image src={Ticket3} alt="ticket3"/>
+<span class="ticketHeading">Types of tickets:</span>
+<div class="ticketImages" id="ticket1">
+    <div class = "ticketImage">
+        <div class="ticketWrapper">
+            <Image src={Ticket1} alt="ticket1" />
+            <p class="moreInfo">More Info</p>
+        </div>  
+        <p class="ticketName">1 Day Ticket</p>
+        <p class="ticketPrice">$65</p>
+        <div class="ticketDescription" id="desc-ticket1">
+            <p>This is a one-day access pass to all events.</p>
+            <p>It includes:</p>
+            <ul>
+                <li> - Seating in the Upper Ring: Enjoy a panoramic view of the entire tournament arena from the upper ring, providing a comprehensive perspective of the action-packed CS2 matches and strategies from a comfortable and elevated position</li>
+                <li> - DH Festival Ticket: Experience the excitement of the DH Festival with this ticket, granting you access to an array of gaming-related events, interactive experiences, and exclusive behind-the-scenes content from the world of CS2 esports.</li>
+                <li> - Access to CGT Fan Zone: Step into the CGT Fan Zone, an exclusive area where fans can engage with CS2 content, meet fellow esports enthusiasts, participate in activities, and interact with your favorite teams and players in a fun, immersive environment.</li>
+            </ul>
+        </div>
+    </div>
+    <div class = "ticketImage" id="ticket2">
+        <div class="ticketWrapper">
+            <Image src={Ticket2} alt="ticket2" />
+            <p class="moreInfo">More Info</p>
+        </div>  
+        <p class="ticketName">3 Day Ticket</p>
+        <p class="ticketPrice">$109</p>
+        <div class="ticketDescription" id="desc-ticket2">
+            <p>Three full days of access to the entire tournament.</p>
+            <p>It includes:</p>
+            <ul>
+                <li> - Seating in the Infield: Enjoy the unique experience of sitting right in the heart of the action with exclusive infield seating, offering a close-up view of the competitors and event highlights.</li>
+                <li> - DH Festival Ticket: Gain entry to the exciting DH Festival with this ticket, giving you access to live entertainment, interactive exhibits, food vendors, and more, making it a full day of fun.</li>
+                <li> - Access to CGT Fan Zone: Dive into the CGT Fan Zone, an interactive space where fans can enjoy exclusive activities, meet other supporters, and engage with event-related content, creating an unforgettable fan experience.</li>
+            </ul>
+        </div>
+    </div>
+    <div class = "ticketImage" id="ticket3">
+        <div class="ticketWrapper">
+            <Image src={Ticket3} alt="ticket3" />
+            <p class="moreInfo">More Info</p>
+        </div>  
+        <p class="ticketName">Fan Zone Ticket</p>
+        <p class="ticketPrice">$309</p>
+        <div class="ticketDescription" id="desc-ticket3">
+            <p>Fan Zone ticket is premium ticket to the entire tournament</p>
+            <p>It includes:</p>
+            <ul>
+                <li> - Free Beverages: Enjoy a variety of complimentary drinks throughout the event, including refreshing sodas, coffee, tea, and water, available at designated beverage stations.</li>
+                <li> - Close Arena View: Experience an up-close and personal view of the action with premium seating offering an unobstructed and thrilling perspective of the arena, ensuring you don't miss a moment.</li>
+                <li> - Free Autograph Sessions: Meet your favorite players in person and get your autograph during exclusive sessions, completely free of charge.</li>
+            </ul>
+        </div>
+    </div>
 </div>
+
+
