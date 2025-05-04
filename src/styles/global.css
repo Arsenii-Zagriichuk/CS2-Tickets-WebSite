@@ -186,3 +186,51 @@ footer p {
   margin: 0.5rem 0;
   font-size: 0.9rem;
 }
+
+#menuOverlay.active {
+  max-width: 100vw;
+}
+
+/* Hide by default */
+.hidden {
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width 0.5s ease;
+}
+
+/* Overlay styles */
+#menuOverlay {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1345e9;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+/* Close button */
+#closeMenu {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Menu content */
+.menu-content nav a {
+  display: block;
+  margin: 20px 0;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}

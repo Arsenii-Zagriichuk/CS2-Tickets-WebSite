@@ -17,12 +17,14 @@ export default function HamburgerMenu() {
     inputName
   );
 
+
   // Function to handle the click event and trigger the animation
   function handleClick() {
     if (toggleInput) {
       toggleInput.fire();
     }
   }
+
 
   return (
     <div className="hamburgerMenu" onClick={handleClick}>
