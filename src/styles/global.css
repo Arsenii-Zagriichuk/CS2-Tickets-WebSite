@@ -26,16 +26,25 @@ main {
 
 /* Header */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
   background-color: #1345e9;
   color: white;
   font-family: Popins, sans-serif;
   width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+header.visible {
+  max-height: 8vh;
 }
 
 .navContainer {
   display: flex;
   align-items: center;
-  /* height: 8vh; */
 }
 
 .navigation {

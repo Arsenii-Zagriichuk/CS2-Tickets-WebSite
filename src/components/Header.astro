@@ -59,4 +59,15 @@ import HamburgerMenu from "../components/HamburgerMenu.jsx";
       body.style.overflow = "auto";
     }
   });
+
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > 600) {
+      header!.classList.add("visible");
+    } else {
+      header!.classList.remove("visible");
+    }
+  });
 </script>
