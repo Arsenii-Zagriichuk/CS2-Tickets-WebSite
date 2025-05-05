@@ -1,7 +1,7 @@
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
 .ticketLayout {
-  background-image: url("../images/background.jpeg");
+  background-image: url("../images/ticketbackground.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
