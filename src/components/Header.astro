@@ -45,7 +45,7 @@ import HamburgerMenu from "../components/HamburgerMenu.jsx";
   const openButton = document.querySelector(".hamburgerMenu");
   const closeButton = document.getElementById("closeMenu");
   const menuOverlay = document.getElementById("menuOverlay");
-  const header = document.querySelector(".navContainer") as HTMLDivElement;
+  const header = document.querySelector("header");
   const body = document.querySelector("body") as HTMLBodyElement;
 
   openButton?.addEventListener("click", () => {
@@ -60,14 +60,21 @@ import HamburgerMenu from "../components/HamburgerMenu.jsx";
     }
   });
 
-  window.addEventListener("scroll", () => {
-    const header = document.querySelector("header");
-    const scrollPosition = window.scrollY;
+  header!.style.transition = "height 0s";
+  header!.classList.add("visible");
 
-    if (scrollPosition > 750) {
-      header!.classList.add("visible");
-    } else {
-      header!.classList.remove("visible");
-    }
-  });
+  if (window.location.pathname === "/") {
+    header!.style.transition = "height 0.3s ease";
+    header!.classList.remove("visible");
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector("header");
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > 750) {
+        header!.classList.add("visible");
+      } else {
+        header!.classList.remove("visible");
+      }
+    });
+  }
 </script>
