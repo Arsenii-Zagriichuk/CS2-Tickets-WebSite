@@ -39,7 +39,6 @@ import '../styles/ticketsPage.css';
   </div>
 </div>
 
-<!-- Popup 1 -->
 <div class="ticketDescription" id="desc-ticket1">
   <button class="closePopup"><i class="fas fa-times"></i></button>
   <div class="popupContent">
@@ -47,14 +46,14 @@ import '../styles/ticketsPage.css';
     <p>This is a one-day access pass to all events.</p>
     <p>It includes:</p>
     <ul>
-      <li>Seating in the Upper Ring: Enjoy a panoramic view of the entire tournament arena from the upper ring, providing a comprehensive perspective of the action-packed CS2 matches and strategies from a comfortable and elevated position.</li>
-      <li>DH Festival Ticket: Experience the excitement of the DH Festival with this ticket, granting you access to an array of gaming-related events, interactive experiences, and exclusive behind-the-scenes content from the world of CS2 esports.</li>
-      <li>Access to CGT Fan Zone: Step into the CGT Fan Zone, an exclusive area where fans can engage with CS2 content, meet fellow esports enthusiasts, participate in activities, and interact with your favorite teams and players in a fun, immersive environment.</li>
+      <li> - <span class="ticketBold">Seating in the Upper Ring:</span> Enjoy a panoramic view of the entire tournament arena from the upper ring, providing a comprehensive perspective of the action-packed CS2 matches and strategies from a comfortable and elevated position.</li>
+      <li> - <span class="ticketBold">DH Festival Ticket:</span> Experience the excitement of the DH Festival with this ticket, granting you access to an array of gaming-related events, interactive experiences, and exclusive behind-the-scenes content from the world of CS2 esports.</li>
+      <li> - <span class="ticketBold">Access to CGT Fan Zone:</span> Step into the CGT Fan Zone, an exclusive area where fans can engage with CS2 content, meet fellow esports enthusiasts, participate in activities, and interact with your favorite teams and players in a fun, immersive environment.</li>
     </ul>
+    <button class="buyTicket">Buy Ticket</button>
   </div>
 </div>
 
-<!-- Popup 2 -->
 <div class="ticketDescription" id="desc-ticket2">
   <button class="closePopup"><i class="fas fa-times"></i></button>
   <div class="popupContent">
@@ -62,14 +61,14 @@ import '../styles/ticketsPage.css';
     <p>Three full days of access to the entire tournament.</p>
     <p>It includes:</p>
     <ul>
-      <li>Seating in the Infield: Enjoy the unique experience of sitting right in the heart of the action with exclusive infield seating, offering a close-up view of the competitors and event highlights.</li>
-      <li>DH Festival Ticket: Gain entry to the exciting DH Festival with this ticket, giving you access to live entertainment, interactive exhibits, food vendors, and more, making it a full day of fun.</li>
-      <li>Access to CGT Fan Zone: Dive into the CGT Fan Zone, an interactive space where fans can enjoy exclusive activities, meet other supporters, and engage with event-related content, creating an unforgettable fan experience.</li>
+      <li> - <span class="ticketBold">Seating in the Infield:</span> Enjoy the unique experience of sitting right in the heart of the action with exclusive infield seating, offering a close-up view of the competitors and event highlights.</li>
+      <li> - <span class="ticketBold">DH Festival Ticket:</span> Gain entry to the exciting DH Festival with this ticket, giving you access to live entertainment, interactive exhibits, food vendors, and more, making it a full day of fun.</li>
+      <li> - <span class="ticketBold">Access to CGT Fan Zone:</span> Dive into the CGT Fan Zone, an interactive space where fans can enjoy exclusive activities, meet other supporters, and engage with event-related content, creating an unforgettable fan experience.</li>
     </ul>
+    <button class="buyTicket">Buy Ticket</button>
   </div>
 </div>
 
-<!-- Popup 3 -->
 <div class="ticketDescription" id="desc-ticket3">
   <button class="closePopup"><i class="fas fa-times"></i></button>
   <div class="popupContent">
@@ -77,28 +76,57 @@ import '../styles/ticketsPage.css';
     <p>Fan Zone ticket is premium ticket to the entire tournament</p>
     <p>It includes:</p>
     <ul>
-      <li>Free Beverages: Enjoy a variety of complimentary drinks throughout the event, including refreshing sodas, coffee, tea, and water, available at designated beverage stations.</li>
-      <li>Close Arena View: Experience an up-close and personal view of the action with premium seating offering an unobstructed and thrilling perspective of the arena, ensuring you don't miss a moment.</li>
-      <li>Free Autograph Sessions: Meet your favorite players in person and get your autograph during exclusive sessions, completely free of charge.</li>
+      <li> - <span class="ticketBold">Free Beverages:</span> Enjoy a variety of complimentary drinks throughout the event, including refreshing sodas, coffee, tea, and water, available at designated beverage stations.</li>
+      <li> - <span class="ticketBold">Close Arena View:</span> Experience an up-close and personal view of the action with premium seating offering an unobstructed and thrilling perspective of the arena, ensuring you don't miss a moment.</li>
+      <li> - <span class="ticketBold">Free Autograph Sessions:</span> Meet your favorite players in person and get your autograph during exclusive sessions, completely free of charge.</li>
     </ul>
+    <button class="buyTicket">Buy Ticket</button>
   </div>
 </div>
 
 <script is:inline>
   const tickets = document.querySelectorAll('.ticketImage');
-  const descriptions = document.querySelectorAll('.ticketDescription');
   const closeButtons = document.querySelectorAll('.closePopup');
 
   tickets.forEach(ticket => {
     ticket.addEventListener('click', () => {
       const id = ticket.getAttribute('data-id');
-      document.getElementById('desc-' + id).classList.add('active');
+      const popUp = document.getElementById('desc-' + id);
+
+      if (!popUp.classList.contains('active') && !popUp.classList.contains('closing')) {
+        popUp.classList.add('active');
+      }
     });
   });
 
   closeButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      btn.closest('.ticketDescription').classList.remove('active');
+      const popUp = btn.closest('.ticketDescription');
+
+      if (popUp.classList.contains('closing')) return;
+
+      popUp.classList.add('closing');
+      popUp.classList.add('inactive');
+
+      popUp.addEventListener('animationend', () => {
+        popUp.classList.remove('active', 'inactive', 'closing');
+      }, { once: true }); // Add event listener once
     });
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      document.querySelectorAll('.ticketDescription.active').forEach(popUp => {
+        
+        if (popUp.classList.contains('closing')) return;
+
+        popUp.classList.add('closing');
+        popUp.classList.add('inactive');
+
+        popUp.addEventListener('animationend', () => {
+          popUp.classList.remove('active', 'inactive', 'closing');
+        }, { once: true }); // Add event listener once
+      });
+    }
   });
 </script>
