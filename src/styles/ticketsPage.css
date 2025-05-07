@@ -1,32 +1,14 @@
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
 .ticketLayout {
-  position: relative;
   min-height: 100vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding-bottom: 2rem;
-  overflow: hidden;
+  background-color:#01031d ;
 }
-
-/* Background image container */
-.ticketLayout::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 80%; /* Increased width to show more of the image */
-  height: 100%;
-  background-image: url("../images/ticketbackground.jpg");
-  background-size: cover;
-  background-position: 80% center; /* Adjusted further left to show headphones fully */
-  background-repeat: no-repeat;
-  z-index: 0;
-}
-
 /* Add an overlay for better readability */
 .ticketLayout::before {
   content: "";
@@ -40,11 +22,11 @@
 }
 
 .ticketImages {
-  position: relative;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
-  margin: 2rem;
+  margin: 4rem;
   margin-bottom: 7rem;
   overflow: hidden;
   z-index: 2;
