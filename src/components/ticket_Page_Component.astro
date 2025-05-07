@@ -9,7 +9,6 @@ import Ticket3 from '../images/ticket_image3.jpg';
 import '../styles/ticketsPage.css';
 ---
 
-<span class="ticketHeading">Types of tickets:</span>
 <div class="ticketImages">
   <div class="ticketImage" data-id="ticket1">
     <div class="ticketWrapper">
@@ -50,7 +49,7 @@ import '../styles/ticketsPage.css';
       <li> - <span class="ticketBold">DH Festival Ticket:</span> Experience the excitement of the DH Festival with this ticket, granting you access to an array of gaming-related events, interactive experiences, and exclusive behind-the-scenes content from the world of CS2 esports.</li>
       <li> - <span class="ticketBold">Access to CGT Fan Zone:</span> Step into the CGT Fan Zone, an exclusive area where fans can engage with CS2 content, meet fellow esports enthusiasts, participate in activities, and interact with your favorite teams and players in a fun, immersive environment.</li>
     </ul>
-    <button class="buyTicket">Buy Ticket</button>
+    <button class="buyTicket">Add to Cart</button>
   </div>
 </div>
 
@@ -65,7 +64,7 @@ import '../styles/ticketsPage.css';
       <li> - <span class="ticketBold">DH Festival Ticket:</span> Gain entry to the exciting DH Festival with this ticket, giving you access to live entertainment, interactive exhibits, food vendors, and more, making it a full day of fun.</li>
       <li> - <span class="ticketBold">Access to CGT Fan Zone:</span> Dive into the CGT Fan Zone, an interactive space where fans can enjoy exclusive activities, meet other supporters, and engage with event-related content, creating an unforgettable fan experience.</li>
     </ul>
-    <button class="buyTicket">Buy Ticket</button>
+    <button class="buyTicket">Add to Cart</button>
   </div>
 </div>
 
@@ -80,7 +79,7 @@ import '../styles/ticketsPage.css';
       <li> - <span class="ticketBold">Close Arena View:</span> Experience an up-close and personal view of the action with premium seating offering an unobstructed and thrilling perspective of the arena, ensuring you don't miss a moment.</li>
       <li> - <span class="ticketBold">Free Autograph Sessions:</span> Meet your favorite players in person and get your autograph during exclusive sessions, completely free of charge.</li>
     </ul>
-    <button class="buyTicket">Buy Ticket</button>
+    <button class="buyTicket">Add to Cart</button>
   </div>
 </div>
 
@@ -110,7 +109,7 @@ import '../styles/ticketsPage.css';
 
       popUp.addEventListener('animationend', () => {
         popUp.classList.remove('active', 'inactive', 'closing');
-      }, { once: true }); // Add event listener once
+      }, { once: true });
     });
   });
 
@@ -125,7 +124,7 @@ import '../styles/ticketsPage.css';
 
         popUp.addEventListener('animationend', () => {
           popUp.classList.remove('active', 'inactive', 'closing');
-        }, { once: true }); // Add event listener once
+        }, { once: true }); 
       });
     }
   });
