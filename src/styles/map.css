@@ -5,9 +5,8 @@
   }
   
   .map-container h2 {
-    text-align: center;
+    text-align: left;
     margin-bottom: 1.5rem;
-    color: rgb(255, 94, 0);
     font-size: 2rem;
   }
   
@@ -25,7 +24,6 @@
     padding: 1rem;
     background-color: rgba(19, 69, 233, 0.1);
     border-radius: 10px;
-    border-left: 4px solid rgb(255, 94, 0);
   }
   
   .detail-item {
