@@ -1,7 +1,8 @@
 .map-container {
-    max-width: 1200px;
     margin: 4rem auto;
     padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
   }
   
   .map-container h2 {
