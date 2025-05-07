@@ -62,7 +62,6 @@ header {
   list-style: none;
   background-color: gold;
   padding: 0;
-  height: 8vh;
 }
 
 .mainNav {
@@ -127,6 +126,10 @@ header {
   header.visible {
     height: 8vh;
   }
+
+  .tickets li {
+    height: 8vh;
+  }
 }
 
 @media (max-width: 530px) {
@@ -135,7 +138,7 @@ header {
   }
 
   header.visible {
-    height: 18.5vh;
+    height: fit-content;
   }
 
   .logoContainer {
