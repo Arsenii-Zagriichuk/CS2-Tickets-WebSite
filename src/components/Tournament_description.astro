@@ -1,18 +1,22 @@
 ---
-import { Image } from 'astro:assets'
-import b1t from '../images/b1t.jpg'
-import '../styles/tournamentDescription.css'
-
+import { Image } from "astro:assets";
+import b1t from "../images/b1t.jpg";
+import "../styles/tournamentDescription.css";
 ---
+
 <section>
-        
-    <div id="section">
-        <div class="test">
-            <span>IEM Lviv</span>
-            <p>For the first time in history of Intel Extreme Masters legacy, the festival of Counter-Strike 2 will take place in the Ukrainian city Lviv. 16 best teams of the wolrd will compete for the trophy, Intel Grand Slam and 1000000$! Fans are getting crazy about the event and cannot wait to be in Lviv on 27-29 of June. Don't be late and buy a ticket to see the most high-level CS and meet players in live?</p>
-        </div>
-        <Image src={b1t} alt = "b1t" id={"b1t_image"} />
-     </div>
+  <div id="section">
+    <div id="tournamentDescription" class="tournamentDescription">
+      <span>IEM Lviv</span>
+      <p>
+        For the first time in history of Intel Extreme Masters legacy, the
+        festival of Counter-Strike 2 will take place in the Ukrainian city Lviv.
+        16 best teams of the wolrd will compete for the trophy, Intel Grand Slam
+        and 1000000$! Fans are getting crazy about the event and cannot wait to
+        be in Lviv on 27-29 of June. Don't be late and buy a ticket to see the
+        most high-level CS and meet players in live?
+      </p>
+    </div>
+    <Image src={b1t} alt="b1t" id={"b1t_image"} />
+  </div>
 </section>
-
-

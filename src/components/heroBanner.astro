@@ -2,6 +2,7 @@
 import "../styles/heroBanner.css";
 import { Image } from "astro:assets";
 import bigLogo from "../images/bigLogo.png";
+import downArrow from "../images/downArrow.png";
 ---
 
 <section class="heroBanner">
@@ -14,7 +15,30 @@ import bigLogo from "../images/bigLogo.png";
       <Image src={bigLogo} alt="logo" id="bigLogo" />
     </div>
     <div class="heroText">
-      <h1>Welcome</h1>
+      <h1>LVIV 2025</h1>
+      <p id="bigTitle">The Heart of CS in UA</p>
+
+      <div class="shortBulletPoints">
+        <p>16 Elite Teams</p>
+        <p>4 Days of Competition</p>
+        <p>$1,000,000</p>
+      </div>
+
+      <div class="longBulletPoints">
+        <p id="date">May 23–25, 2025</p>
+        <p id="place">Arena Lviv Stadium, Ukraine</p>
+        <p id="startDate">Action Begins: May 19th</p>
+      </div>
+
+      <a href="#ticketsSection" class="getTickets">
+        <div class="heroButton">
+          <p>Get Tickets</p>
+        </div>
+      </a>
+
+      <a href="#tournamentDescription"
+        ><Image src={downArrow} alt="downArrow" id="downArrow" /></a
+      >
     </div>
   </div>
 </section>
