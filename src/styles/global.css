@@ -37,10 +37,6 @@ header {
   overflow: hidden;
 }
 
-header.visible {
-  height: 8vh;
-}
-
 .navContainer {
   display: flex;
   align-items: center;
@@ -66,6 +62,7 @@ header.visible {
   list-style: none;
   background-color: gold;
   padding: 0;
+  height: 8vh;
 }
 
 .mainNav {
@@ -122,19 +119,23 @@ header.visible {
     padding: 1.57rem;
   }
 
-  .navContainer {
-    height: fit-content;
-  }
-
   .logoImg {
     height: 100%;
     width: auto;
+  }
+
+  header.visible {
+    height: 8vh;
   }
 }
 
 @media (max-width: 530px) {
   .navContainer {
     flex-direction: column;
+  }
+
+  header.visible {
+    height: 18.5vh;
   }
 
   .logoContainer {
