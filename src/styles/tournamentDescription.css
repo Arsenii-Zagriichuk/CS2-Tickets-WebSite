@@ -1,130 +1,129 @@
-span{
-    font-size: 3rem;
+span {
+  font-size: 3rem;
 }
-#section{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin :0;
-    padding: 10rem 0;
-    gap: 2rem;
+#section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 10rem 0;
+  gap: 2rem;
 }
-#b1t_image{
-    width: 50%;
-    height: 30%;
-    border-radius: 2rem;
-    object-fit: contain;
+#b1t_image {
+  width: 50%;
+  height: 30%;
+  border-radius: 2rem;
+  object-fit: contain;
 }
-#section p{
-    font-size: 1.5rem;
+#section p {
+  font-size: 1.5rem;
 }
-.test{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin :0;
+.tournamentDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
 }
 /* Large Screens */
 @media (min-width: 1200px) {
-    span {
-        font-size: 3.5rem;
-    }
-    
-    #section {
-        padding: 12rem 0;
-    }
-    
-    #section p {
-        font-size: 1.6rem;
-    }
+  span {
+    font-size: 3.5rem;
+  }
+
+  #section {
+    padding: 12rem 0;
+  }
+
+  #section p {
+    font-size: 1.6rem;
+  }
 }
 
 /* Medium Screens (Tablets) */
 @media (max-width: 992px) {
-    span {
-        font-size: 2.5rem;
-    }
-    
-    #section {
-        padding: 8rem 0;
-        gap: 1.5rem;
-    }
-    
-    #b1t_image {
-        width: 45%;
-    }
-    
-    #section p {
-        font-size: 1.3rem;
-    }
+  span {
+    font-size: 2.5rem;
+  }
+
+  #section {
+    padding: 8rem 0;
+    gap: 1.5rem;
+  }
+
+  #b1t_image {
+    width: 45%;
+  }
+
+  #section p {
+    font-size: 1.3rem;
+  }
 }
 
 /* Small Screens (Mobile Landscape) */
 @media (max-width: 768px) {
-    span {
-        font-size: 2rem;
-    }
-    
-    #section {
-        padding: 6rem 0;
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    #b1t_image {
-        width: 70%;
-        order: 1; /* Move image below text on mobile */
-        margin-top: 2rem;
-    }
-    
-    #section p {
-        font-size: 1.2rem;
-    }
-    
-    .test {
-        width: 100%;
-    }
+  span {
+    font-size: 2rem;
+  }
+
+  #section {
+    padding: 6rem 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #b1t_image {
+    width: 70%;
+    order: 1; /* Move image below text on mobile */
+    margin-top: 2rem;
+  }
+
+  #section p {
+    font-size: 1.2rem;
+  }
+
+  .test {
+    width: 100%;
+  }
 }
 
 /* Extra Small Screens (Mobile Portrait) */
 @media (max-width: 576px) {
-    span {
-        font-size: 1.8rem;
-    }
-    
-    #section {
-        padding: 4rem 0;
-    }
-    
-    #b1t_image {
-        width: 90%;
-        border-radius: 1.5rem;
-    }
-    
-    #section p {
-        font-size: 1.1rem;
-    }
+  span {
+    font-size: 1.8rem;
+  }
+
+  #section {
+    padding: 4rem 0;
+  }
+
+  #b1t_image {
+    width: 90%;
+    border-radius: 1.5rem;
+  }
+
+  #section p {
+    font-size: 1.1rem;
+  }
 }
 
 /* For very small screens */
 @media (max-width: 400px) {
-    span {
-        font-size: 1.5rem;
-    }
-    
-    #section {
-        padding: 3rem 0;
-        gap: 1rem;
-    }
-    
-    #b1t_image {
-        width: 100%;
-        border-radius: 1rem;
-    }
-    
-    #section p {
-        font-size: 1rem;
-    }
-}
+  span {
+    font-size: 1.5rem;
+  }
 
+  #section {
+    padding: 3rem 0;
+    gap: 1rem;
+  }
+
+  #b1t_image {
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  #section p {
+    font-size: 1rem;
+  }
+}
