@@ -62,6 +62,24 @@ h1 {
   font-size: 5rem;
 }
 
+@media (max-width: 1270px) {
+  #bigTitle {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  #bigTitle {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #bigTitle {
+    font-size: 2rem;
+  }
+}
+
 .shortBulletPoints {
   display: flex;
   gap: 3rem;
@@ -70,11 +88,21 @@ h1 {
 }
 
 .shortBulletPoints p {
-  color: white;
   font-size: 1.5rem;
   font-weight: 400;
   color: gold;
   margin-right: 0;
+}
+
+@media (max-width: 1024px) {
+  .shortBulletPoints {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .shortBulletPoints p {
+    padding: 0;
+  }
 }
 
 .longBulletPoints #date {
@@ -96,6 +124,22 @@ h1 {
   font-weight: 400;
   margin-top: 0.25rem;
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .longBulletPoints {
+    & #date {
+      font-size: 1.75rem;
+    }
+
+    & #place {
+      font-size: 1.25rem;
+    }
+
+    & #startDate {
+      font-size: 0.75rem;
+    }
+  }
 }
 
 #downArrow {
