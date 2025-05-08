@@ -1,53 +1,28 @@
-.event-information {
-    max-width: 1200px;
-    margin: 0 auto 4rem;
-    padding: 0 1rem;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-/* Tournament info section without background */
-.tournament-info-section {
-    position: relative;
-    padding: 3rem 0;
-    min-height: 80vh;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.event-title {
-    text-align: left;
-    font-size: 2.5rem;
-    margin: 3rem 0;
-    position: relative;
-    max-width: 100%;
-    align-self: flex-start;
-}
-
-
-.info-grid {
-    display: flex;
-    flex-wrap: wrap;
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-bottom: 3rem;
-    max-width: 60%;
-    position: relative;
-    z-index: 1;
-    align-self: flex-start;
+    margin-right: 0; 
+}
+.event-information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding : 0 4rem;
 }
 
 .info-card {
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1 1 calc(50% - 2rem);
-    min-width: 280px;
-    max-width: calc(50% - 1rem);
+ display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(255, 94, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  min-height: 300px;
+  max-width: 500px;
 }
 
 .info-card:hover {
@@ -99,18 +74,9 @@
     font-size: 0.9rem;
 }
 
-.location-section {
-    margin-top: 3rem;
-    max-width: 60%;
-    position: relative;
-    z-index: 1;
-    align-self: flex-start;
-}
-
-/* Container modifications to align content to the left */
 .event-information {
     margin-left: 0;
-    margin-right: auto;
+    margin-right: 0; 
     padding-left: 4rem;
 }
 
