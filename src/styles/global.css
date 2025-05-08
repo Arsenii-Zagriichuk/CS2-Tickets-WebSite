@@ -14,6 +14,11 @@ html {
   scroll-behavior: smooth;
 }
 
+a {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: Montserrat, sans-serif;
@@ -44,6 +49,7 @@ header {
 .navContainer {
   display: flex;
   align-items: center;
+  height: inherit;
 }
 
 .navigation {
@@ -53,19 +59,20 @@ header {
   list-style: none;
   flex: 1;
   margin: 0;
-  height: 8vh;
+  height: inherit;
 }
 
 .navigation li {
   display: flex;
   align-items: center;
-  max-height: 8vh;
+  height: inherit;
 }
 
 .tickets {
   list-style: none;
   background-color: gold;
   padding: 0;
+  /* height: inherit; */
 }
 
 .mainNav {
@@ -73,6 +80,7 @@ header {
   display: flex;
   align-items: center;
   padding: 0;
+  height: inherit;
 }
 
 .mainNav li a {
@@ -98,7 +106,7 @@ header {
 .logoContainer {
   display: flex;
   justify-content: center;
-  height: 8vh;
+  height: inherit;
 }
 
 @media (max-width: 790px) {
@@ -131,8 +139,8 @@ header {
     height: 8vh;
   }
 
-  .tickets li {
-    height: 8vh;
+  .tickets {
+    height: inherit;
   }
 }
 
