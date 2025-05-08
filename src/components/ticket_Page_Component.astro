@@ -1,13 +1,9 @@
 ---
-import TicketHero from "../components/TicketHero.astro";
 import { Image } from "astro:assets";
-import FullLogo from "../images/logoFull.jpg";
-import SmallLogo from "../images/logoSmall.png";
 import Ticket1 from "../images/ticket_image1.jpg";
 import Ticket2 from "../images/ticket_image2.jpg";
 import Ticket3 from "../images/ticket_image3.jpg";
 import "../styles/ticketsPage.css";
-import Cart from "../components/Cart.jsx";
 ---
 
 <div class="ticketImages">
@@ -183,11 +179,8 @@ import Cart from "../components/Cart.jsx";
   });
 </script>
 <script>
-  import {
-    ticketsStorage,
-    Ticket,
-    ticketsInformation,
-  } from "../components/ticketsStorage.js";
+  import { Ticket, ticketsInformation } from "../components/ticketsStorage.js";
+  import { ticketsStorage } from "../components/ticketsStorage.js";
 
   const buyButton1 = document.querySelector("#buyTicket1") as HTMLButtonElement;
   const buyButton2 = document.querySelector("#buyTicket2") as HTMLButtonElement;
@@ -212,6 +205,6 @@ import Cart from "../components/Cart.jsx";
   function addNewTicket(name: string, price: number) {
     const newTicket = new Ticket(name, price);
     ticketsStorage.push(newTicket);
-    console.log(ticketsStorage.length);
+    console.log(ticketsStorage);
   }
 </script>

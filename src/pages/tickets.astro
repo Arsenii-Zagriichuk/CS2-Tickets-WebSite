@@ -1,12 +1,15 @@
 ---
-import TicketLayout from '../layouts/TicketLayout.astro'
-import TicketPage from '../components/ticket_Page_Component.astro'
-import TournamentInformation from '../components/TournamentInformation.astro'
-import Map from '../components/Map.astro'
+import React from "react";
+import TicketLayout from "../layouts/TicketLayout.astro";
+import TicketPage from "../components/ticket_Page_Component.astro";
+import CartObject from "../components/CartObject";
+import TournamentInformation from "../components/TournamentInformation.astro";
+import Map from "../components/Map.astro";
 ---
+
 <TicketLayout>
-    <TournamentInformation/>
-    <TicketPage/>
-    <Map/>
+  <TournamentInformation />
+  <CartObject />
+  <TicketPage />
+  <Map />
 </TicketLayout>
-    
