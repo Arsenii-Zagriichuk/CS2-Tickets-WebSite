@@ -74,11 +74,6 @@
     font-size: 0.9rem;
 }
 
-.event-information {
-    margin-left: 0;
-    margin-right: 0; 
-    padding-left: 4rem;
-}
 
 /* Media Queries for Responsive Design */
 @media (max-width: 1200px) {
@@ -87,7 +82,7 @@
     }
     
     .event-information {
-        padding-left: 3rem;
+        padding: 0 4rem;
     }
 }
 
@@ -97,7 +92,7 @@
     }
     
     .event-information {
-        padding-left: 2rem;
+        padding: 0 4rem;
     }
     
     .info-card {
@@ -107,8 +102,12 @@
 }
 
 @media (max-width: 768px) {
+    .info-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
     .event-information {
-        padding-left: 1rem;
+        padding:0 4rem;
     }
     
     .event-title {
@@ -117,7 +116,6 @@
     }
     
     .info-grid {
-        flex-direction: column;
         gap: 1.5rem;
         max-width: 100%;
     }
