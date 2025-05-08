@@ -1,122 +1,139 @@
+.bigContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 /* container styling */
 .container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: stretch;
-    gap: 0.5rem; 
-  }
-  /* border styling */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+/* border styling */
+.border {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.border span {
+  font-size: 2rem;
+}
+
+.border::before,
+.border::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid rgb(255, 94, 0);
+}
+
+.border::before {
+  margin-right: 1rem;
+}
+
+.border::after {
+  margin-left: 1rem;
+}
+/* ticket box styling */
+.ticketBox {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(255, 94, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  flex: 1 1 300px;
+  max-width: 350px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.ticketBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.ticketTitle {
+  background-color: #000110;
+  color: rgb(255, 94, 0);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.ticketContent {
+  background: linear-gradient(
+    to bottom left,
+    rgb(251, 120, 32),
+    rgb(211, 77, 0)
+  );
+  color: black;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.ticketContent p {
+  margin: 1rem 0;
+  padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+  border-bottom: 0.6px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* responsive design for the smaller screens */
+@media (max-width: 768px) {
   .border {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 4rem 0;
+    margin: 2rem 0;
   }
 
-  .border span{
-    font-size: 2rem;
+  .border span {
+    font-size: 1.2rem;
   }
-  
-  .border::before, .border::after {
-    content: '';
+
+  .border::before,
+  .border::after {
+    content: "";
     flex: 1;
     border-top: 1px solid rgb(255, 94, 0);
   }
-  
+
   .border::before {
-    margin-right: 1rem;
+    margin-right: 0.7rem;
   }
-  
-  .border::after {
-    margin-left: 1rem;
-  }
-  /* ticket box styling */
-  .ticketBox {
-    display: flex;
+}
+
+@media (max-width: 1440px) {
+  .container {
     flex-direction: column;
-    border: 1px solid rgb(255, 94, 0);
-    border-radius: 10px;
-    overflow: hidden;
-    flex: 1 1 300px;
-    max-width: 350px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    height: 100%;
-  }
-  
-  .ticketBox:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  }
-  
-  .ticketTitle {
-    background-color: #000110;
-    color: rgb(255, 94, 0);
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-  
-  .ticketContent {
-    background: linear-gradient(to bottom left, rgb(251, 120, 32), rgb(211, 77, 0));
-    color: black;
-    padding: 1.5rem;
-    text-align: center;
-  }
-  
-  .ticketContent p {
-    margin: 1rem 0;
-    padding-bottom: 0.5rem;
-    font-size: 1.3rem;
-    border-bottom: 0.6px solid white;
-    display: flex;
     align-items: center;
-    justify-content: center;
   }
-  
-  h2 {
-    text-align: center;
-    margin-top: 2rem;
+  .ticketBox {
+    margin-bottom: 1.5rem;
+    padding-bottom: 3rem;
   }
+}
 
-  /* responsive design for the smaller screens */
-  @media (max-width: 768px) {
-    .border {
-      margin: 2rem 0;
-    }
-  
-    .border span{
-      font-size: 1.2rem;
-    }
-    
-    .border::before, .border::after {
-      content: '';
-      flex: 1;
-      border-top: 1px solid rgb(255, 94, 0);
-    }
-    
-    .border::before {
-      margin-right: 0.7rem;
-    }
+@media (max-width: 471px) {
+  .ticketBox {
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: auto;
   }
+}
 
-  @media (max-width: 1440px) {
-    .container {
-      flex-direction: column;
-      align-items: center;
-    }
-    .ticketBox{
-      margin-bottom:1.5rem;
-      padding-bottom: 3rem;
-    }
-  }
-
-  @media (max-width: 471px) {
-    .ticketBox {
-      flex: 1 1 100%;
-      max-width: 100%;
-      height: auto;
-    }
-  }
+#goToTickets {
+  display: flex;
+  justify-content: center;
+}

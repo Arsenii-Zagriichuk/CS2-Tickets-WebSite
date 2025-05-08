@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import FullLogo from "../images/logoFull.jpg";
 import HamburgerMenu from "../components/HamburgerMenu.jsx";
+import CartIcon from "../images/cartIcon.png";
 ---
 
 <header>
@@ -22,9 +23,10 @@ import HamburgerMenu from "../components/HamburgerMenu.jsx";
         </ul>
       </li>
       <li>
-        <ul class="tickets">
+        <a href="/cart" id="cartIconContainer"><Image src={CartIcon} alt="cart" id="cartIcon" /></a>
+        <!-- <ul class="tickets">
           <li><a href="/tickets">Get Tickets</a></li>
-        </ul>
+        </ul> -->
       </li>
     </ul>
   </nav>
