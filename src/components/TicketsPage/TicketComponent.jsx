@@ -1,5 +1,5 @@
 import { ticketsInformation } from "../ticketsStorage.js";
-import "./src/styles/ticketsPage.css";
+import "/src/styles/ticketsPage.css";
 import { useState } from "react";
 
 function TicketComponent({ name, price, image, tagID, onClick }) {
