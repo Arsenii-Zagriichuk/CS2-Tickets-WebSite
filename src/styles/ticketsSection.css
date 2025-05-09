@@ -92,6 +92,31 @@ h2 {
   margin-top: 2rem;
 }
 
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 1rem;
+}
+.sectionButton {
+  background: linear-gradient(45deg, rgb(254, 56, 1), rgb(250, 150, 1));
+  color: #000110;
+  padding: 1.7rem 4.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50rem;
+  box-shadow: 0 4px 12px rgba(255, 94, 0, 0.4);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionButton:hover {
+  transform: translateY(-2px);
+  color: #000;
+}
+
 /* responsive design for the smaller screens */
 @media (max-width: 768px) {
   .border {
@@ -113,7 +138,6 @@ h2 {
     margin-right: 0.7rem;
   }
 }
-
 @media (max-width: 1440px) {
   .container {
     flex-direction: column;
@@ -132,8 +156,8 @@ h2 {
     height: auto;
   }
 }
-
 #goToTickets {
   display: flex;
   justify-content: center;
 }
+
