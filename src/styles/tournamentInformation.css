@@ -1,3 +1,12 @@
+
+.BackgroundLogo {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+
 .info-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
