@@ -15,8 +15,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
-  margin: 4rem;
-  margin-bottom: 7rem;
+  margin: 7rem;
   overflow: hidden;
   z-index: 2;
 }

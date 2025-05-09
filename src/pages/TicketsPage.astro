@@ -4,11 +4,13 @@ import Tickets from "../components/TicketsPage/TicketComponent.jsx";
 import CartObject from "../components/CartObject";
 import TournamentInformation from "../components/TicketsPage/TournamentInformation.astro";
 import Map from "../components/TicketsPage/Map.astro";
+import TicketBackground from "../components/TicketsPage/ticketBackground.astro";
 ---
 
 <TicketLayout>
-  <TournamentInformation />
-  <CartObject />
+  <TicketBackground />
   <Tickets/>
+  <TournamentInformation />
+  <!-- <CartObject /> -->
   <Map />
 </TicketLayout>
