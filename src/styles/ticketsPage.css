@@ -179,18 +179,18 @@
 }
 
 .buyTicket {
-  font-family: inherit;
-  font-weight: 600;
-  padding: 1.2rem 2.7rem;
-  margin-top: 1.5rem;
-  background-color: #4ea8de;
-  color: white;
-  border: none;
-  border-radius: 0.7rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: inherit;
+    font-weight:600;
+    padding:  1.2rem 2.7rem;
+    margin-top: 1.5rem;
+    background-color: #4ea8de;
+    color: white;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .buyTicket:hover {
@@ -200,7 +200,6 @@
 .ticketBold {
   font-weight: 700;
 }
-
 /* Animation */
 @keyframes openPopUpAnim {
   0% {

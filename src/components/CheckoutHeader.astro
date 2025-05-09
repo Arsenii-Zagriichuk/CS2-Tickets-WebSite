@@ -1,0 +1,13 @@
+---
+import { Image } from "astro:assets";
+import CheckOutLogo from "../images/CheckOutLogo.png";
+import CartIcon from "../images/cartIcon.png";
+import '../styles/CheckOutGlobal.css';
+---
+
+<nav class="CheckoutNav">
+    <div class="logoContainer">
+        <a href="/"><Image src={CheckOutLogo} alt="logo" class="logoImg" /></a>
+    </div>
+    <a href="/CartPage" id="cartIconContainer"><Image src={CartIcon} alt="cart" id="cartIcon" /></a>
+</nav>
