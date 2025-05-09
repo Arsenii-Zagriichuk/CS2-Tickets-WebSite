@@ -37,7 +37,7 @@ function TicketDescription({ ticket, isActive, isClosing, onClose }) {
     }, [isActive, isClosing, onClose]);
 
     function addNewTicket() {
-        const newTicket = new Ticket(ticket.name, ticket.price)
+        const newTicket = new Ticket(ticket.name, ticket.price, ticket.description, ticket.image)
         ticketsStorage.push(newTicket);
         onClose();
     }

@@ -1,14 +1,20 @@
-import { useState, useEffect } from 'react'
-import Cart from '../components/Cart.jsx';
-import ticketsStorage from "./ticketsStorage.js";
-
+import { useEffect, useState } from "react";
+import Cart from "./Cart";
 
 export default function CartObject() {
-    const [tickets, setTickets] = useState(ticketsStorage);
+  const [tickets, setTickets] = useState([]);
 
-    return (
-        <>
-            <Cart tickets= { tickets } func={ setTickets } />
-        </>
-    )
+  useEffect(() => {
+    const stored = localStorage.getItem("ticketsStorage");
+    if (stored) {
+      console.log(JSON.parse(stored));
+      setTickets(JSON.parse(stored));
+    }
+  }, []);
+
+  return (
+    <>
+      <Cart tickets={tickets} func={setTickets} />
+    </>
+  );
 }
