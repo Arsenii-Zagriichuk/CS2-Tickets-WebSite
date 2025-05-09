@@ -29,7 +29,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive design for mobile devices */
 @media (max-width: 768px) {
     .content {
         flex-direction: column;

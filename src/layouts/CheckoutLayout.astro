@@ -1,0 +1,21 @@
+---
+import "../styles/global.css";
+import CheckoutHeader from "../components/CheckoutHeader.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+  </head>
+  <body>
+    <CheckoutHeader />
+    <section class="checkoutLayout">
+      <slot />
+    </section>
+    <Footer />
+  </body>
+</html>
