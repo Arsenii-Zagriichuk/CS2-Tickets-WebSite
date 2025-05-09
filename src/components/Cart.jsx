@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-
+import "../styles/test.css";
 
 export default function Cart( { tickets, func }) {
 
   return (
-    <>
-    <p>Hello</p>
-      {Array.isArray(tickets) && tickets.map((ticket, index) => (
+    <div className="cartContainer">
+    <h1>Bag</h1>
+      {tickets && tickets.map((ticket, index) => (
         <CartElement key={index} ticket={ticket} />
     ))}
-    </>
+    </div>
   );
 }
 
@@ -20,9 +20,14 @@ function CartElement({ ticket }) {
         <img src={ticket.src} alt={ticket.name} />
       </div>
       <div className="ticketCartDescription">
-        <p>{ticket.name}</p>
-        <p>{ticket.description}</p>
-        <p>{ticket.price}</p>
+        <div>
+          <p className="important">{ticket.name}</p>
+          <p className="description">{ticket.description}</p>
+        </div>
+
+        <div>
+          <p className="important">${ticket.price}</p>
+        </div>
       </div>
     </div>
   );
