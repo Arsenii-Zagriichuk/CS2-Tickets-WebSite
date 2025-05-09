@@ -1,28 +1,27 @@
-
 .BackgroundLogo {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
 }
-
 
 .info-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-bottom: 3rem;
-    margin-right: 0; 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+  margin-right: 0;
 }
-.event-information{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding : 0 4rem;
+.event-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 4rem;
+  overflow: hidden;
 }
 
 .info-card {
- display: flex;
+  display: flex;
   flex-direction: column;
   border: 1px solid rgb(255, 94, 0);
   border-radius: 10px;
@@ -35,109 +34,115 @@
 }
 
 .info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .card-header {
-    background: linear-gradient(to right, #000110, #001e4d);
-    color: rgb(255, 94, 0);
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  background: linear-gradient(to right, #000110, #001e4d);
+  color: rgb(255, 94, 0);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .card-header i {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .card-header h3 {
-    margin: 0;
-    font-size: 1.3rem;
+  margin: 0;
+  font-size: 1.3rem;
 }
 
 .card-content {
-    padding: 1.5rem;
-    color: white;
+  padding: 1.5rem;
+  color: white;
 }
 
 .card-content p {
-    margin: 0.7rem 0;
-    line-height: 1.5;
+  margin: 0.7rem 0;
+  line-height: 1.5;
 }
 
 .highlight {
-    color: rgb(255, 94, 0);
-    font-weight: bold;
+  color: rgb(255, 94, 0);
+  font-weight: bold;
 }
 
 .rules-list p {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .rules-list i {
-    color: rgb(255, 94, 0);
-    font-size: 0.9rem;
+  color: rgb(255, 94, 0);
+  font-size: 0.9rem;
 }
-
 
 /* Media Queries for Responsive Design */
 @media (max-width: 1200px) {
-    .info-grid, .location-section {
-        max-width: 70%;
-    }
-    
-    .event-information {
-        padding: 0 4rem;
-    }
+  .info-grid,
+  .location-section {
+    max-width: 70%;
+  }
+
+  .event-information {
+    padding: 0 4rem;
+  }
 }
 
 @media (max-width: 992px) {
-    .info-grid, .location-section {
-        max-width: 85%;
-    }
-    
-    .event-information {
-        padding: 0 4rem;
-    }
-    
-    .info-card {
-        max-width: 100%;
-        flex: 1 1 100%;
-    }
+  .info-grid,
+  .location-section {
+    max-width: 85%;
+  }
+
+  .event-information {
+    padding: 0 4rem;
+  }
+
+  .info-card {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
 }
 
 @media (max-width: 768px) {
-    .info-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    .event-information {
-        padding:0 4rem;
-    }
-    
-    .event-title {
-        font-size: 2rem;
-        margin: 2rem 0;
-    }
-    
-    .info-grid {
-        gap: 1.5rem;
-        max-width: 100%;
-    }
-    
-    .location-section {
-        max-width: 100%;
-    }
-    
-    .card-header {
-        padding: 1rem;
-    }
-    
-    .card-content {
-        padding: 1rem;
-    }
+  .info-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .event-information {
+    padding: 0 4rem;
+  }
+
+  .event-title {
+    font-size: 2rem;
+    margin: 2rem 0;
+  }
+
+  .info-grid {
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  .location-section {
+    max-width: 100%;
+  }
+
+  .card-header {
+    padding: 1rem;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+}
+
+#stadium {
+  width: 40vw;
+  height: auto;
 }
