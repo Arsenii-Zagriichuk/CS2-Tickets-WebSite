@@ -1,6 +1,9 @@
 ---
 import "./src/styles/tournamentInformation.css";
+import Stadium from "./src/images/stage.png";
+import { Image } from "astro:assets";
 ---
+
 <div class="event-information">
   <span class="ticketHeading">Event Information</span>
 
@@ -81,4 +84,5 @@ import "./src/styles/tournamentInformation.css";
       </div>
     </div>
   </div>
+  <Image src={Stadium} alt="stadium" id="stadium" />
 </div>
