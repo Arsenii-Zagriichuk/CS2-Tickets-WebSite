@@ -1,7 +1,7 @@
 import { ticketsInformation } from "../ticketsStorage.js";
 import { Ticket, ticketsStorage } from "../ticketsStorage.js";
 import "/src/styles/ticketsPage.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function TicketComponent({ name, price, image, tagID, onClick }) {
     return (
@@ -19,27 +19,22 @@ function TicketComponent({ name, price, image, tagID, onClick }) {
 function TicketDescription({ ticket, isActive, isClosing, onClose }) {
     const { name, description, features, tagID } = ticket;
 
-    const tickets = document.querySelectorAll(".ticketImage");
-    const closeButtons = document.querySelectorAll(".closePopup");
+    // Handle Escape key in this component
+    useEffect(() => {
+        const handleEscKey = (event) => {
+            if (event.key === "Escape" && isActive && !isClosing) {
+                onClose();
+            }
+        };
 
-    document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-        document.querySelectorAll(".ticketDescription.active").forEach((popUp) => {
-        if (popUp.classList.contains("closing")) return;
+        // Add event listener
+        document.addEventListener("keydown", handleEscKey);
 
-        popUp.classList.add("closing");
-        popUp.classList.add("inactive");
-
-        popUp.addEventListener(
-            "animationend",
-            () => {
-            popUp.classList.remove("active", "inactive", "closing");
-            },
-            { once: true }
-        );
-        });
-    }
-    });
+        // Clean up
+        return () => {
+            document.removeEventListener("keydown", handleEscKey);
+        };
+    }, [isActive, isClosing, onClose]);
 
     function addNewTicket() {
         const newTicket = new Ticket(ticket.name, ticket.price)
@@ -89,8 +84,22 @@ export default function Tickets() {
         setTimeout(() => {
             setSelectedTicketId(null);
             setIsClosing(false);
-        }, 400);
+        }, 400); 
     };
+
+    
+    useEffect(() => {
+        
+        const cleanup = () => {
+            document.querySelectorAll(".ticketDescription").forEach(popup => {
+               
+                popup.classList.remove("inactive", "closing");
+            });
+        };
+        
+        cleanup();
+        return cleanup;
+    }, []);
 
     const selectedTicket = ticketsInformation.find(
         (ticket) => ticket.tagID === selectedTicketId
