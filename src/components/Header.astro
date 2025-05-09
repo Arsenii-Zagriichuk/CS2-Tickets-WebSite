@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import FullLogo from "../images/logoFull.jpg";
 import HamburgerMenu from "../components/HamburgerMenu.jsx";
-import CartIcon from "../images/cartIcon.png";
+import CartIcon from "../components/CartIcon.jsx";
 ---
 
 <header>
@@ -22,7 +22,7 @@ import CartIcon from "../images/cartIcon.png";
         </ul>
       </li>
       <li>
-        <a href="/CartPage" id="cartIconContainer"><Image src={CartIcon} alt="cart" id="cartIcon" /></a>
+        <CartIcon client:load />
         <!-- <ul class="tickets">
           <li><a href="/tickets">Get Tickets</a></li>
         </ul> -->
@@ -43,6 +43,8 @@ import CartIcon from "../images/cartIcon.png";
 </div>
 
 <script>
+  import { ticketsStorage } from "./ticketsStorage";
+
   const openButton = document.querySelector(".hamburgerMenu");
   const menuOverlay = document.getElementById("menuOverlay");
   const header = document.querySelector("header");
