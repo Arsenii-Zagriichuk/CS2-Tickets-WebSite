@@ -1,4 +1,4 @@
-.cartContainer {
+.cartElementsContainer {
   display: flex;
   flex-direction: column;
   margin: 3rem;
@@ -21,9 +21,14 @@
   padding-top: 1rem;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: left;
   margin: 0 1rem;
+}
+.cartContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .ticketCartDescription p {
@@ -37,4 +42,18 @@
 .ticketCartDescription .description {
   font-weight: 300;
   color: rgb(207, 207, 207);
+}
+
+.emptyCartMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.emptyCartMessage p {
+  font-size: 1.2rem;
+  color: #888;
 }
