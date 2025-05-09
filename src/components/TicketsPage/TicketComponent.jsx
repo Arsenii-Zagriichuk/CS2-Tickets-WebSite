@@ -47,7 +47,27 @@ function TicketDescription({ ticket, isActive, isClosing, onClose }) {
 }
 
 export default function Tickets() {
-    
+    const [selectedTicketId, setSelectedTicketId] = useState(null);
+    const [isClosing, setIsClosing] = useState(false);
+    console.log(selectedTicketId);
+
+    const handleTicketClick = (tagID) => {
+        setSelectedTicketId(tagID);
+        setIsClosing(false); // ensure it's reset in case of multiple opens
+    };
+
+    const handleClose = () => {
+        setIsClosing(true);
+        setTimeout(() => {
+            setSelectedTicketId(null);
+            setIsClosing(false);
+        }, 400); // match your CSS animation duration
+    };
+
+    const selectedTicket = ticketsInformation.find(
+        (ticket) => ticket.tagID === selectedTicketId
+    );
+
     return (
         <>
             <div className="ticketImages">
