@@ -1,14 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import TournamentDescription from "../components/Tournament_description.astro";
-import TicketsSection from "../components/Tickets_Section.astro";
-import Carousel from "../components/carousel.astro";
-import TeamsSection from "../components/teams_section.astro";
+import HomePage from "../layouts/homepageLayout.astro";
+import TournamentDescription from "../components/indexPage/TournamentDescription.astro";
+import TicketsSection from "../components/indexPage/TicketsSection.astro";
+import TeamsSection from "../components/indexPage/TeamsSection.astro";
+import Carousel from "../components/indexPage/Carousel.astro";
 ---
 
-<Layout>
+<HomePage>
   <TournamentDescription />
   <Carousel />
   <TicketsSection />
   <TeamsSection />
-</Layout>
+</HomePage>

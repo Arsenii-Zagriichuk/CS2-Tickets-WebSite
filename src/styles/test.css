@@ -1,0 +1,40 @@
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem;
+}
+
+.cartElement {
+  display: flex;
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+  border-top: 0.5px rgba(222, 222, 222, 0.656) solid;
+}
+
+.cartElement img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.ticketCartDescription {
+  padding-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 1rem;
+}
+
+.ticketCartDescription p {
+  margin: 0.5rem 0;
+}
+
+.ticketCartDescription .important {
+  font-weight: 500;
+}
+
+.ticketCartDescription .description {
+  font-weight: 300;
+  color: rgb(207, 207, 207);
+}
