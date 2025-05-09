@@ -106,33 +106,36 @@
   margin: 0;
 }
 
-/* Popup Description Styling */
 .ticketDescription {
-  display: none;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(1, 8, 26, 0.828);
+  backdrop-filter: blur(20px);
+  color: white;
+  padding: 2rem;
+  z-index: 1000;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
 }
 
 .ticketDescription.active {
-  display: flex;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(1, 8, 26, 0.828); 
-  backdrop-filter: blur(20px);
-  color: white;
-  z-index: 1000;
-  overflow-y: auto;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  animation: openPopUpAnim 0.4s ease-out;
-  padding: 2rem;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s;
 }
 
 .ticketDescription.inactive {
-  animation: closePopUpAnim 0.4s ease-out;
-  animation-fill-mode: forwards;
+  display: none;
 }
-
 .ticketPopupContent {
   max-width: 50rem;
   width: 100%;
@@ -208,17 +211,6 @@
   100% {
     opacity: 1;
     transform: scale(1);
-  }
-}
-
-@keyframes closePopUpAnim {
-  0% {
-    opacity: 1;
-    background-color: rgba(1, 8, 26, 0.828);
-  }
-  100% {
-    opacity: 0;
-    background-color: rgba(1, 8, 26, 0); 
   }
 }
 
