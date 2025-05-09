@@ -1,4 +1,5 @@
 import { ticketsInformation } from "../ticketsStorage.js";
+import { Ticket, ticketsStorage } from "../ticketsStorage.js";
 import "/src/styles/ticketsPage.css";
 import { useState } from "react";
 
@@ -40,6 +41,12 @@ function TicketDescription({ ticket, isActive, isClosing, onClose }) {
     }
     });
 
+    function addNewTicket() {
+        const newTicket = new Ticket(ticket.name, ticket.price)
+        ticketsStorage.push(newTicket);
+        onClose();
+    }
+
     return (
         <div
             className={`ticketDescription ${isActive ? "active" : ""} ${isClosing ? "closing" : ""}`}
@@ -60,7 +67,7 @@ function TicketDescription({ ticket, isActive, isClosing, onClose }) {
                         </li>
                     ))}
                 </ul>
-                <button className="buyTicket" id={"buy" + tagID}>
+                <button className="buyTicket" id={"buy" + tagID} onClick={addNewTicket}>
                     Add to cart
                 </button>
             </div>

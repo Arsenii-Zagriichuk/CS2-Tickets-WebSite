@@ -1,5 +1,6 @@
 import React from "react";
 import Cart from "./Cart";
+import { ticketsStorage } from "./ticketsStorage";
 
 function App() {
   const sampleTickets = [
@@ -25,7 +26,7 @@ function App() {
 
   return (
     <div>
-      <Cart tickets={sampleTickets} func={() => {}} />
+      <Cart tickets={ticketsStorage} func={() => {}} />
     </div>
   );
 }
