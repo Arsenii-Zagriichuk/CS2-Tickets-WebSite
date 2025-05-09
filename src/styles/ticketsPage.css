@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: flex-start;
   padding-bottom: 2rem;
-  background-color:#01031d ;
+  background-color: #01031d;
 }
 
 .ticketImages {
@@ -30,6 +30,9 @@
 
 .ticketWrapper {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
   border-radius: 12px;
   overflow: hidden;
@@ -75,7 +78,7 @@
 
 .moreInfo {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 0.95rem;
@@ -118,7 +121,7 @@
   color: white;
   padding: 2rem;
   z-index: 1000;
-  
+
   opacity: 0;
   visibility: hidden;
   transform: scale(0.95);
@@ -145,11 +148,11 @@
   z-index: 1001;
 }
 
-.popupContent ul{
-    list-style-type: none;
+.popupContent ul {
+  list-style-type: none;
 }
 
-.popupContent ul li{
+.popupContent ul li {
   margin-bottom: 1rem;
   text-align: left;
   max-width: 55rem;
@@ -177,8 +180,8 @@
 
 .buyTicket {
   font-family: inherit;
-  font-weight:600;
-  padding:  1.2rem 2.7rem;
+  font-weight: 600;
+  padding: 1.2rem 2.7rem;
   margin-top: 1.5rem;
   background-color: #4ea8de;
   color: white;
@@ -191,15 +194,12 @@
 }
 
 .buyTicket:hover {
-  background-color: #3b95cc; 
+  background-color: #3b95cc;
 }
 
-.ticketBold{
+.ticketBold {
   font-weight: 700;
 }
-
-
-
 
 /* Animation */
 @keyframes openPopUpAnim {
@@ -230,11 +230,14 @@
 
 @media (max-width: 768px) {
   .ticketLayout::before {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
   }
-  
+
   .ticketLayout::after {
     background-position: 55% center; /* Further adjusted for mobile */
   }
 }
-

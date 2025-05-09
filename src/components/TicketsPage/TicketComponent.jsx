@@ -18,6 +18,28 @@ function TicketComponent({ name, price, image, tagID, onClick }) {
 function TicketDescription({ ticket, isActive, isClosing, onClose }) {
     const { name, description, features, tagID } = ticket;
 
+    const tickets = document.querySelectorAll(".ticketImage");
+    const closeButtons = document.querySelectorAll(".closePopup");
+
+    document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        document.querySelectorAll(".ticketDescription.active").forEach((popUp) => {
+        if (popUp.classList.contains("closing")) return;
+
+        popUp.classList.add("closing");
+        popUp.classList.add("inactive");
+
+        popUp.addEventListener(
+            "animationend",
+            () => {
+            popUp.classList.remove("active", "inactive", "closing");
+            },
+            { once: true }
+        );
+        });
+    }
+    });
+
     return (
         <div
             className={`ticketDescription ${isActive ? "active" : ""} ${isClosing ? "closing" : ""}`}
@@ -49,11 +71,10 @@ function TicketDescription({ ticket, isActive, isClosing, onClose }) {
 export default function Tickets() {
     const [selectedTicketId, setSelectedTicketId] = useState(null);
     const [isClosing, setIsClosing] = useState(false);
-    console.log(selectedTicketId);
 
     const handleTicketClick = (tagID) => {
         setSelectedTicketId(tagID);
-        setIsClosing(false); // ensure it's reset in case of multiple opens
+        setIsClosing(false);
     };
 
     const handleClose = () => {
@@ -61,7 +82,7 @@ export default function Tickets() {
         setTimeout(() => {
             setSelectedTicketId(null);
             setIsClosing(false);
-        }, 400); // match your CSS animation duration
+        }, 400);
     };
 
     const selectedTicket = ticketsInformation.find(
