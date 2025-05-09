@@ -1,67 +1,88 @@
 ---
-import '../styles/tournamentInformation.css'
-import { Image } from 'astro:assets'
-import BackgroundLogo from '../images/BackgroundLogo.png'
+import "./src/styles/tournamentInformation.css";
+import { Image } from "astro:assets";
+import BackgroundLogo from "./src/images/BackgroundLogo.png";
 ---
 
-<Image class = "BackgroundLogo" src={BackgroundLogo} alt = "BackgroundLogo"></Image>
+<Image class="BackgroundLogo" src={BackgroundLogo} alt="BackgroundLogo" />
 <div class="event-information">
-    <span class="ticketHeading">Event Information</span>
-    
-    <div class="info-container">
-        <div class="info-card schedule">
-            <div class="card-header">
-                <i class="fas fa-calendar-day"></i>
-                <h3>Schedule</h3>
-            </div>
-            <div class="card-content">
-                <p><span class="highlight">Date:</span> June 27-29, 2025</p>
-                <p><span class="highlight">Arena Opens:</span> 12:00 PM</p>
-                <p><span class="highlight">First Match:</span> 3:00 PM</p>
-                <p><span class="highlight">Arena Closes:</span> 1 hour after the last match</p>
-            </div>
-        </div>
-        
-        <div class="info-card entertainment">
-            <div class="card-header">
-                <i class="fas fa-music"></i>
-                <h3>Tournament Entertainment</h3>
-            </div>
-            <div class="card-content">
-                <p><span class="highlight">Autograph Sessions:</span> June 27-28</p>
-                <p><span class="highlight">Food & Drinks:</span> Provided by CGT community</p>
-                <p><span class="highlight">Concert:</span> June 29 before grand final</p>
-                <p><span class="highlight">DHL Festival:</span> All event days (June 27-29)</p>
-                <p><span class="highlight">Merchandise:</span> Fan shop available on-site</p>
-            </div>
-        </div>
-        
-        <div class="info-card rules">
-            <div class="card-header">
-                <i class="fas fa-gavel"></i>
-                <h3>Rules</h3>
-            </div>
-            <div class="card-content rules-list">
-                <p><i class="fas fa-check"></i> All fans must have a ticket to enter</p>
-                <p><i class="fas fa-check"></i> No outside food or drinks</p>
-                <p><i class="fas fa-check"></i> No weapons or aggressive behavior</p>
-                <p><i class="fas fa-check"></i> Photography allowed (no flash)</p>
-                <p><i class="fas fa-check"></i> No smoking in the arena</p>
-            </div>
-        </div>
-        
-        <div class="info-card accessibility">
-            <div class="card-header">
-                <i class="fas fa-universal-access"></i>
-                <h3>Accessibility</h3>
-            </div>
-            <div class="card-content">
-                <p><span class="highlight">Wheelchair Access:</span> Available at all entrances</p>
-                <p><span class="highlight">Accessible Seating:</span> Reserved areas in all sections</p>
-                <p><span class="highlight">Hearing Assistance:</span> Available upon request</p>
-                <p><span class="highlight">Service Animals:</span> Permitted in all areas</p>
-                <p><span class="highlight">Accessible Restrooms:</span> Located on all levels</p>
-            </div>
-        </div>
+  <span class="ticketHeading">Event Information</span>
+
+  <div class="info-container">
+    <div class="info-card schedule">
+      <div class="card-header">
+        <i class="fas fa-calendar-day"></i>
+        <h3>Schedule</h3>
+      </div>
+      <div class="card-content">
+        <p><span class="highlight">Date:</span> June 27-29, 2025</p>
+        <p><span class="highlight">Arena Opens:</span> 12:00 PM</p>
+        <p><span class="highlight">First Match:</span> 3:00 PM</p>
+        <p>
+          <span class="highlight">Arena Closes:</span> 1 hour after the last match
+        </p>
+      </div>
     </div>
+
+    <div class="info-card entertainment">
+      <div class="card-header">
+        <i class="fas fa-music"></i>
+        <h3>Tournament Entertainment</h3>
+      </div>
+      <div class="card-content">
+        <p><span class="highlight">Autograph Sessions:</span> June 27-28</p>
+        <p>
+          <span class="highlight">Food & Drinks:</span> Provided by CGT community
+        </p>
+        <p>
+          <span class="highlight">Concert:</span> June 29 before grand final
+        </p>
+        <p>
+          <span class="highlight">DHL Festival:</span> All event days (June 27-29)
+        </p>
+        <p>
+          <span class="highlight">Merchandise:</span> Fan shop available on-site
+        </p>
+      </div>
+    </div>
+
+    <div class="info-card rules">
+      <div class="card-header">
+        <i class="fas fa-gavel"></i>
+        <h3>Rules</h3>
+      </div>
+      <div class="card-content rules-list">
+        <p><i class="fas fa-check"></i> All fans must have a ticket to enter</p>
+        <p><i class="fas fa-check"></i> No outside food or drinks</p>
+        <p><i class="fas fa-check"></i> No weapons or aggressive behavior</p>
+        <p><i class="fas fa-check"></i> Photography allowed (no flash)</p>
+        <p><i class="fas fa-check"></i> No smoking in the arena</p>
+      </div>
+    </div>
+
+    <div class="info-card accessibility">
+      <div class="card-header">
+        <i class="fas fa-universal-access"></i>
+        <h3>Accessibility</h3>
+      </div>
+      <div class="card-content">
+        <p>
+          <span class="highlight">Wheelchair Access:</span> Available at all entrances
+        </p>
+        <p>
+          <span class="highlight">Accessible Seating:</span> Reserved areas in all
+          sections
+        </p>
+        <p>
+          <span class="highlight">Hearing Assistance:</span> Available upon request
+        </p>
+        <p>
+          <span class="highlight">Service Animals:</span> Permitted in all areas
+        </p>
+        <p>
+          <span class="highlight">Accessible Restrooms:</span> Located on all levels
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
