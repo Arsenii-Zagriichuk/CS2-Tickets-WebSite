@@ -13,7 +13,6 @@ import CartIcon from "../images/cartIcon.png";
     <ul class="navigation">
       <li>
         <ul class="mainNav">
-          <!-- This component is loaded on the client side, becuase it has additional logic in js -->
           <HamburgerMenu client:load />
           <div class="navLinks">
             <li><a href="/">Home Page</a></li>
@@ -23,7 +22,7 @@ import CartIcon from "../images/cartIcon.png";
         </ul>
       </li>
       <li>
-        <a href="/cart" id="cartIconContainer"><Image src={CartIcon} alt="cart" id="cartIcon" /></a>
+        <a href="/CartPage" id="cartIconContainer"><Image src={CartIcon} alt="cart" id="cartIcon" /></a>
         <!-- <ul class="tickets">
           <li><a href="/tickets">Get Tickets</a></li>
         </ul> -->

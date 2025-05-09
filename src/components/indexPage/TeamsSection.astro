@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+import g2 from "./src/images/g2.png";
+import faze from "./src/images/faze.png";
+import navi from "./src/images/navi.png";
+import astralis from "./src/images/astralis.png";
+import pain from "./src/images/pain.png";
+import furia from "./src/images/furia.png";
+import mouz from "./src/images/mouzLogo.png";
+import spirit from "./src/images/spirit.png";
+import flyquest from "./src/images/flyquest.png";
+import imperial from "./src/images/imperial.png";
+import liquid from "./src/images/liquid.png";
+import vitality from "./src/images/vitality.png";
+import falcons from "./src/images/falcons.png";
+import mongolz from "./src/images/mongolzLogo.png";
+import heroic from "./src/images/heroic.png";
+import eternalFire from "./src/images/eternalFire.png";
+
+const firstRow = [
+  { src: g2, alt: "g2", name: "G2 Esports" },
+  { src: faze, alt: "faze", name: "Faze Clan" },
+  { src: navi, alt: "navi", name: "Navi" },
+  { src: astralis, alt: "astralis", name: "Astralis" },
+  { src: pain, alt: "pain", name: "Pain" },
+  { src: furia, alt: "furia", name: "Furia" },
+  { src: mouz, alt: "mouz", name: "Mouz" },
+  { src: spirit, alt: "spirit", name: "Spirit" },
+];
+const secondRow = [
+  { src: flyquest, alt: "flyquest", name: "Flyquest" },
+  { src: imperial, alt: "imperial", name: "Imperial" },
+  { src: liquid, alt: "liquid", name: "Liquid" },
+  { src: vitality, alt: "vitality", name: "Vitality" },
+  { src: falcons, alt: "falcons", name: "Falcons" },
+  { src: mongolz, alt: "mongolz", name: "Mongolz" },
+  { src: heroic, alt: "heroic", name: "Heroic" },
+  { src: eternalFire, alt: "eternalFire", name: "Eternal Fire" },
+];
+import "./src/styles/teamsSection.css";
+---
+
+<section class="teams">
+  <div class="border">
+    <span>Teams</span>
+  </div>
+
+  <div class="team_section">
+    <div class="top_text">
+      <span class="title_team_section">Teams invited</span>
+      <span>Playoff: 27-29 June</span>
+    </div>
+
+    <div class="firstRow">
+      {
+        firstRow.map((team) => (
+          <div class="team-item">
+            <Image src={team.src} alt={team.alt} format="png" quality="max" />
+            <span>{team.name}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="secondRow">
+      {
+        secondRow.map((team) => (
+          <div class="team-item">
+            <Image src={team.src} alt={team.alt} format="png" quality="max" />
+            <span>{team.name}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

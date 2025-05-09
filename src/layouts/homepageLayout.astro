@@ -2,8 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import HeroBanner from "../components/heroBanner.astro";
-import CartObject from "../components/CartObject";
+import HeroBanner from "../components/indexPage/HeroBanner.astro";
 ---
 
 <!doctype html>
@@ -11,12 +10,11 @@ import CartObject from "../components/CartObject";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main Page</title>
+    <title>Home Page</title>
   </head>
   <body>
     <HeroBanner />
     <Header />
-
     <main>
       <slot />
     </main>

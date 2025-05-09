@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import Ticket1 from "../images/ticket_image1.jpg";
-import Ticket2 from "../images/ticket_image2.jpg";
-import Ticket3 from "../images/ticket_image3.jpg";
-import "../styles/ticketsPage.css";
+import Ticket1 from "./src/images/ticket_image1.jpg";
+import Ticket2 from "./src/images/ticket_image2.jpg";
+import Ticket3 from "./src/images/ticket_image3.jpg";
+import "./src/styles/ticketsPage.css";
 ---
 
 <div class="ticketImages">
@@ -179,8 +179,8 @@ import "../styles/ticketsPage.css";
   });
 </script>
 <script>
-  import { Ticket, ticketsInformation } from "../components/ticketsStorage.js";
-  import { ticketsStorage } from "../components/ticketsStorage.js";
+  import { Ticket, ticketsInformation } from "../ticketsStorage.js";
+  import { ticketsStorage } from "../ticketsStorage.js";
 
   const buyButton1 = document.querySelector("#buyTicket1") as HTMLButtonElement;
   const buyButton2 = document.querySelector("#buyTicket2") as HTMLButtonElement;

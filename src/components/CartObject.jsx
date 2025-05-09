@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Cart from '../components/Cart.jsx';
-import TicketPage from '../components/ticket_Page_Component.astro'
+import TicketPage from '../components/TicketsPage/TicketPageComponent.astro';
 import ticketsStorage from "./ticketsStorage.js";
 
 
