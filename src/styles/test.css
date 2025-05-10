@@ -81,7 +81,7 @@ main {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   margin: 3rem 0;
   position: sticky;
-  top: 2rem;
+  top: 10rem; /* Increased top value to position below header */
   align-self: flex-start;
   height: fit-content;
 }
@@ -114,29 +114,39 @@ main {
 }
 
 .checkoutButton {
-  background: linear-gradient(45deg, #1345e9, #4ea8de);
+  background-color: #4ea8de;
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 1rem 0;
+  border-radius: 0.7rem;
+  padding: 1.2rem 0;
   width: 100%;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   margin-top: 1.5rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(19, 69, 233, 0.3);
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkoutButton:hover {
-  background: linear-gradient(45deg, #0d36b5, #3b95cc);
+  background-color: #3b95cc;
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(19, 69, 233, 0.4);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .checkoutButton:active {
   transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(19, 69, 233, 0.4);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.checkoutButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.5);
 }
 
 /* Footer styles to stick to bottom */
