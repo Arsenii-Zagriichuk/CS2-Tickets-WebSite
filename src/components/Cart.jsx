@@ -43,6 +43,7 @@ function CartElement({ ticket }) {
 
 function PaymentSection({ tickets }) {
   const [totalPrice, setTotalPrice] = useState(0);
+  const taxFee = 5.00; // Fixed tax fee of $5
   
   useEffect(() => {
     if (tickets && tickets.length > 0) {
@@ -53,12 +54,23 @@ function PaymentSection({ tickets }) {
     }
   }, [tickets]);
 
+  // Calculate final total with tax
+  const finalTotal = (parseFloat(totalPrice) + taxFee).toFixed(2);
+
   return(
     <div className="paymentSection">
       <h2>Summary</h2>
       <div className="priceSummary">
         <p>Subtotal:</p>
         <p>${totalPrice}</p>
+      </div>
+      <div className="priceSummary">
+        <p>Tax Fee:</p>
+        <p>${taxFee.toFixed(2)}</p>
+      </div>
+      <div className="priceSummary totalRow">
+        <p>Total:</p>
+        <p>${finalTotal}</p>
       </div>
       <button className="checkoutButton">Checkout</button>
     </div>
