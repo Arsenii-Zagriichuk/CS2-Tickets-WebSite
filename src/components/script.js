@@ -171,17 +171,6 @@ document.addEventListener("DOMContentLoaded", function() {
   
   function proceedToPayment() {
     if (checkoutDataValidation()) {
-      // Store form data in localStorage before proceeding
-      const formData = {
-        email: emailInput.value,
-        city: cityInput.value,
-        postcode: postcodeInput.value,
-        address: addressInput.value,
-        firstName: firstNameInput.value,
-        lastName: lastNameInput.value,
-        country: countryInput.value
-      };
-      localStorage.setItem("checkoutFormData", JSON.stringify(formData));
       
       // Redirect to payment page or next step
       window.location.href = "/payment";
