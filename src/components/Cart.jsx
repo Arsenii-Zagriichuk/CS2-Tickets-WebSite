@@ -56,6 +56,20 @@ function PaymentSection({ tickets }) {
 
   // Calculate final total with tax
   const finalTotal = (parseFloat(totalPrice) + taxFee).toFixed(2);
+  
+  // Function to handle checkout click
+  const handleCheckout = () => {
+    // Store the cart data in localStorage before navigating
+    localStorage.setItem("checkoutData", JSON.stringify({
+      tickets: tickets,
+      subtotal: totalPrice,
+      taxFee: taxFee.toFixed(2),
+      total: finalTotal
+    }));
+    
+    // Navigate to the Checkout page
+    window.location.href = "/Checkout";
+  };
 
   return(
     <div className="paymentSection">
@@ -72,7 +86,19 @@ function PaymentSection({ tickets }) {
         <p>Total:</p>
         <p>${finalTotal}</p>
       </div>
-      <button className="checkoutButton">Checkout</button>
+      <div 
+        className="checkoutButton" 
+        onClick={handleCheckout}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            handleCheckout();
+          }
+        }}
+      >
+        Checkout
+      </div>
     </div>
   );
 }
