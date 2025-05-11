@@ -1,3 +1,5 @@
+import { ticketsStorage } from "/src/scripts/ticketsStorage.js";
+
 export default function CartIcon() {
 
     function redirect() {

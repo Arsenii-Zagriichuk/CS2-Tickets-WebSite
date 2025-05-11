@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../styles/test.css";
+import "../../styles/test.css";
 
 export default function Cart({ tickets, func }) {
   const hasItems = tickets && tickets.length > 0;
