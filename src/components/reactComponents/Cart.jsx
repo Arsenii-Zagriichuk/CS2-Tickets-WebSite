@@ -103,7 +103,16 @@ function PaymentSection({ tickets }) {
   );
 }
 
-function SuccessfulPaymenPageContent({ tickets, func }){
+function SuccessfulPaymenPageContent(){
+  const [tickets, setTickets] = useState([]);
+
+  useEffect(() => {
+    const stored = localStorage.getItem("ticketsStorage");
+    if (stored) {
+      setTickets(JSON.parse(stored));
+    }
+  }, []);
+
   return(
     <div>
       <div className="sucessElements"></div>
