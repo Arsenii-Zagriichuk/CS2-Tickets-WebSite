@@ -34,19 +34,35 @@ function TicketDescription({ ticket, isActive, isClosing, onClose }) {
     }, [isActive, isClosing, onClose]);
 
     function handleSave() {
+        console.log(JSON.parse(localStorage.getItem("ticketsStorage")));
         localStorage.setItem("ticketsStorage", JSON.stringify(ticketsStorage));
-        console.log("Saved successfully")
+        console.log("Saved successfully");
+    }
+
+    function quantityIcon() {
+        const stored = JSON.parse(localStorage.getItem("ticketsStorage"));
+        const quantityElement = document.querySelector("#quantity");
+
+        if (stored && stored.length > 0) {
+            quantityElement.textContent = stored.length;
+            quantityElement.style.opacity = "1";
+        } else {
+            quantityElement.textContent = "";
+            quantityElement.style.opacity = "0";
+        }
     }
 
     function addNewTicket() {
-        console.log(ticketsStorage);
-        const newTicket = new Ticket(ticket.name, ticket.price, ticket.description, ticket.image)
         const savedTickets = JSON.parse(localStorage.getItem("ticketsStorage")) || [];
+        ticketsStorage.length = 0;
         ticketsStorage.push(...savedTickets);
+        const newTicket = new Ticket(ticket.name, ticket.price, ticket.description, ticket.image);
         ticketsStorage.push(newTicket);
         handleSave();
+        quantityIcon();
         onClose();
     }
+
 
     return (
         <div
