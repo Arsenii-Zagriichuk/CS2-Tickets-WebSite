@@ -1,5 +1,5 @@
-import { ticketsInformation } from "../ticketsStorage.js";
-import { Ticket, ticketsStorage } from "../ticketsStorage.js";
+import { ticketsInformation } from "../../scripts/ticketsStorage.js";
+import { Ticket, ticketsStorage } from "../../scripts/ticketsStorage.js";
 import "/src/styles/ticketsPage.css";
 import { useState, useEffect } from "react";
 
@@ -19,7 +19,6 @@ function TicketComponent({ name, price, image, tagID, onClick }) {
 function TicketDescription({ ticket, isActive, isClosing, onClose }) {
     const { name, description, features, tagID } = ticket;
 
-    // Handle Escape key in this component
     useEffect(() => {
         const handleEscKey = (event) => {
             if (event.key === "Escape" && isActive && !isClosing) {
@@ -27,18 +26,25 @@ function TicketDescription({ ticket, isActive, isClosing, onClose }) {
             }
         };
 
-        // Add event listener
         document.addEventListener("keydown", handleEscKey);
 
-        // Clean up
         return () => {
             document.removeEventListener("keydown", handleEscKey);
         };
     }, [isActive, isClosing, onClose]);
 
+    function handleSave() {
+        localStorage.setItem("ticketsStorage", JSON.stringify(ticketsStorage));
+        console.log("Saved successfully")
+    }
+
     function addNewTicket() {
+        console.log(ticketsStorage);
         const newTicket = new Ticket(ticket.name, ticket.price, ticket.description, ticket.image)
+        const savedTickets = JSON.parse(localStorage.getItem("ticketsStorage")) || [];
+        ticketsStorage.push(...savedTickets);
         ticketsStorage.push(newTicket);
+        handleSave();
         onClose();
     }
 

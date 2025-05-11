@@ -131,3 +131,14 @@
       gap: 1rem;
     }
   }
+
+  /* Simple error styling */
+  .input-error {
+    border: 1px solid #ff3333;
+  }
+
+  .error-message {
+    color: #ff3333;
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+  }

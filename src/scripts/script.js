@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (checkoutDataValidation()) {
       
       // Redirect to payment page or next step
-      window.location.href = "/payment";
+      window.location.href = "/Payment";
     } else {
       // Clear invalid fields
       allInputs.forEach(input => {
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   
   // Add event listener to the button
-  const button = document.querySelector(".primaryButton");
+  const button = document.getElementById("proceedToPayment");
   
   if (button) {
     button.addEventListener("click", function(event) {
@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // Redirect to comments page
       setTimeout(() => {
         window.location.href = "/CommentsPage";
-      }, 750);
+      }, 1500);
     } else {
       // Clear invalid fields
       allPaymentInputs.forEach(input => {
@@ -331,8 +331,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
-
-
 
 
 function commentValidation(){
