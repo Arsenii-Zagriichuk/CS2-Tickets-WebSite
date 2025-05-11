@@ -1,5 +1,6 @@
 ---
 import '../styles/SuccessfulPayment.css'
+import {SuccessfulPaymenPageContent}  from './reactComponents/Cart.jsx';
 ---
 
 <div class="checkoutInfo">
@@ -11,7 +12,7 @@ import '../styles/SuccessfulPayment.css'
       <h2 class="sectionHeading">Thank you for your payment!</h2>
       <p>Your transaction has been processed successfully.</p>
       <p>You will receive a confirmation email shortly.</p>
-
+      <SuccessfulPaymenPageContent client:load />
       <div class="formActions">
         <a href="/" class="primaryButton">Return to Home</a>
       </div>
