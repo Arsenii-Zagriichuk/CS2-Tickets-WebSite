@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Payment validation regex patterns
   const cardNumberRegex = /^[0-9]{16}$/;
   const cardDateRegex = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
-  const cardCVCRegex = /^[0-9]{3,4}$/;
+  const cardCVCRegex = /^[0-9]{3}$/;
   const nameOnCardRegex = /^[A-Za-z\s]+$/;
   
   // Add error message display for payment fields
@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   function cardNumberValidation() {
     if (!cardNumberInput) return false;
-    const cardNumber = cardNumberInput.value.replace(/\s/g, ''); // Remove spaces
+    const cardNumber = cardNumberInput.value.replace(/\s/g, '');
     if (!cardNumberRegex.test(cardNumber) || cardNumber === "") {
       showPaymentError(cardNumberInput, "Please enter a valid 16-digit card number");
       return false;
@@ -299,8 +299,6 @@ document.addEventListener("DOMContentLoaded", function() {
   
   function processPayment() {
     if (paymentFormValidation()) {
-      // Payment successful
-      alert("Payment successful! Thank you for your purchase.");
       
       // Clear form
       allPaymentInputs.forEach(input => {
@@ -309,9 +307,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       });
       
-      // Redirect to confirmation page or home
+      // Redirect to comments page
       setTimeout(() => {
-        window.location.href = "/";
+        window.location.href = "/CommentsPage";
       }, 1500);
     } else {
       // Clear invalid fields
@@ -323,14 +321,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   
+  // Add event listener to the payment button
   const paymentButton = document.getElementById("paymentButton");
-  
+
+  if (paymentButton) {
     paymentButton.addEventListener("click", function(event) {
       event.preventDefault();
       processPayment();
     });
   }
-);
+});
 
 
 function commentValidation(){
