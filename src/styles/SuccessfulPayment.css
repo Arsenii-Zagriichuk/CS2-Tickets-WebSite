@@ -1,0 +1,77 @@
+.checkoutInfo {
+    max-width: 800px;
+    margin: 0 auto;
+}
+  
+.checkoutHeader {
+    text-align: center;
+    margin: 2rem 0 3rem;
+}
+  
+.mainHeading {
+    font-size: 2.5rem;
+    color: #e9e2e2;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+  
+.formSection {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    background-color: #01031D;
+    color: #f7f7f7;
+}
+  
+.successMessage p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+  
+  .successIcon {
+    font-size: 5rem;
+    color: #4BB543;
+    margin-bottom: 1.5rem;
+  }
+  
+  .sectionHeading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #cfc5c5;
+  }
+  
+  .formActions {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .primaryButton {
+    font-family: inherit;
+    font-weight: 600;
+    padding: 1.2rem 2.7rem;
+    background-color: #4ea8de;
+    color: white;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .primaryButton:hover {
+    background-color: #3b95cc;
+  }
+  
+  .primaryButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.5);
+  }
+  
+  .primaryButton:active {
+    background-color: #2b6cb0;
+  }
+  
