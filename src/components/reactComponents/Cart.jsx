@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../../styles/test.css";
 
-export default function Cart({ tickets, func }) {
+function Cart({ tickets, func }) {
   const hasItems = tickets && tickets.length > 0;
 
   return (
@@ -103,7 +103,7 @@ function PaymentSection({ tickets }) {
   );
 }
 
-export default function SuccessfulPaymenPageContent({ tickets, func }){
+function SuccessfulPaymenPageContent({ tickets, func }){
   return(
     <div>
       <div className="sucessElements"></div>
@@ -115,3 +115,7 @@ export default function SuccessfulPaymenPageContent({ tickets, func }){
     </div>
   );
 };
+
+
+export { SuccessfulPaymenPageContent };
+export default Cart;
