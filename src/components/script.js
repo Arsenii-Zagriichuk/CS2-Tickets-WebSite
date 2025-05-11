@@ -196,66 +196,140 @@ document.addEventListener("DOMContentLoaded", function() {
 }); // End of DOMContentLoaded event listener
 
 
-
-function cardNumberValidation(){
-  const cardNumber = cardNumberInput.value;
-  if(cardNumberRegex.test(cardNumber) || cardNumber === ""){
-    alert("Please enter a valid card number");
-    return false;
-  }
-  return true;
-}
-
-function cardDateValidation(){
-  const cardDate = cardDateInput.value;
-  if(cardDateRegex.test(cardDate) || cardDate === ""){
-    alert("Please enter a valid card date");
-    return false;
-  }
-  return true;
-}
-
-function cardCVCValidation(){
-  const cardCVC = cardCVCInput.value;
-  if(cardCVCRegex.test(cardCVC) || cardCVC === ""){
-    alert("Please enter a valid card CVV");
-    return false;
-  }
-  return true;
-}
-
-function nameValidation(){
-  const name = nameInput.value;
-  if(nameRegex.test(name) || name === ""){
-    alert("Please enter a valid name");
-    return false;
-  }
-  return true;
-}
-
-function paymentValidation(){
-  return cardNumberValidation() && cardDateValidation() && cardCVCValidation() && nameValidation();
-}
-
-
-function finishPayment(){
-  if(paymentValidation()){
-    alert("Payment successful");
+// Payment form validation
+document.addEventListener("DOMContentLoaded", function() {
+  // Payment form elements
+  const cardNumberInput = document.getElementById("card-number");
+  const cardDateInput = document.getElementById("expiry-date");
+  const cardCVCInput = document.getElementById("cvv");
+  const nameOnCardInput = document.getElementById("name-on-card");
+  
+  // Payment validation regex patterns
+  const cardNumberRegex = /^[0-9]{16}$/;
+  const cardDateRegex = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
+  const cardCVCRegex = /^[0-9]{3}$/;
+  const nameOnCardRegex = /^[A-Za-z\s]+$/;
+  
+  // Add error message display for payment fields
+  function showPaymentError(input, message) {
+    // Remove any existing error message
+    const existingError = input.parentElement.querySelector('.error-message');
+    if (existingError) {
+      existingError.remove();
+    }
     
-  }else{
-    cardNumberInput.value = "";
-    cardDateInput.value = "";
-    cardCVCInput.value = "";
-    nameInput.value = "";
-    alert("Please fill in all fields correctly.");
+    // Add error class to input
+    input.classList.add('input-error');
+    
+    // Create and append error message
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    input.parentElement.appendChild(errorDiv);
   }
-}
+  
+  // Remove error styling and message
+  function clearPaymentError(input) {
+    input.classList.remove('input-error');
+    const existingError = input.parentElement.querySelector('.error-message');
+    if (existingError) {
+      existingError.remove();
+    }
+  }
+  
+  // Add input event listeners to clear errors when user types
+  const allPaymentInputs = [cardNumberInput, cardDateInput, cardCVCInput, nameOnCardInput];
+  
+  allPaymentInputs.forEach(input => {
+    if (input) {
+      input.addEventListener('input', function() {
+        clearPaymentError(input);
+      });
+    }
+  });
+  
+  function cardNumberValidation() {
+    if (!cardNumberInput) return false;
+    const cardNumber = cardNumberInput.value.replace(/\s/g, '');
+    if (!cardNumberRegex.test(cardNumber) || cardNumber === "") {
+      showPaymentError(cardNumberInput, "Please enter a valid 16-digit card number");
+      return false;
+    }
+    return true;
+  }
+  
+  function cardDateValidation() {
+    if (!cardDateInput) return false;
+    const cardDate = cardDateInput.value;
+    if (!cardDateRegex.test(cardDate) || cardDate === "") {
+      showPaymentError(cardDateInput, "Please enter a valid date (MM/YY)");
+      return false;
+    }
+    return true;
+  }
+  
+  function cardCVCValidation() {
+    if (!cardCVCInput) return false;
+    const cardCVC = cardCVCInput.value;
+    if (!cardCVCRegex.test(cardCVC) || cardCVC === "") {
+      showPaymentError(cardCVCInput, "Please enter a valid CVV/CVC code");
+      return false;
+    }
+    return true;
+  }
+  
+  function nameOnCardValidation() {
+    if (!nameOnCardInput) return false;
+    const nameOnCard = nameOnCardInput.value;
+    if (!nameOnCardRegex.test(nameOnCard) || nameOnCard === "") {
+      showPaymentError(nameOnCardInput, "Please enter a valid name");
+      return false;
+    }
+    return true;
+  }
+  
+  function paymentFormValidation() {
+    const cardNumberValid = cardNumberValidation();
+    const cardDateValid = cardDateValidation();
+    const cardCVCValid = cardCVCValidation();
+    const nameOnCardValid = nameOnCardValidation();
+    
+    return cardNumberValid && cardDateValid && cardCVCValid && nameOnCardValid;
+  }
+  
+  function processPayment() {
+    if (paymentFormValidation()) {
+      
+      // Clear form
+      allPaymentInputs.forEach(input => {
+        if (input) {
+          input.value = "";
+        }
+      });
+      
+      // Redirect to comments page
+      setTimeout(() => {
+        window.location.href = "/CommentsPage";
+      }, 750);
+    } else {
+      // Clear invalid fields
+      allPaymentInputs.forEach(input => {
+        if (input && input.classList.contains('input-error')) {
+          input.value = "";
+        }
+      });
+    }
+  }
+  
+  // Add event listener to the payment button
+  const paymentButton = document.getElementById("paymentButton");
 
-
-const paymentButton = document.querySelector(".jajaj");
-paymentButton.addEventListener("click", function (event) {
-  event.preventDefault();
-  finishPayment();
+  if (paymentButton) {
+    paymentButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      processPayment();
+    });
+  }
 });
 
 
