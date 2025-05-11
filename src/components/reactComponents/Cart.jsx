@@ -102,3 +102,16 @@ function PaymentSection({ tickets }) {
     </div>
   );
 }
+
+export default function SuccessfulPaymenPageContent({ tickets, func }){
+  return(
+    <div>
+      <div className="sucessElements"></div>
+      {tickets && tickets.length > 0 && (
+        tickets.map((ticket, index) => (
+          <CartElement key={index} ticket={ticket} />
+        ))
+      )}
+    </div>
+  );
+};
