@@ -22,7 +22,7 @@ a {
 body {
   margin: 0;
   font-family: Montserrat, sans-serif;
-  background-color: #01031D;
+  background-color: #01031d;
   color: white;
   display: flex;
   flex-direction: column;
@@ -220,7 +220,7 @@ header {
 
 /* Footer */
 footer {
-  background-color: #004a99; /* Darker blue */
+  background-color: #1345e9; /* Darker blue */
   color: white;
   text-align: center;
   padding-bottom: 2rem;
