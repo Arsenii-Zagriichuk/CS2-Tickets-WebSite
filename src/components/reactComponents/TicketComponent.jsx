@@ -1,5 +1,5 @@
-import { ticketsInformation } from "../ticketsStorage.js";
-import { Ticket, ticketsStorage } from "../ticketsStorage.js";
+import { ticketsInformation } from "../../scripts/ticketsStorage.js";
+import { Ticket, ticketsStorage } from "../../scripts/ticketsStorage.js";
 import "/src/styles/ticketsPage.css";
 import { useState, useEffect } from "react";
 

@@ -1,4 +1,4 @@
-import { ticketsStorage } from "/src/components/ticketsStorage.js";
+import { ticketsStorage } from "/src/scripts/ticketsStorage.js";
 
 export default function CartIcon() {
 
