@@ -39,7 +39,10 @@ function TicketDescription({ ticket, isActive, isClosing, onClose }) {
     }
 
     function addNewTicket() {
+        console.log(ticketsStorage);
         const newTicket = new Ticket(ticket.name, ticket.price, ticket.description, ticket.image)
+        const savedTickets = JSON.parse(localStorage.getItem("ticketsStorage")) || [];
+        ticketsStorage.push(...savedTickets);
         ticketsStorage.push(newTicket);
         handleSave();
         onClose();
