@@ -1,10 +1,15 @@
-import { ticketsStorage } from "/src/components/ticketsStorage.js";
-
 export default function CartIcon() {
 
     function redirect() {
         window.location.href = "/CartPage";
     }
+    // TODO
+    // function quantityIcon() {
+    //     const stored = localStorage.getItem("ticketsStorage");
+    //     if(stored) {
+    //         console.log()
+    //     }
+    // }
 
     return (
         <div id="cartIconContainer">       
