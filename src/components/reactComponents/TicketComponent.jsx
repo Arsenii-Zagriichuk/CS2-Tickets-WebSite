@@ -2,6 +2,7 @@ import { ticketsInformation } from "../../scripts/ticketsStorage.js";
 import { Ticket, ticketsStorage } from "../../scripts/ticketsStorage.js";
 import "/src/styles/ticketsPage.css";
 import { useState, useEffect } from "react";
+import MiniCart from "./MiniCart.jsx";
 
 function TicketComponent({ name, price, image, tagID, onClick }) {
     return (
@@ -16,7 +17,7 @@ function TicketComponent({ name, price, image, tagID, onClick }) {
     );
 }
 
-function TicketDescription({ ticket, isActive, isClosing, onClose }) {
+function TicketDescription({ ticket, isActive, isClosing, onClose, onTicketAdd }) {
     const { name, description, features, tagID } = ticket;
 
     useEffect(() => {
@@ -60,9 +61,11 @@ function TicketDescription({ ticket, isActive, isClosing, onClose }) {
         ticketsStorage.push(newTicket);
         handleSave();
         quantityIcon();
+
+        onTicketAdd(newTicket);
+
         onClose();
     }
-
 
     return (
         <div
@@ -95,6 +98,8 @@ function TicketDescription({ ticket, isActive, isClosing, onClose }) {
 export default function Tickets() {
     const [selectedTicketId, setSelectedTicketId] = useState(null);
     const [isClosing, setIsClosing] = useState(false);
+    const [lastAddedTicket, setLastAddedTicket] = useState(null);
+    const [showMiniCart, setShowMiniCart] = useState(false);
 
     const handleTicketClick = (tagID) => {
         setSelectedTicketId(tagID);
@@ -108,6 +113,11 @@ export default function Tickets() {
             setIsClosing(false);
         }, 400); 
     };
+
+    function handleTicketAdded(ticket) {
+        setLastAddedTicket(ticket);
+        setShowMiniCart(true);
+    }
 
     
     useEffect(() => {
@@ -148,8 +158,14 @@ export default function Tickets() {
                     isActive={!isClosing}
                     isClosing={isClosing}
                     onClose={handleClose}
+                    onTicketAdd={handleTicketAdded}
                 />
             )}
+
+             {showMiniCart && (
+                <MiniCart ticket={lastAddedTicket} onClose={() => setShowMiniCart(false)} />
+            )}
+
         </>
     );
 }
