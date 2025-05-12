@@ -2,6 +2,7 @@
   position: fixed;
   top: 4rem;
   right: 20px;
+  width: 30vw;
   background: #1345e9;
   padding: 1rem;
   border-radius: 0 0 24px 24px;
@@ -67,4 +68,39 @@
   width: 130px;
   height: auto;
   border-radius: 10px;
+}
+
+@media (max-width: 1150px) {
+  #miniCartDescription {
+    font-size: 0.85rem;
+  }
+
+  .miniCartDescriptionContainer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 790px) {
+  .miniCartContainer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #1345e9;
+    padding: 1rem;
+    border-radius: 24px 24px 0 0;
+    z-index: 999;
+    animation: fadeIn 0.3s ease-in-out;
+    width: inherit;
+    height: fit-content;
+    overflow-y: auto;
+  }
+
+  .miniCartDescriptionContainer {
+    flex-direction: row;
+  }
+
+  #miniCartDescription {
+    font-size: 1.2rem;
+  }
 }
