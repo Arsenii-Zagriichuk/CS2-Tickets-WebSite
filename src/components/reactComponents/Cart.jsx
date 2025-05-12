@@ -5,8 +5,8 @@ function Cart({ tickets, deleteTicket, addTicket }) {
   const hasItems = tickets && tickets.length > 0;
 
   const ticketsType1 = tickets.filter(ticket => ticket.name === "1 Day Ticket");
-  const ticketsType2 = tickets.filter(ticket => ticket.name === "2 Day Ticket");
-  const ticketsType3 = tickets.filter(ticket => ticket.name === "3 Day Ticket");
+  const ticketsType2 = tickets.filter(ticket => ticket.name === "3 Day Ticket");
+  const ticketsType3 = tickets.filter(ticket => ticket.name === "Fan Zone Ticket");
 
   const allTypes = [ticketsType1, ticketsType2, ticketsType3];
 
