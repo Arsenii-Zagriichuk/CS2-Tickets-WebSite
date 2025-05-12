@@ -1,28 +1,45 @@
 import { useEffect, useState } from "react";
 import "../../styles/test.css";
 
-function Cart({ tickets, func }) {
+function Cart({ tickets, deleteTicket, addTicket }) {
   const hasItems = tickets && tickets.length > 0;
+
+  const ticketsType1 = tickets.filter(ticket => ticket.name === "1 Day Ticket");
+  const ticketsType2 = tickets.filter(ticket => ticket.name === "2 Day Ticket");
+  const ticketsType3 = tickets.filter(ticket => ticket.name === "3 Day Ticket");
+
+  const allTypes = [ticketsType1, ticketsType2, ticketsType3];
 
   return (
     <div className="cartContainer">
       <div className="cartElementsContainer">
         <h1>Bag</h1>
-        {hasItems && 
-          tickets.map((ticket, index) => (
-            <CartElement key={index} ticket={ticket} />
-          ))
-        }
+        {hasItems ? (
+          allTypes.map((typeGroup, index) =>
+            typeGroup.length > 0 ? (
+              <CartElement
+                key={index}
+                ticket={typeGroup[0]}
+                quantity={typeGroup.length}
+                deleteTicket={deleteTicket}
+                addTicket={addTicket}
+              />
+            ) : null
+          )
+        ) : (
+          <p>There are no items in your bag.</p>
+        )}
       </div>
-      
-      {/* Only render PaymentSection if there are items */}
-      {hasItems && <PaymentSection tickets={tickets} />}
+
+      <PaymentSection tickets={tickets} />
     </div>
   );
 }
 
-function CartElement({ ticket }) {
+
+function CartElement({ ticket, quantity, deleteTicket, addTicket }) {
   return (
+    <>
     <div className="cartElement">
       <div className="ticketCartImage">
         <img src={ticket.src} alt={ticket.name} />
@@ -38,9 +55,19 @@ function CartElement({ ticket }) {
         </div>
       </div>
     </div>
+    <div className="quantityContainer">
+      {quantity <= 1 ? 
+          <button onClick={() => deleteTicket(ticket.name)}><i className="fa-regular fa-trash-can"></i></button>
+         : 
+          <button onClick={() => deleteTicket(ticket.name)}><i className="fa-solid fa-minus"></i></button>
+      }
+      <p>{quantity}</p>
+      <button onClick={() => addTicket(ticket)}><i className="fa-solid fa-plus"></i></button>
+    </div>
+    
+    </>
   );
 }
-
 function PaymentSection({ tickets }) {
   const [totalPrice, setTotalPrice] = useState(0);
   const taxFee = 5.00; // Fixed tax fee of $5
@@ -59,6 +86,7 @@ function PaymentSection({ tickets }) {
   
   // Function to handle checkout click
   const handleCheckout = () => {
+    if (parseFloat(totalPrice) === 0) return;
     // Store the cart data in localStorage before navigating
     localStorage.setItem("checkoutData", JSON.stringify({
       tickets: tickets,
@@ -70,6 +98,8 @@ function PaymentSection({ tickets }) {
     // Navigate to the Checkout page
     window.location.href = "/Checkout";
   };
+
+  const isDisabled = parseFloat(totalPrice) === 0;
 
   return(
     <div className="paymentSection">
@@ -86,16 +116,17 @@ function PaymentSection({ tickets }) {
         <p>Total:</p>
         <p>${finalTotal}</p>
       </div>
-      <div 
-        className="checkoutButton" 
+      <div
+        className={`checkoutButton ${!isDisabled ? '' : 'disabled'}`}
         onClick={handleCheckout}
         role="button"
-        tabIndex={0}
+        tabIndex={isDisabled ? -1 : 0}
         onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
+          if (!isDisabled && (e.key === 'Enter' || e.key === ' ')) {
             handleCheckout();
           }
         }}
+        aria-disabled={isDisabled}
       >
         Checkout
       </div>
