@@ -163,7 +163,7 @@ export default function Tickets() {
             )}
 
              {showMiniCart && (
-                <MiniCart ticket={lastAddedTicket} onClose={() => setShowMiniCart(false)} />
+                <MiniCart ticket={lastAddedTicket} onClose={() => setShowMiniCart(false) } showMiniCart = { showMiniCart } />
             )}
 
         </>
