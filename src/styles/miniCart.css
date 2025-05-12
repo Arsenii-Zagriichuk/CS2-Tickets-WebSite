@@ -106,6 +106,7 @@
     width: inherit;
     height: fit-content;
     overflow-y: auto;
+    margin-top: auto;
   }
 
   .miniCartDescriptionContainer {
