@@ -2,14 +2,14 @@ import "../../styles/miniCart.css";
 import { ticketsStorage } from "../../scripts/ticketsStorage";
 import { useEffect, useState } from "react";
 
-export default function MiniCart({ ticket, onClose }) {
+export default function MiniCart({ ticket, onClose, showMiniCart }) {
     const [tickets, setTickets] = useState([]);
     
     useEffect(() => {
-    const stored = localStorage.getItem("ticketsStorage");
-    if (stored) {
-        setTickets(JSON.parse(stored));
-    }
+        const stored = localStorage.getItem("ticketsStorage");
+        if (stored) {
+            setTickets(JSON.parse(stored));
+        }
     }, []);
 
     function redirectToCart() {
@@ -17,11 +17,11 @@ export default function MiniCart({ ticket, onClose }) {
     } 
 
     function redirectToCheckout() {
-
+        window.location.href = "/Checkout";
     }
 
     return (
-        <div className="miniCartContainer">
+        <div className={`miniCartContainer ${showMiniCart ? 'fade-in' : ''}`}>
             <div className="upperContainer">
                 <div className="checkMarkContainer">
                     <img src="/src/images/checkMark.png" alt="checkmark" id="checkmark"/>
