@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1.5rem;
+  padding: 1.5rem 0;
   background-color: rgba(19, 69, 233, 0.1);
   border-radius: 10px;
   width: 100%;
@@ -86,7 +86,6 @@
   .location-details {
     flex-direction: row;
     justify-content: space-around;
-    padding: 1.5rem;
   }
 
   .detail-item {
@@ -159,7 +158,6 @@
 
   .location-details {
     gap: 0.5rem;
-    padding: 0.5rem;
   }
 
   .detail-item {
