@@ -3,45 +3,67 @@ import "../styles/CheckOutInfo.css";
 ---
 
 <div class="checkoutInfo">
-    <div class="checkoutHeader">
-      <h1 class="mainHeading">Payment Information</h1>
-    </div>
-  
-    <form class="checkoutForm">
-      <div class="formSection">
-        <h2 class="sectionHeading">Enter your payment details</h2>
-  
-        <div class="formRow">
-          <div class="inputGroup">
-            <label for="card-number" class="inputLabel">Card Number</label>
-            <input type="text" id="card-number" name="cardNumber" class="formInput" required>
-          </div>
-        </div>
-  
-        <div class="formRow">
-          <div class="inputGroup">
-            <label for="name-on-card" class="inputLabel">Name on Card</label>
-            <input type="text" id="name-on-card" name="nameOnCard" class="formInput" required>
-          </div>
-        </div>
-  
-        <div class="formRow threeColumns">
-          <div class="inputGroup">
-            <label for="expiry-date" class="inputLabel">Expiration Date (MM/YY)</label>
-            <input type="text" id="expiry-date" name="expiryDate" class="formInput" required>
-          </div>
-  
-          <div class="inputGroup">
-            <label for="cvv" class="inputLabel">CVV</label>
-            <input type="text" id="cvv" name="cvv" class="formInput" required>
-          </div>
-        </div>
-  
-        <div class="formActions">
-          <button type="submit" class="primaryButton" id="paymentButton">Pay Now</button>
+  <div class="checkoutHeader">
+    <h1 class="mainHeading">Payment Information</h1>
+  </div>
+
+  <form class="checkoutForm">
+    <div class="formSection">
+      <h2 class="sectionHeading">Enter your payment details</h2>
+
+      <div class="formRow">
+        <div class="inputGroup">
+          <label for="card-number" class="inputLabel">Card Number</label>
+          <input
+            type="text"
+            id="card-number"
+            name="cardNumber"
+            class="formInput"
+            required
+          />
         </div>
       </div>
-    </form>
-  </div>
-  <script src="../scripts/script.js"></script>
-  
+
+      <div class="formRow">
+        <div class="inputGroup">
+          <label for="name-on-card" class="inputLabel">Name on Card</label>
+          <input
+            type="text"
+            id="name-on-card"
+            name="nameOnCard"
+            class="formInput"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="formRow threeColumns">
+        <div class="inputGroup">
+          <label for="expiry-date" class="inputLabel"
+            >Expiration Date (MM/YY)</label
+          >
+          <input
+            type="text"
+            id="expiry-date"
+            name="expiryDate"
+            class="formInput"
+            required
+          />
+        </div>
+
+        <div class="inputGroup">
+          <label for="cvv" class="inputLabel">CVV</label>
+          <input type="text" id="cvv" name="cvv" class="formInput" required />
+        </div>
+      </div>
+
+      <div class="formActions">
+        <button type="submit" class="primaryButton" id="paymentButton"
+          >Pay Now</button
+        >
+      </div>
+    </div>
+  </form>
+</div>
+<script src="../scripts/script.js"></script>
+
