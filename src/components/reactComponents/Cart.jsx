@@ -134,28 +134,74 @@ function PaymentSection({ tickets }) {
   );
 }
 
-function SuccessfulPaymenPageContent(){
+function SuccessfulPaymenPageContent() {
   const [tickets, setTickets] = useState([]);
+  const [subtotal, setSubtotal] = useState("0.00");
+  const [taxFee, setTaxFee] = useState("0.00");
+  const [total, setTotal] = useState("0.00");
 
   useEffect(() => {
-    const stored = localStorage.getItem("ticketsStorage");
+    const stored = localStorage.getItem("checkoutData");
     if (stored) {
-      setTickets(JSON.parse(stored));
+      const parsed = JSON.parse(stored);
+      setTickets(parsed.tickets || []);
+      setSubtotal(parsed.subtotal || "0.00");
+      setTaxFee(parsed.taxFee || "0.00");
+      setTotal(parsed.total || "0.00");
     }
   }, []);
 
-  return(
-    <div>
-      <div className="sucessElements"></div>
-      {tickets && tickets.length > 0 && (
-        tickets.map((ticket, index) => (
-          <CartElement key={index} ticket={ticket} />
-        ))
-      )}
+  const groupTickets = (tickets) => {
+    const grouped = {};
+    tickets.forEach(ticket => {
+      if (!grouped[ticket.name]) {
+        grouped[ticket.name] = { ...ticket, quantity: 1 };
+      } else {
+        grouped[ticket.name].quantity += 1;
+      }
+    });
+    return Object.values(grouped);
+  };
+
+  const groupedTickets = groupTickets(tickets);
+
+  return (
+    <div className="successfulPaymentContainer">
+      {/* Order Summary Section */}
+      <div className="orderSummarySection">
+        <h3>Order Summary</h3>
+        {groupedTickets.map((ticket, index) => (
+          <div key={index} className="ticketSummaryCard">
+            <div className="ticketCartImage">
+              <img src={ticket.src} alt={ticket.name} />
+            </div>
+            <div className="ticketCartDescription">
+              <p className="important">{ticket.name}</p>
+              <p className="description">{ticket.description}</p>
+              <p>Quantity: {ticket.quantity}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Payment Summary Section */}
+      <div className="paymentSummarySection">
+        <h3>Payment Summary</h3>
+        <div className="priceSummary">
+          <span>Subtotal:</span>
+          <span>${subtotal}</span>
+        </div>
+        <div className="priceSummary">
+          <span>Tax Fee:</span>
+          <span>${taxFee}</span>
+        </div>
+        <div className="priceSummary totalRow">
+          <span>Total:</span>
+          <span>${total}</span>
+        </div>
+      </div>
     </div>
   );
-};
-
-
+}
 export { SuccessfulPaymenPageContent };
 export default Cart;
