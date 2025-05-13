@@ -14,7 +14,7 @@
     font-weight: 600;
     letter-spacing: -0.025em;
 }
-  
+
 .formSection {
     padding: 2rem;
     border-radius: 8px;
@@ -27,6 +27,10 @@
 .successMessage p {
     font-size: 1.1rem;
     margin: 0.5rem 0;
+}
+
+.successMessage .confirmationMessage{
+  margin-bottom: 1.5rem
 }
   
   .successIcon {
@@ -45,6 +49,58 @@
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+  }
+  .successfulPaymentContainer {
+    margin-top: 2rem;
+  }
+  
+  .orderSummarySection,
+  .paymentSummarySection {
+    background-color: #0a0a2a;
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+  }
+  
+  .ticketSummaryCard {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #444;
+    padding-bottom: 1rem;
+  }
+  
+  
+  .ticketCartImage img {
+    width: 8rem;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .ticketCartDescription {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center text inside */
+    margin-top: 0.25rem;
+    padding-right: 9rem;
+  }
+  
+  
+  
+  .priceSummary {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+  }
+  
+  .totalRow {
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-top: 1px solid #555;
+    padding-top: 1rem;
   }
   
   .primaryButton {
