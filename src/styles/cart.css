@@ -210,3 +210,12 @@ footer {
 button {
   all: unset;
 }
+
+.quantityNumberContainer {
+  display: flex;
+}
+
+.quantityNumberContainer p {
+  font-weight: bold;
+  margin-bottom: 2rem;
+}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../../styles/test.css";
+import "../../styles/cart.css";
 
 function Cart({ tickets, deleteTicket, addTicket }) {
   const hasItems = tickets && tickets.length > 0;
@@ -13,7 +13,7 @@ function Cart({ tickets, deleteTicket, addTicket }) {
   return (
     <div className="cartContainer">
       <div className="cartElementsContainer">
-        <h1>Bag</h1>
+        <h1>Basket</h1>
         {hasItems ? (
           allTypes.map((typeGroup, index) =>
             typeGroup.length > 0 ? (
@@ -23,6 +23,7 @@ function Cart({ tickets, deleteTicket, addTicket }) {
                 quantity={typeGroup.length}
                 deleteTicket={deleteTicket}
                 addTicket={addTicket}
+                showQuantity={true}
               />
             ) : null
           )
@@ -37,7 +38,7 @@ function Cart({ tickets, deleteTicket, addTicket }) {
 }
 
 
-function CartElement({ ticket, quantity, deleteTicket, addTicket }) {
+function CartElement({ ticket, quantity, deleteTicket, addTicket, showQuantity }) {
   return (
     <>
     <div className="cartElement">
@@ -55,15 +56,23 @@ function CartElement({ ticket, quantity, deleteTicket, addTicket }) {
         </div>
       </div>
     </div>
-    <div className="quantityContainer">
-      {quantity <= 1 ? 
-          <button onClick={() => deleteTicket(ticket.name)}><i className="fa-regular fa-trash-can"></i></button>
-         : 
-          <button onClick={() => deleteTicket(ticket.name)}><i className="fa-solid fa-minus"></i></button>
-      }
-      <p>{quantity}</p>
-      <button onClick={() => addTicket(ticket)}><i className="fa-solid fa-plus"></i></button>
-    </div>
+    { showQuantity &&
+        <div className="quantityContainer">
+          {quantity <= 1 ? 
+              <button onClick={() => deleteTicket(ticket.name)}><i className="fa-regular fa-trash-can"></i></button>
+            : 
+              <button onClick={() => deleteTicket(ticket.name)}><i className="fa-solid fa-minus"></i></button>
+          }
+          <p>{quantity}</p>
+          <button onClick={() => addTicket(ticket)}><i className="fa-solid fa-plus"></i></button>
+        </div>
+    }
+
+    { !showQuantity && 
+      <div className="quantityNumberContainer">
+        <p>Quantity: {quantity}</p>
+      </div>
+    }
     
     </>
   );
@@ -137,6 +146,12 @@ function PaymentSection({ tickets }) {
 function SuccessfulPaymenPageContent(){
   const [tickets, setTickets] = useState([]);
 
+  const ticketsType1 = tickets.filter(ticket => ticket.name === "1 Day Ticket");
+  const ticketsType2 = tickets.filter(ticket => ticket.name === "3 Day Ticket");
+  const ticketsType3 = tickets.filter(ticket => ticket.name === "Fan Zone Ticket");
+
+  const allTypes = [ticketsType1, ticketsType2, ticketsType3];
+
   useEffect(() => {
     const stored = localStorage.getItem("ticketsStorage");
     if (stored) {
@@ -147,11 +162,20 @@ function SuccessfulPaymenPageContent(){
   return(
     <div>
       <div className="sucessElements"></div>
-      {tickets && tickets.length > 0 && (
-        tickets.map((ticket, index) => (
-          <CartElement key={index} ticket={ticket} />
-        ))
-      )}
+      {
+          allTypes.map((typeGroup, index) =>
+            typeGroup.length > 0 ? (
+              <CartElement
+                key={index}
+                ticket={typeGroup[0]}
+                quantity={typeGroup.length}
+                deleteTicket={null}
+                addTicket={null}
+                showQuantity={false}
+              />
+            ) : null
+          )
+        }
     </div>
   );
 };
