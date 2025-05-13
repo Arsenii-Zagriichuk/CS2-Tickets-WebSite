@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import fazeWithTrophy from "/src/images/fazeWithTrophy.jpg";
+import liquidGrandSlam from "/src/images/liquidGrandSlam.jpg";
+import vitalityProLeague from "/src/images/vitalityProLeague.avif";
+import getRightCrying from "/src/images/getRightCrying.jpg";   
+import ropsAndZywho from "/src/images/ropsAndZywho.avif";
+import serral from "/src/images/serral.jpg";
+import simple from "/src/images/simple.jpg";
+import im from "/src/images/im.jpg";
+import device from "/src/images/device.avif"
+import naviWinCologne from "/src/images/naviWinCologne.jpg";
+import "/src/styles/gallery.css";
+
+const images = [
+  { src: fazeWithTrophy, alt: "faze with trophy", caption: "Faze Clan celebrating their championship victory" },
+  { src: liquidGrandSlam, alt: "liquid grand slam", caption: "Team Liquid achieving the Intel Grand Slam" },
+  { src: vitalityProLeague, alt: "vitality pro league", caption: "Team Vitality at the Pro League Finals" },
+  { src: getRightCrying, alt: "get right crying", caption: "GeT_RiGhT's emotional farewell to competitive play" },
+  { src: ropsAndZywho, alt: "rops and zywho", caption: "ropz and ZywOo - two of CS:GO's brightest stars" },
+  { src: serral, alt: "serral", caption: "Serral - the Finnish StarCraft II phenomenon" },
+  { src: simple, alt: "simple", caption: "s1mple - widely regarded as the best CS:GO player" },
+  { src: im, alt: "im", caption: "IM - first romanian to win a MVP" },
+  { src: device, alt: "device", caption: "device - the Danish AWP legend" },
+  { src: naviWinCologne, alt: "navi win cologne", caption: "Natus Vincere winning the IEM Cologne 2018" }
+];
+---
+
+<div class="galleryContainer">
+  <h1 class="galleryHeading">Esports Moments Gallery</h1>
+  
+  <div class="galleryGrid">
+    {images.map((image, index) => (
+      <div class="galleryItem" data-index={index}>
+        <Image src={image.src} alt={image.alt} class="galleryImage" />
+        <div class="imageCaption">{image.caption}</div>
+      </div>
+    ))}
+  </div>
+  
+  <div class="galleryModal">
+    <div class="modalContent">
+      <button class="closeModal">&times;</button>
+      <img src="" alt="" class="modalImage" />
+      <div class="modalCaption"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const galleryItems = document.querySelectorAll('.galleryItem');
+    const modal = document.querySelector('.galleryModal');
+    const modalImage = document.querySelector('.modalImage');
+    const modalCaption = document.querySelector('.modalCaption');
+    const closeButton = document.querySelector('.closeModal');
+    
+    // Open modal when clicking on an image
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const index = parseInt(item.getAttribute('data-index'));
+        const img = item.querySelector('img');
+        const caption = item.querySelector('.imageCaption').textContent;
+        
+        if (modalImage) {
+          modalImage.src = img.src;
+          modalImage.alt = img.alt;
+        }
+        
+        if (modalCaption) {
+          modalCaption.textContent = caption;
+        }
+        
+        modal?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    
+    // Close modal when clicking the close button
+    closeButton?.addEventListener('click', () => {
+      modal?.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+    
+    // Close modal when clicking outside the image
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal?.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+</script>
