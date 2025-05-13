@@ -83,7 +83,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center text inside */
+    justify-content: center; 
     margin-top: 0.25rem;
     padding-right: 9rem;
   }
@@ -130,4 +130,69 @@
   .primaryButton:active {
     background-color: #2b6cb0;
   }
+  @media (min-width: 600px) {
+    .ticketCartImage img {
+      width: 10rem;
+    }
+  
+    .ticketCartDescription {
+      padding:0;
+      width: 100%;
+      text-align: left;
+    }
+  
+    .mainHeading {
+      font-size: 2.75rem;
+    }
+  
+    .sectionHeading {
+      font-size: 1.75rem;
+    }
+
+    .formSection {
+      padding: 1rem;
+      margin-right: 1rem;
+    }  
+    .primaryButton {
+      font-size: 1.1rem;
+      padding: 1rem 2.5rem;
+    }
+  
+    .priceSummary {
+      font-size: 1.05rem;
+    }
+  }
+  
+  /* Adjustments for desktops and larger screens */
+  @media (min-width: 900px) {
+    .checkoutInfo {
+      max-width: 1000px;
+      padding: 0 2rem;
+    }
+    .formSection {
+      padding: 3rem;
+    }
+  
+    .ticketSummaryCard {
+      gap: 1.25rem;
+    }
+  
+    .ticketCartDescription {
+      width: 100%;
+      padding:0;
+      text-align: left;
+      margin-top: 1rem;
+    }
+  
+    .priceSummary {
+      font-size: 1.1rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .primaryButton {
+      font-size: 1.2rem;
+      padding: 1.2rem 3rem;
+    }
+  }
+  
   
