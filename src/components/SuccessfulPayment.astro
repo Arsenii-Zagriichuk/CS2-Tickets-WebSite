@@ -8,14 +8,15 @@ import { SuccessfulPaymenPageContent } from "./reactComponents/Cart.jsx";
     <h1 class="mainHeading">Payment Successful</h1>
   </div>
 
-    <div class="formSection successMessage">
-      <h2 class="sectionHeading">Thank you for your payment!</h2>
-      <p>Your transaction has been processed successfully.</p>
-      <p class="confirmationMessage ">You will receive a confirmation email shortly.</p>
-      <SuccessfulPaymenPageContent client:load />
-      <div class="formActions">
-        <a href="/" class="primaryButton">Return to Home</a>
-      </div>
+  <div class="formSection successMessage">
+    <h2 class="sectionHeading">Thank you for your payment!</h2>
+    <p>Your transaction has been processed successfully.</p>
+    <p class="confirmationMessage">
+      You will receive a confirmation email shortly.
+    </p>
+    <SuccessfulPaymenPageContent client:load />
+    <div class="formActions">
+      <a href="/" class="primaryButton" id="returnToHome">Return to Home</a>
     </div>
   </div>
 </div>
