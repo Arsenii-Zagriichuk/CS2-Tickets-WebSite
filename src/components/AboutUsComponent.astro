@@ -1,16 +1,51 @@
 ---
-import '../styles/aboutUs.css'
-import { Image } from 'astro:assets';
-import creators from '../images/authorsPhoto.jpg';
+import "../styles/aboutUs.css";
+import { Image } from "astro:assets";
+import creators from "../images/authorsPhoto.jpg";
 ---
 
-<div class="content">
+<div class="aboutUsContainer">
+  <h1>About Us</h1>
+  <div class="content">
     <div class="aboutUsText">
-        <p>Hi, my name is Arsen, and I am from Ukraine. My hobbies are going to the gym and watching football. I find going to the gym a great way to relieve stress and stay healthy, and I'm a big fan of the tactical side of football – I love analyzing different strategies and watching my favorite teams play. I chose to study computer science because I was interested in technologies from a very young age. I've always been fascinated by how things work, especially when it comes to computers and software. Moreover, when I was about 13 years old, I read a book about Python and I really liked it. It was my first real introduction to programming, and I found the logic and problem-solving aspects of it incredibly engaging. At that moment, I decided that I would be studying computing science in the future as well. The book opened up a whole new world for me, and I started experimenting with coding in my spare time.</p>
-        <p>Hi, my name is Maksym(the guy on the right side of the photo) and I am from Ukraine.Generally my hobbies are going to gym and watching diffrent types of sports, especially football and cybersport.I have started coding since i attented the college and during whole this year, I felt a huge improvement in my personal knowledge and coding skills. For me personally this project became a major part of Client Side Web Development course, and I am really glad that I have had an opportunity to work on it. I wish everyone who will visit our website a good time and hope you will enjoy our work!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatibus laboriosam sit, exercitationem cum architecto nulla numquam soluta ad beatae aut. Amet, molestias eligendi. Ea molestias natus beatae dolores accusamus.</p>
+      <p>
+        Hi, my name is Arsen, and I am from Ukraine. My hobbies are going to the
+        gym and watching football. I find going to the gym a great way to
+        relieve stress and stay healthy, and I'm a big fan of the tactical side
+        of football – I love analyzing different strategies and watching my
+        favorite teams play. I chose to study computer science because I was
+        interested in technologies from a very young age. I've always been
+        fascinated by how things work, especially when it comes to computers and
+        software. Moreover, when I was about 13 years old, I read a book about
+        Python and I really liked it. It was my first real introduction to
+        programming, and I found the logic and problem-solving aspects of it
+        incredibly engaging. At that moment, I decided that I would be studying
+        computing science in the future as well. The book opened up a whole new
+        world for me, and I started experimenting with coding in my spare time.
+      </p>
+      <p>
+        Hi, my name is Maksym(the guy on the right side of the photo) and I am
+        from Ukraine.Generally my hobbies are going to gym and watching diffrent
+        types of sports, especially football and cybersport.I have started
+        coding since i attented the college and during whole this year, I felt a
+        huge improvement in my personal knowledge and coding skills. For me
+        personally this project became a major part of Client Side Web
+        Development course, and I am really glad that I have had an opportunity
+        to work on it. I wish everyone who will visit our website a good time
+        and hope you will enjoy our work!
+      </p>
+      <p>
+        I’m Ihor, and I am 17 years old. Lviv, a city in the western part of
+        Ukraine, is my home. I have been playing football since I was 5, but due
+        to medical issues, I was forced to stop. However, I’ve been interested
+        in coding since I was a child because my parents told me it was one of
+        the best fields to pursue. I really enjoy programming, and I’m convinced
+        that studying Computer Science will broaden my understanding of how
+        computers work. I wish all of you a great academic year!
+      </p>
     </div>
     <div class="AboutUsPhoto">
-        <Image src={creators} alt= "photo of creators"></Image>
+      <Image src={creators} alt="photo of creators" />
     </div>
+  </div>
 </div>
