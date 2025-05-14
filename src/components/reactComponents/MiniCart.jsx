@@ -1,23 +1,20 @@
 import "../../styles/miniCart.css";
-import { ticketsStorage } from "../../scripts/ticketsStorage";
+import { handleCheckout } from "../../scripts/handleCheckout";
 import { useEffect, useState } from "react";
 
-export default function MiniCart({ ticket, onClose, showMiniCart }) {
-    const [tickets, setTickets] = useState([]);
-    
-    useEffect(() => {
-        const stored = localStorage.getItem("ticketsStorage");
-        if (stored) {
-            setTickets(JSON.parse(stored));
-        }
-    }, []);
+export default function MiniCart({ tickets, ticket, onClose, showMiniCart }) {
 
     function redirectToCart() {
         window.location.href = "/CartPage";
     } 
 
     function redirectToCheckout() {
-        window.location.href = "/Checkout";
+        console.log(tickets)
+
+        if (tickets.length === 0) return;
+
+        const subtotal = tickets.reduce((acc, ticket) => acc + parseFloat(ticket.price), 0).toFixed(2);
+        handleCheckout(tickets, subtotal);
     }
 
     return (
