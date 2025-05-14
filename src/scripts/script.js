@@ -22,17 +22,14 @@ document.addEventListener("keydown", function (event) {
 
 
 
-// Constants
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const postcodeRegex = /^[A-Za-z0-9]+$/;
-const addressRegex = /^[A-Za-z0-9\s,]+$/; // Updated to include commas
+const addressRegex = /^[A-Za-z0-9\s,]+$/;
 const cityRegex = /^[A-Za-z\s]+$/;
 const nameRegex = /^[A-Za-z\s]+$/;
 const countryRegex = /^[A-Za-z\s]+$/;
 
-// Wait for DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function() {
-  // Form elements - get them after DOM is loaded
   const emailInput = document.getElementById("email");
   const cityInput = document.getElementById("city");
   const postcodeInput = document.getElementById("postalCode");
@@ -41,25 +38,20 @@ document.addEventListener("DOMContentLoaded", function() {
   const lastNameInput = document.getElementById("lastName");
   const countryInput = document.getElementById("country");
   
-  // Add error message display
   function showError(input, message) {
-    // Remove any existing error message
     const existingError = input.parentElement.querySelector('.error-message');
     if (existingError) {
       existingError.remove();
     }
     
-    // Add error class to input
     input.classList.add('input-error');
     
-    // Create and append error message
     const errorDiv = document.createElement('div');
     errorDiv.className = 'error-message';
     errorDiv.textContent = message;
     input.parentElement.appendChild(errorDiv);
   }
   
-  // Remove error styling and message
   function clearError(input) {
     input.classList.remove('input-error');
     const existingError = input.parentElement.querySelector('.error-message');
@@ -68,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   
-  // Add input event listeners to clear errors when user types
   const allInputs = [emailInput, cityInput, postcodeInput, addressInput, 
                     firstNameInput, lastNameInput, countryInput];
   
@@ -77,8 +68,17 @@ document.addEventListener("DOMContentLoaded", function() {
       input.addEventListener('input', function() {
         clearError(input);
       });
+      
+      input.addEventListener('invalid', function(e) {
+        e.preventDefault();
+      });
     }
   });
+  
+  const checkoutForm = document.querySelector(".checkoutForm");
+  if (checkoutForm) {
+    checkoutForm.setAttribute("novalidate", "");
+  }
   
   function emailValidation() {
     if (!emailInput) return false;
@@ -133,7 +133,6 @@ document.addEventListener("DOMContentLoaded", function() {
   function nameValidation() {
     let isValid = true;
     
-    // Check first name
     if (firstNameInput) {
       const firstName = firstNameInput.value;
       if (!nameRegex.test(firstName) || firstName === "") {
@@ -144,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function() {
       isValid = false;
     }
     
-    // Check last name
     if (lastNameInput) {
       const lastName = lastNameInput.value;
       if (!nameRegex.test(lastName) || lastName === "") {
@@ -171,11 +169,8 @@ document.addEventListener("DOMContentLoaded", function() {
   
   function proceedToPayment() {
     if (checkoutDataValidation()) {
-      
-      // Redirect to payment page or next step
       window.location.href = "/Payment";
     } else {
-      // Clear invalid fields
       allInputs.forEach(input => {
         if (input && input.classList.contains('input-error')) {
           input.value = "";
@@ -184,7 +179,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   
-  // Add event listener to the button
   const button = document.getElementById("proceedToPayment");
   
   if (button) {
@@ -196,39 +190,31 @@ document.addEventListener("DOMContentLoaded", function() {
 }); // End of DOMContentLoaded event listener
 
 
-// Payment form validation
 document.addEventListener("DOMContentLoaded", function() {
-  // Payment form elements
   const cardNumberInput = document.getElementById("card-number");
   const cardDateInput = document.getElementById("expiry-date");
   const cardCVCInput = document.getElementById("cvv");
   const nameOnCardInput = document.getElementById("name-on-card");
   
-  // Payment validation regex patterns
-  const cardNumberRegex = /^[0-9]{16}$/;
-  const cardDateRegex = /^(0[1-9]|1[0-2])\/([0-9]{2})$/;
-  const cardCVCRegex = /^[0-9]{3}$/;
-  const nameOnCardRegex = /^[A-Za-z\s]+$/;
+  const paymentForm = document.querySelector(".checkoutForm");
+  if (paymentForm) {
+    paymentForm.setAttribute("novalidate", "");
+  }
   
-  // Add error message display for payment fields
   function showPaymentError(input, message) {
-    // Remove any existing error message
     const existingError = input.parentElement.querySelector('.error-message');
     if (existingError) {
       existingError.remove();
     }
     
-    // Add error class to input
     input.classList.add('input-error');
     
-    // Create and append error message
     const errorDiv = document.createElement('div');
     errorDiv.className = 'error-message';
     errorDiv.textContent = message;
     input.parentElement.appendChild(errorDiv);
   }
   
-  // Remove error styling and message
   function clearPaymentError(input) {
     input.classList.remove('input-error');
     const existingError = input.parentElement.querySelector('.error-message');
@@ -237,13 +223,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   
-  // Add input event listeners to clear errors when user types
   const allPaymentInputs = [cardNumberInput, cardDateInput, cardCVCInput, nameOnCardInput];
   
   allPaymentInputs.forEach(input => {
     if (input) {
       input.addEventListener('input', function() {
         clearPaymentError(input);
+      });
+      
+      input.addEventListener('invalid', function(e) {
+        e.preventDefault();
       });
     }
   });
@@ -299,20 +288,16 @@ document.addEventListener("DOMContentLoaded", function() {
   
   function processPayment() {
     if (paymentFormValidation()) {
-      
-      // Clear form
       allPaymentInputs.forEach(input => {
         if (input) {
           input.value = "";
         }
       });
       
-      // Redirect to comments page
       setTimeout(() => {
         window.location.href = "/CommentsPage";
       }, 1500);
     } else {
-      // Clear invalid fields
       allPaymentInputs.forEach(input => {
         if (input && input.classList.contains('input-error')) {
           input.value = "";
@@ -321,7 +306,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   
-  // Add event listener to the payment button
   const paymentButton = document.getElementById("paymentButton");
 
   if (paymentButton) {
@@ -330,7 +314,7 @@ document.addEventListener("DOMContentLoaded", function() {
       processPayment();
     });
   }
-});
+}); // End of DOMContentLoaded event listener
 
 
 function commentValidation(){

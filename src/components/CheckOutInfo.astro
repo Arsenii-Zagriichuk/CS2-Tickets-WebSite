@@ -6,7 +6,7 @@ import '../styles/CheckOutInfo.css';
     <div class="checkoutHeader">
         <h1 class="mainHeading">Checkout</h1>
     </div>
-    <div class="checkoutForm">
+    <div class="checkoutForm" novalidate>
         <div class="formSection">
             <h2 class="sectionHeading">Delivery Information</h2>
             <div class="formRow">
@@ -24,36 +24,35 @@ import '../styles/CheckOutInfo.css';
                 </div>
                 <div class="inputGroup">
                     <label for="lastName" class="inputLabel">Last Name</label>
-                    <input type="text" id="lastName" class="formInput" class="name" 
+                    <input type="text" id="lastName" class="formInput" class="name"
                         required autocomplete="family-name">
                 </div>
-            </div> 
-
+            </div>
             <div class="formRow">
                 <div class="inputGroup">
-                    <label for="address" class="inputLabel">Street Address</label>
-                    <input type="text" id="address" class="formInput" 
+                    <label for="address" class="inputLabel">Address</label>
+                    <input type="text" id="address" class="formInput"
                         required autocomplete="street-address">
                 </div>
-            </div> 
-
+            </div>
             <div class="formRow threeColumns">
                 <div class="inputGroup">
-                    <label for="country" class="inputLabel">Country</label>
-                    <input type="text" id="country" class="formInput" required autocomplete="country" placeholder="Enter your country">
-                </div>
-                <div class="inputGroup">
                     <label for="city" class="inputLabel">City</label>
-                    <input type="text" id="city" class="formInput" 
+                    <input type="text" id="city" class="formInput"
                         required autocomplete="address-level2">
                 </div>
                 <div class="inputGroup">
                     <label for="postalCode" class="inputLabel">Postal Code</label>
-                    <input type="text" id="postalCode" class="formInput" 
+                    <input type="text" id="postalCode" class="formInput"
                         required autocomplete="postal-code">
                 </div>
-            </div> 
-        </div> 
+                <div class="inputGroup">
+                    <label for="country" class="inputLabel">Country</label>
+                    <input type="text" id="country" class="formInput"
+                        required autocomplete="country-name">
+                </div>
+            </div>
+        </div>
 
         <div class="formActions">
             <button type="button" class="primaryButton" id="proceedToPayment">
