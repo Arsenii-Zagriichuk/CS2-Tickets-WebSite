@@ -1,6 +1,6 @@
 import "../../styles/miniCart.css";
 import { handleCheckout } from "../../scripts/handleCheckout";
-import { useEffect, useState } from "react";
+import checkMark from "../../images/checkMark.png";
 
 export default function MiniCart({ tickets, ticket, onClose, showMiniCart }) {
 
@@ -21,7 +21,7 @@ export default function MiniCart({ tickets, ticket, onClose, showMiniCart }) {
         <div className={`miniCartContainer ${showMiniCart ? 'fade-in' : ''}`}>
             <div className="upperContainer">
                 <div className="checkMarkContainer">
-                    <img src="/src/images/checkMark.png" alt="checkmark" id="checkmark"/>
+                    <img src={checkMark.src} alt="checkmark" id="checkmark"/>
                     <p>Added to Bag</p>
                 </div>
                 <button className="closeBtn" onClick={onClose}>×</button>

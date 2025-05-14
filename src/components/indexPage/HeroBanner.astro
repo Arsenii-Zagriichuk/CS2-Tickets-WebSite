@@ -1,13 +1,14 @@
 ---
 import "/src/styles/heroBanner.css";
 import { Image } from "astro:assets";
-import bigLogo from "/src/images/bigLogo.png";
-import downArrow from "/src/images/downArrow.png";
+import bigLogo from "../../images/bigLogo.png";
+import downArrow from "../../images/downArrow.png";
+import backgroundVideo from "../../images/bigVideo.mp4"
 ---
 
 <section class="heroBanner">
   <video autoplay loop muted plays-inline class="backVideo">
-    <source src="/src/images/bigVideo.mp4" type="video/mp4" />
+    <source src={backgroundVideo} type="video/mp4" />
   </video>
 
   <div class="heroContent">

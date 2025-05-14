@@ -1,3 +1,8 @@
+// Import the images properly
+import ticket1Image from '../images/ticket_image1.jpg';
+import ticket2Image from '../images/ticket_image2.jpg';
+import ticket3Image from '../images/ticket_image3.jpg';
+
 export class Ticket {
   constructor(name, price, description, src) {
     this.name = name;
@@ -16,7 +21,7 @@ export const ticketsInformation = [
     tagID: "ticket1",
     price: 65.99,
     description: "This is a one-day access pass to all events.",
-    image: "/src/images/ticket_image1.jpg",
+    image: ticket1Image, // Use the imported image
     features: [
       {
         title: "Seating in the Upper Ring",
@@ -41,7 +46,7 @@ export const ticketsInformation = [
     tagID: "ticket2",
     price: 109.99,
     description: "Three full days of access to the entire tournament.",
-    image: "/src/images/ticket_image2.jpg",
+    image: ticket2Image, // Use the imported image
     features: [
       {
         title: "Seating in the Infield",
@@ -66,7 +71,7 @@ export const ticketsInformation = [
     tagID: "ticket3",
     price: 309.99,
     description: "Fan Zone ticket is premium ticket to the entire tournament",
-    image: "/src/images/ticket_image3.jpg",
+    image: ticket3Image, // Use the imported image
     features: [
       {
         title: "Free Beverages",

@@ -8,7 +8,7 @@ function TicketComponent({ name, price, image, tagID, onClick }) {
     return (
         <div className="ticketImage" onClick={() => onClick(tagID)}>
             <div className="ticketWrapper">
-                <img src={image} alt={name} />
+                <img src={image.src} alt={name} />
                 <div className="moreInfo">More Info</div>
             </div>
             <p className="ticketName">{name}</p>
@@ -57,7 +57,7 @@ function TicketDescription({ ticket, isActive, isClosing, onClose, onTicketAdd }
         const savedTickets = JSON.parse(localStorage.getItem("ticketsStorage")) || [];
         ticketsStorage.length = 0;
         ticketsStorage.push(...savedTickets);
-        const newTicket = new Ticket(ticket.name, ticket.price, ticket.description, ticket.image);
+        const newTicket = new Ticket(ticket.name, ticket.price, ticket.description, ticket.image.src);
         ticketsStorage.push(newTicket);
         handleSave();
         quantityIcon();
