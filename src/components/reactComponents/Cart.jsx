@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../../styles/cart.css";
+import { handleCheckout } from "../../scripts/handleCheckout";
 
 function Cart({ tickets, deleteTicket, addTicket }) {
   const hasItems = tickets && tickets.length > 0;
@@ -80,6 +81,7 @@ function CartElement({ ticket, quantity, deleteTicket, addTicket, showQuantity }
 function PaymentSection({ tickets }) {
   const [totalPrice, setTotalPrice] = useState(0);
   const taxFee = 5.00; // Fixed tax fee of $5
+
   
   useEffect(() => {
     if (tickets && tickets.length > 0) {
@@ -90,23 +92,12 @@ function PaymentSection({ tickets }) {
     }
   }, [tickets]);
 
+  function onCheckout(){
+    handleCheckout(tickets, totalPrice, taxFee);
+  };
+
   // Calculate final total with tax
   const finalTotal = (parseFloat(totalPrice) + taxFee).toFixed(2);
-  
-  // Function to handle checkout click
-  const handleCheckout = () => {
-    if (parseFloat(totalPrice) === 0) return;
-    // Store the cart data in localStorage before navigating
-    localStorage.setItem("checkoutData", JSON.stringify({
-      tickets: tickets,
-      subtotal: totalPrice,
-      taxFee: taxFee.toFixed(2),
-      total: finalTotal
-    }));
-    
-    // Navigate to the Checkout page
-    window.location.href = "/Checkout";
-  };
 
   const isDisabled = parseFloat(totalPrice) === 0;
 
@@ -127,14 +118,9 @@ function PaymentSection({ tickets }) {
       </div>
       <div
         className={`checkoutButton ${!isDisabled ? '' : 'disabled'}`}
-        onClick={handleCheckout}
+        onClick={onCheckout}
         role="button"
         tabIndex={isDisabled ? -1 : 0}
-        onKeyDown={(e) => {
-          if (!isDisabled && (e.key === 'Enter' || e.key === ' ')) {
-            handleCheckout();
-          }
-        }}
         aria-disabled={isDisabled}
       >
         Checkout

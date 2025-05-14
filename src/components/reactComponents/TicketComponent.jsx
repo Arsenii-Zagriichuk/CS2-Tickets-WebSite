@@ -96,6 +96,8 @@ function TicketDescription({ ticket, isActive, isClosing, onClose, onTicketAdd }
 }
 
 export default function Tickets() {
+    const [tickets, setTickets] = useState([]);
+    
     const [selectedTicketId, setSelectedTicketId] = useState(null);
     const [isClosing, setIsClosing] = useState(false);
     const [lastAddedTicket, setLastAddedTicket] = useState(null);
@@ -116,21 +118,26 @@ export default function Tickets() {
 
     function handleTicketAdded(ticket) {
         setLastAddedTicket(ticket);
+        setTickets(prev => [...prev, ticket]);
         setShowMiniCart(true);
     }
+
 
     
     useEffect(() => {
         
-        const cleanup = () => {
+        function cleanup() {
             document.querySelectorAll(".ticketDescription").forEach(popup => {
-               
                 popup.classList.remove("inactive", "closing");
             });
         };
-        
         cleanup();
-        return cleanup;
+
+        const stored = localStorage.getItem("ticketsStorage");
+        if (stored) {
+            console.log(JSON.parse(stored));
+            setTickets(JSON.parse(stored));
+        }
     }, []);
 
     const selectedTicket = ticketsInformation.find(
@@ -163,7 +170,7 @@ export default function Tickets() {
             )}
 
              {showMiniCart && (
-                <MiniCart ticket={lastAddedTicket} onClose={() => setShowMiniCart(false) } showMiniCart = { showMiniCart } />
+                <MiniCart tickets={tickets} ticket={lastAddedTicket} onClose={() => setShowMiniCart(false) } showMiniCart = { showMiniCart } />
             )}
 
         </>
