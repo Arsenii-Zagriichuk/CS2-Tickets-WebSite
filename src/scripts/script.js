@@ -195,6 +195,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const cardDateInput = document.getElementById("expiry-date");
   const cardCVCInput = document.getElementById("cvv");
   const nameOnCardInput = document.getElementById("name-on-card");
+
+  const cardNumberRegex = /^\d{16}$/;
+  const cardDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+  const cardCVCRegex = /^\d{3}$/;
+  const nameOnCardRegex = /^[A-Za-z\s]+$/;
+
+
   
   const paymentForm = document.querySelector(".checkoutForm");
   if (paymentForm) {
@@ -310,37 +317,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   if (paymentButton) {
     paymentButton.addEventListener("click", function(event) {
+      console.log("Payment button clicked");
       event.preventDefault();
       processPayment();
     });
   }
-}); // End of DOMContentLoaded event listener
-
-
-function commentValidation(){
-  const comment = commentInput.value;
-  if(comment === "" || comment.length < 10){
-    alert("Please enter a comment");
-    return false;
-  }
-  return true;
-}
-
-function finishComment(){
-  if(commentValidation()){
-    alert("Comment sent");
-    commentInput.value = "";
-  }else{
-    commentInput.value = "";
-    alert("Please enter a comment");
-  }
-}
-
-const commentButton = document.getElementById("commentButton");
-commentButton.addEventListener("click", function (event) {
-  event.preventDefault();
-  finishComment();
-});
-
-
-
+}); 
