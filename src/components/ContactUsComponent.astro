@@ -20,41 +20,152 @@ import "../styles/contactUs.css";
       </ul>
     </div>
     <div class="userInfo">
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+      <form id="contactForm" novalidate>
+        <label for="firstName">Name:</label>
+        <input type="text" id="firstName" name="name" required />
+        <div class="error-container"></div>
 
-        <label for="surname">Surname:</label>
-        <input type="text" id="surname" name="surname" required />
+        <label for="lastName">Surname:</label>
+        <input type="text" id="lastName" name="surname" required />
+        <div class="error-container"></div>
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required />
+        <div class="error-container"></div>
 
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="5" required></textarea>
+        <div class="error-container"></div>
 
-        <button type="submit">Send Message</button>
+        <button type="submit" id="submitContact">Send Message</button>
 
         <div id="confirmationMessage" class="confirmation-message" style="display: none;">
             <p>Your message has been sent successfully. We will get back to you soon!</p>
         </div>
-        
       </form>
     </div>
   </div>
 </div>
 
-<script is:inline>
-    const form = document.querySelector('form');
-    const confirmationMessage = document.getElementById('confirmationMessage');
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("contactForm");
+    const firstNameInput = document.getElementById("firstName");
+    const lastNameInput = document.getElementById("lastName");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+    const confirmationMessage = document.getElementById("confirmationMessage");
     
-    form.addEventListener('submit', function(event) {
-      event.preventDefault(); 
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    function showError(input, message) {
+      const errorContainer = input.nextElementSibling;
+      errorContainer.innerHTML = '';
       
-      confirmationMessage.style.display = 'block';
+      input.classList.add('input-error');
       
-      form.reset();
-      
+      const errorDiv = document.createElement('div');
+      errorDiv.className = 'error-message';
+      errorDiv.textContent = message;
+      errorContainer.appendChild(errorDiv);
+    }
+    
+    function clearError(input) {
+      input.classList.remove('input-error');
+      const errorContainer = input.nextElementSibling;
+      errorContainer.innerHTML = '';
+    }
+    
+    const allInputs = [firstNameInput, lastNameInput, emailInput, messageInput];
+    
+    allInputs.forEach(input => {
+      if (input) {
+        input.addEventListener('input', function() {
+          clearError(input);
+        });
+        
+        input.addEventListener('invalid', function(e) {
+          e.preventDefault();
+        });
+      }
     });
-  </script>
+    
+    function nameValidation() {
+      let isValid = true;
+      
+      if (firstNameInput) {
+        const firstName = firstNameInput.value;
+        if (!nameRegex.test(firstName) || firstName === "") {
+          showError(firstNameInput, "Please enter a valid first name");
+          isValid = false;
+        }
+      } else {
+        isValid = false;
+      }
+      
+      if (lastNameInput) {
+        const lastName = lastNameInput.value;
+        if (!nameRegex.test(lastName) || lastName === "") {
+          showError(lastNameInput, "Please enter a valid last name");
+          isValid = false;
+        }
+      } else {
+        isValid = false;
+      }
+      
+      return isValid;
+    }
+    
+    function emailValidation() {
+      if (!emailInput) return false;
+      const email = emailInput.value;
+      if (!emailRegex.test(email) || email === "") {
+        showError(emailInput, "Please enter a valid email address");
+        return false;
+      }
+      return true;
+    }
+    
+    function messageValidation() {
+      if (!messageInput) return false;
+      const message = messageInput.value;
+      if (message === "" || message.length < 10) {
+        showError(messageInput, "Please enter a message (minimum 10 characters)");
+        return false;
+      }
+      return true;
+    }
+    
+    function validateContactForm() {
+      const namesValid = nameValidation();
+      const emailValid = emailValidation();
+      const messageValid = messageValidation();
+      
+      return namesValid && emailValid && messageValid;
+    }
+    
+    if (form) {
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        if (validateContactForm()) {
+          confirmationMessage.style.display = 'block';
+          
+          form.reset();
+          
+          setTimeout(() => {
+            confirmationMessage.style.display = 'none';
+          }, 5000);
+        } else {
+          allInputs.forEach(input => {
+            if (input && input.classList.contains('input-error')) {
+              input.value = "";
+            }
+          });
+        }
+      });
+    }
+  });
+</script>
   
