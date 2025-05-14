@@ -179,7 +179,7 @@ header {
 }
 
 #smallLogo {
-  width: 150px;
+  width: 220px;
 }
 
 .navigation li a:hover {
@@ -240,22 +240,65 @@ header {
 
 /* Footer */
 footer {
-  background-color: #1345e9; /* Darker blue */
-  color: white;
+  background-color: #1345e9;
   text-align: center;
-  padding-bottom: 2rem;
-  padding-top: 4rem;
+  padding: 4rem 2rem;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.socialMediaContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.instagramLinkContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.instagramLinkContainer:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+.instagramLinkContainer i {
+  transition: color 0.3s ease;
+}
+
+.instagramLinkContainer:hover i {
+  color: #ffb0f0;
+}
+
+.instagramLinkContainer p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 footer img {
-  height: 60px;
+  height: 80px;
   margin-bottom: 1rem;
 }
 
 footer a {
   color: white;
-  margin: 0 10px;
   text-decoration: none;
+  font-weight: 500;
 }
 
 footer a:hover {
@@ -263,8 +306,9 @@ footer a:hover {
 }
 
 footer p {
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
 #menuOverlay.active {
