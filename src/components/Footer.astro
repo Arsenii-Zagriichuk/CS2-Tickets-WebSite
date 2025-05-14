@@ -4,25 +4,40 @@ import SmallLogo from "../images/logoSmall.png";
 ---
 
 <footer>
-  <Image src={SmallLogo} alt="logo" class="logoImg" id="smallLogo" />
-
-  <div style="margin-bottom: 1rem;">
-    <a href="https://instagram.com/yourprofile1" target="_blank">
-      <i class="fab fa-instagram fa-2x"></i>
-    </a>
-    <a href="https://instagram.com/yourprofile2" target="_blank">
-      <i class="fab fa-instagram fa-2x"></i>
-    </a>
-    <a href="https://instagram.com/yourprofile3" target="_blank">
-      <i class="fab fa-instagram fa-2x"></i>
-    </a>
-  </div>
-
-  <div>
-    <p>&copy; 2025 Your Company Name. All rights reserved.</p>
-    <p>
-      Contact us at
-      <a href="mailto:info@yourcompany.com">tickets.cs2@gmail.com</a>
-    </p>
+  <div class="footerContainer">
+    <div>
+      <Image src={SmallLogo} alt="logo" class="logoImg" id="smallLogo" />
+      <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+      <p>
+        Contact us at
+        <a href="mailto:info@yourcompany.com">tickets.cs2@gmail.com</a>
+      </p>
+    </div>
+    <div class="socialMediaContainer">
+      <a
+        href="https://www.instagram.com/igor._ivanchenko/"
+        target="_blank"
+        class="instagramLinkContainer"
+      >
+        <i class="fab fa-instagram fa-2x"></i>
+        <p>Ihor Ivanchenko</p>
+      </a>
+      <a
+        href="https://www.instagram.com/wqfdgx/"
+        target="_blank"
+        class="instagramLinkContainer"
+      >
+        <i class="fab fa-instagram fa-2x"></i>
+        <p>Arsenii Zahriichuk</p>
+      </a>
+      <a
+        href="https://www.instagram.com/shtmeex/"
+        target="_blank"
+        class="instagramLinkContainer"
+      >
+        <i class="fab fa-instagram fa-2x"></i>
+        <p>Maksym Shtymak</p>
+      </a>
+    </div>
   </div>
 </footer>
