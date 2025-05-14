@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import cartIcon from "../../images/cartIcon.png";
 
 export default function CartIcon() {
     let quantity;
@@ -26,7 +27,7 @@ export default function CartIcon() {
 
     return (
         <div id="cartIconContainer">       
-            <img src="./src/images/cartIcon.png" alt="CartIcon" id="cartIcon" onClick={redirect}/>
+            <img src={cartIcon.src} alt="CartIcon" id="cartIcon" onClick={redirect}/>
             <p id="quantity">{quantity}</p>
         </div>
     );

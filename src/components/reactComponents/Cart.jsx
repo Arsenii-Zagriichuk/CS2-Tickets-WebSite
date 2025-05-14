@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import "../../styles/test.css";
+import "../../styles/cart.css";
+import { handleCheckout } from "../../scripts/handleCheckout";
 
 function Cart({ tickets, deleteTicket, addTicket }) {
   const hasItems = tickets && tickets.length > 0;
@@ -13,7 +14,7 @@ function Cart({ tickets, deleteTicket, addTicket }) {
   return (
     <div className="cartContainer">
       <div className="cartElementsContainer">
-        <h1>Bag</h1>
+        <h1>Basket</h1>
         {hasItems ? (
           allTypes.map((typeGroup, index) =>
             typeGroup.length > 0 ? (
@@ -23,6 +24,7 @@ function Cart({ tickets, deleteTicket, addTicket }) {
                 quantity={typeGroup.length}
                 deleteTicket={deleteTicket}
                 addTicket={addTicket}
+                showQuantity={true}
               />
             ) : null
           )
@@ -37,7 +39,7 @@ function Cart({ tickets, deleteTicket, addTicket }) {
 }
 
 
-function CartElement({ ticket, quantity, deleteTicket, addTicket }) {
+function CartElement({ ticket, quantity, deleteTicket, addTicket, showQuantity }) {
   return (
     <>
     <div className="cartElement">
@@ -55,15 +57,23 @@ function CartElement({ ticket, quantity, deleteTicket, addTicket }) {
         </div>
       </div>
     </div>
-    <div className="quantityContainer">
-      {quantity <= 1 ? 
-          <button onClick={() => deleteTicket(ticket.name)}><i className="fa-regular fa-trash-can"></i></button>
-         : 
-          <button onClick={() => deleteTicket(ticket.name)}><i className="fa-solid fa-minus"></i></button>
-      }
-      <p>{quantity}</p>
-      <button onClick={() => addTicket(ticket)}><i className="fa-solid fa-plus"></i></button>
-    </div>
+    { showQuantity &&
+        <div className="quantityContainer">
+          {quantity <= 1 ? 
+              <button onClick={() => deleteTicket(ticket.name)}><i className="fa-regular fa-trash-can"></i></button>
+            : 
+              <button onClick={() => deleteTicket(ticket.name)}><i className="fa-solid fa-minus"></i></button>
+          }
+          <p>{quantity}</p>
+          <button onClick={() => addTicket(ticket)}><i className="fa-solid fa-plus"></i></button>
+        </div>
+    }
+
+    { !showQuantity && 
+      <div className="quantityNumberContainer">
+        <p>Quantity: {quantity}</p>
+      </div>
+    }
     
     </>
   );
@@ -71,6 +81,7 @@ function CartElement({ ticket, quantity, deleteTicket, addTicket }) {
 function PaymentSection({ tickets }) {
   const [totalPrice, setTotalPrice] = useState(0);
   const taxFee = 5.00; // Fixed tax fee of $5
+
   
   useEffect(() => {
     if (tickets && tickets.length > 0) {
@@ -81,23 +92,12 @@ function PaymentSection({ tickets }) {
     }
   }, [tickets]);
 
+  function onCheckout(){
+    handleCheckout(tickets, totalPrice, taxFee);
+  };
+
   // Calculate final total with tax
   const finalTotal = (parseFloat(totalPrice) + taxFee).toFixed(2);
-  
-  // Function to handle checkout click
-  const handleCheckout = () => {
-    if (parseFloat(totalPrice) === 0) return;
-    // Store the cart data in localStorage before navigating
-    localStorage.setItem("checkoutData", JSON.stringify({
-      tickets: tickets,
-      subtotal: totalPrice,
-      taxFee: taxFee.toFixed(2),
-      total: finalTotal
-    }));
-    
-    // Navigate to the Checkout page
-    window.location.href = "/Checkout";
-  };
 
   const isDisabled = parseFloat(totalPrice) === 0;
 
@@ -118,14 +118,9 @@ function PaymentSection({ tickets }) {
       </div>
       <div
         className={`checkoutButton ${!isDisabled ? '' : 'disabled'}`}
-        onClick={handleCheckout}
+        onClick={onCheckout}
         role="button"
         tabIndex={isDisabled ? -1 : 0}
-        onKeyDown={(e) => {
-          if (!isDisabled && (e.key === 'Enter' || e.key === ' ')) {
-            handleCheckout();
-          }
-        }}
         aria-disabled={isDisabled}
       >
         Checkout
@@ -139,6 +134,12 @@ function SuccessfulPaymenPageContent() {
   const [subtotal, setSubtotal] = useState("0.00");
   const [taxFee, setTaxFee] = useState("0.00");
   const [total, setTotal] = useState("0.00");
+
+  const ticketsType1 = tickets.filter(ticket => ticket.name === "1 Day Ticket");
+  const ticketsType2 = tickets.filter(ticket => ticket.name === "3 Day Ticket");
+  const ticketsType3 = tickets.filter(ticket => ticket.name === "Fan Zone Ticket");
+
+  const allTypes = [ticketsType1, ticketsType2, ticketsType3];
 
   useEffect(() => {
     const stored = localStorage.getItem("checkoutData");
