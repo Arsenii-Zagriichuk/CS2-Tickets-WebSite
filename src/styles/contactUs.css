@@ -1,0 +1,145 @@
+.container {
+  display: flex;
+  align-items: center;
+  max-width: 63rem;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+.content {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  border-radius: 1rem;
+}
+
+.contactInfo {
+  flex: 1;
+  min-width: 18rem;
+}
+
+.contactInfo h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #e9e2e2;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.contactInfo p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #bfbfbf;
+}
+
+.contactInfo ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #d4d4d4;
+}
+
+.contactInfo ul li {
+  margin-bottom: 1rem;
+}
+
+.userInfo {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 0.5rem;
+  background-color: #030721;
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.4);
+}
+
+form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 2rem; 
+  padding: 2rem 0;
+}
+
+form label {
+  color: rgb(192, 169, 169);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+form input,
+form textarea { 
+  padding: 1rem;
+  border: 0.1rem solid #a79c9c;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #f7f7f7;
+  background-color: #01031d;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.2);
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  font-family: inherit;
+  font-weight: 600;
+  padding: 1.2rem 2.7rem;
+  background-color: #4ea8de;
+  color: white;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.2);
+}
+
+form button:hover {
+  background-color: #3b95cc;
+}
+
+form button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(49, 130, 206, 0.5);
+}
+
+form button:active {
+  background-color: #2b6cb0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #01031d inset;
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+  border: 0.1rem solid #a79c9c;
+}
+
+.confirmation-message {
+    padding: 1.5rem;
+    margin-top: 2rem;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 0.7rem;
+    text-align: center;
+  }
+  
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+}
